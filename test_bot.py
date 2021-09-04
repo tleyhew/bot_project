@@ -3,6 +3,7 @@ import logging
 import sys
 import json
 import datetime
+import math
 from discord.ext import commands
 
 try: #Do we have a client token? If we don't, shut down
@@ -30,6 +31,9 @@ server_roles_m = ["Bartender", "Barboy", "Barkeep"]    #Male server roles
 server_roles_f = ["Alewife", "Coffee Mom", "Meido"]    #Female server roles
 server_roles_n = ["Server","Barstaff"]                 #Neuter server roles
 minor_roles = ["Minor", "Underage"]
+menu_page_size = 7
+menu_num_pages = 0
+menu_list = []
 
 try: #If we don't have the drink list, why bother?
   drink_file = open("./resources/drinklist.json", "r",encoding="utf-8") 
@@ -45,11 +49,25 @@ drink_list = json.loads(drink_string)
 #print (drink_list.keys())
 #print(type(drink_list))
 
-   
+def build_menu_list():  #this has to go here, because python won't let me forward declare it,
+     drink_keys = drink_list.keys()    #but I also can't call it before it's declared. Python, man. 
+     menu_num_pages  = math.ceil(len(drink_keys)/menu_page_size)
+     print(len(drink_keys))
+     print(menu_num_pages)
+     sorted_drink_keys = sorted(drink_keys)
+     list_count = 0
+     
+     for x in range(menu_num_pages):
+         for i in range(menu_page_size):
+             pass   
+     return []   
 
 #build the bot framework
 intentions = discord.Intents(guilds=True, members=True, emojis=True, messages=True)
 bot = commands.Bot(command_prefix='!bb - ', case_insensitive = True, intents=intentions)
+
+menu_list = build_menu_list()
+
 
 @bot.event
 async def on_ready():
@@ -128,7 +146,7 @@ async def serve(ctx):
          elif role.name in server_roles_n:
             serve_pronoun = 'themselves'
      
-     if curr_drink["alcoholic"] and not self_flag: #Is the recipient tagged as a minor?
+     if curr_drink["alcoholic"] and not self_flag and not all_flag: #Is the recipient tagged as a minor?
          for r in recipient.roles:
             if r.name in minor_roles:
                 await ctx.send("Sorry, " + ctx.author.display_name + ", but " + recipient.display_name + " is not old enough to consume alcoholic beverages.")
@@ -185,7 +203,7 @@ def build_embed(ctx, recipient, curr_drink, serve_pronoun, self_flag, all_flag):
      embed.set_image(url=picture_url)
      embed.add_field(name="So, what's in the glass?", value=curr_drink["menudesc"],inline=False)
      embed.add_field(name="suggested by", value=curr_drink["by"],inline=False)
-     print(embed.fields)
+     #print(embed.fields)
      return embed
 
 
@@ -195,6 +213,7 @@ def starts_with_vowel(in_string):
         return True
     else:
         return False
+
 
 
 bot.run(bot_token)
