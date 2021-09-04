@@ -111,7 +111,9 @@ async def serve(ctx):
                   
          
      for drinks in drink_list.keys(): #moderately fuzzy string matching
-         if drink_list[drinks].get("name").lower().startswith(modified_content[1].strip()) or drink_list[drinks].get("name").lower().endswith(modified_content[1].strip()) or modified_content[1].strip() in drink_list[drinks].get("name").lower():
+         if (drink_list[drinks].get("name").lower().startswith(modified_content[1].strip()) 
+         or drink_list[drinks].get("name").lower().endswith(modified_content[1].strip()) 
+         or modified_content[1].strip() in drink_list[drinks].get("name").lower()):
             valid_drink = True
             curr_drink = drink_list[drinks]
             #await ctx.send("this is placeholder for a valid drink message")
