@@ -13,7 +13,6 @@ except:
 
 bot_token = token_file.read()
 
-#logging.basicConfig(level=logging.INFO)
 
 #Set up some logging. I don't really know what I'm doing, but this 
 #is what professionals do, so here we are.
@@ -66,8 +65,8 @@ async def serve(ctx):
      valid_user = False       #Is the user being served present in the server?
      valid_drink = False      #Is this a real drink?
      self_flag = False        #Is this user serving a drink to themselves?
-     all_flag = False         
-     serve_pronoun = ''
+     all_flag = False         #Are they serving the house?
+     serve_pronoun = ''       #himself, herself, or themselves?
      recipient = ''
      content = ctx.message.content #get the text
      modified_content = content.lower().replace('!bb - serve','',1).split('-') #strip out the formatting
@@ -81,9 +80,9 @@ async def serve(ctx):
                  all_flag = True
              break
      
-     for i in ctx.guild.members: 
-         if valid_user == True:
-             break            
+     for i in ctx.guild.members: #This tries to match on account name and on
+         if valid_user == True:  #display name. Haven't decided what to do if multiple users
+             break               #share a name, or if a mention is put in this field
          
          if i.name.lower() == modified_content[0].strip() or i.display_name.lower() == modified_content[0].strip():
              valid_user = True
@@ -93,7 +92,7 @@ async def serve(ctx):
          await ctx.send( "Sorry, but " + modified_content[0].strip() + " is not a valid user.")
                   
          
-     for drinks in drink_list.keys():
+     for drinks in drink_list.keys(): #moderately fuzzy string matching
          if drink_list[drinks].get("name").lower().startswith(modified_content[1].strip()) or drink_list[drinks].get("name").lower().endswith(modified_content[1].strip()) or modified_content[1].strip() in drink_list[drinks].get("name").lower():
             valid_drink = True
             curr_drink = drink_list[drinks]
@@ -101,22 +100,17 @@ async def serve(ctx):
             break
          else: 
              pass
-             
-     #print(curr_drink)
-     #print(type(curr_drink))
-     #print (type(curr_drink['roles']))     
+                 
      if valid_drink == False:   
          await ctx.send ("Sorry, but I don't know what a " + modified_content[1].strip() + " is. Try ordering something else.")
          return
      
-     if ctx.author.id in curr_drink["users"]:
-        allowed_to_serve = True
+     if ctx.author.id in curr_drink["users"]: #Someone who suggests a drink can always serve it,
+        allowed_to_serve = True               #regardless of role
      else:
-         role_list = ctx.author.roles
-         #print(role_list)
+         role_list = ctx.author.roles #Does the invoker have a role that can serve this drink
          allowed_roles = ["Bartender","Barkeep","Alewife","Server","Barstaff"]
          allowed_roles + curr_drink["roles"]
-         #print(allowed_roles)
          for r in role_list:
              if r.name in allowed_roles:
                 allowed_to_serve = True
@@ -134,7 +128,7 @@ async def serve(ctx):
          elif role.name in server_roles_n:
             serve_pronoun = 'themselves'
      
-     if curr_drink["alcoholic"] and not self_flag:
+     if curr_drink["alcoholic"] and not self_flag: #Is the recipient tagged as a minor?
          for r in recipient.roles:
             if r.name in minor_roles:
                 await ctx.send("Sorry, " + ctx.author.display_name + ", but " + recipient.display_name + " is not old enough to consume alcoholic beverages.")
@@ -143,7 +137,6 @@ async def serve(ctx):
      
      
      embed = build_embed(ctx, recipient, curr_drink, serve_pronoun, self_flag, all_flag)
-     #await ctx.send(ctx.author.display_name + ' pours ' + recipient.display_name + ' a/an ' + curr_drink["name"])
      await ctx.send(embed=embed)
      return
     
@@ -153,13 +146,18 @@ async def serve(ctx):
 async def menu(ctx):
     await ctx.send('This is a placeholder for the menu interface')
     
+    
+@bot.command()
+async def suggest(ctx):
+    await ctx.send('This will eventually be how drinks are added.')
+    
       
 @bot.command()
 async def test(ctx):    
     await ctx.send(ctx.message.content)
     print (ctx.send(ctx.message.content))
     
-@bot.command()
+@bot.command() #Some easter eggs
 async def zork(ctx):
     await ctx.send('It is pitch black. You are likely to be eaten by a grue.')
     
@@ -170,7 +168,7 @@ async def nethack(ctx):
     
 def build_embed(ctx, recipient, curr_drink, serve_pronoun, self_flag, all_flag):
 
-     article = ' a '
+     article = ' a ' #This is a hack job, but it should be fine
      if starts_with_vowel(curr_drink["name"]):
         article = ' an '
 
