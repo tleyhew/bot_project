@@ -31,7 +31,7 @@ server_roles_m = ["Bartender", "Barboy", "Barkeep"]    #Male server roles
 server_roles_f = ["Alewife", "Coffee Mom", "Meido"]    #Female server roles
 server_roles_n = ["Server","Barstaff"]                 #Neuter server roles
 minor_roles = ["Minor", "Underage"]
-menu_page_size = 7
+menu_page_size = 10
 menu_num_pages = 0
 menu_list = []
 
@@ -55,14 +55,22 @@ def build_menu_list():  #this has to go here, because python won't let me forwar
      print(len(drink_keys))
      print(menu_num_pages)
      sorted_drink_keys = sorted(drink_keys)
-     list_count = 0
+     drink_counter = 0
      return_list = []
      
      for x in range(menu_num_pages):
-         return_list.append('')
+         title_string = "Menu Page " + str((x + 1))
+         curr_embed = discord.Embed(title=title_string,color=0xffffff)
          for i in range(menu_page_size):
-             pass   
-     return []   
+             drink_name = drink_list[sorted_drink_keys[drink_counter]].get("name")
+             drink_desc = drink_list[sorted_drink_keys[drink_counter]].get("menudesc")
+             curr_embed.add_field(name=drink_name, value=drink_desc, inline=False)
+             drink_counter+=1
+             if drink_counter == len(drink_keys):
+                 break
+         return_list.append(curr_embed)
+         menu_num_pages+=1
+     return return_list   
 
 #build the bot framework
 intentions = discord.Intents(guilds=True, members=True, emojis=True, messages=True)
@@ -168,7 +176,8 @@ async def serve(ctx):
         
 @bot.command()
 async def menu(ctx):
-    await ctx.send('This is a placeholder for the menu interface')
+     for x in range(len(menu_list)):
+         await ctx.send(embed=menu_list[x])
     
     
 @bot.command()
