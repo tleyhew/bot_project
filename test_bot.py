@@ -69,7 +69,6 @@ def build_menu_list():  #this has to go here, because python won't let me forwar
              if drink_counter == len(drink_keys):
                  break
          return_list.append(curr_embed)
-         menu_num_pages+=1
      return return_list   
 
 #build the bot framework
