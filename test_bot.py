@@ -56,8 +56,10 @@ def build_menu_list():  #this has to go here, because python won't let me forwar
      print(menu_num_pages)
      sorted_drink_keys = sorted(drink_keys)
      list_count = 0
+     return_list = []
      
      for x in range(menu_num_pages):
+         return_list.append('')
          for i in range(menu_page_size):
              pass   
      return []   
@@ -108,7 +110,9 @@ async def serve(ctx):
      
      if valid_user == False:
          await ctx.send( "Sorry, but " + modified_content[0].strip() + " is not a valid user.")
-                  
+     
+     if ctx.author.id == recipient.id:
+             self_flag = True
          
      for drinks in drink_list.keys(): #moderately fuzzy string matching
          if (drink_list[drinks].get("name").lower().startswith(modified_content[1].strip()) 
