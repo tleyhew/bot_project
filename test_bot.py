@@ -4,6 +4,7 @@ import sys
 import json
 import datetime
 import math
+import unicodedata
 from discord.ext import commands
 
 try: #Do we have a client token? If we don't, shut down
@@ -23,7 +24,7 @@ handler = logging.FileHandler(filename='bot.log', encoding='UTF-8', mode='a')
 handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
 logger.addHandler(handler)
 
-bot_std_out = open('bot_std_out.txt', 'a')
+bot_std_out = open('bot_std_out.txt', 'a',encoding='UTF-8')
 sys.stdout = bot_std_out
 
 special_names = ['everyone', 'the house', 'here','me'] #These 'users' are always present
@@ -31,6 +32,7 @@ server_roles_m = ["Bartender", "Barboy", "Barkeep"]    #Male server roles
 server_roles_f = ["Alewife", "Coffee Mom", "Meido"]    #Female server roles
 server_roles_n = ["Server","Barstaff"]                 #Neuter server roles
 minor_roles = ["Minor", "Underage"]
+drink_categories = ["beers","cocktails","hot coffee","iced coffee","spirits","tea","miscellaneous"]
 menu_page_size = 10
 menu_num_pages = 0
 menu_list = []
@@ -52,8 +54,8 @@ drink_list = json.loads(drink_string)
 def build_menu_list():  #this has to go here, because python won't let me forward declare it,
      drink_keys = drink_list.keys()    #but I also can't call it before it's declared. Python, man. 
      menu_num_pages  = math.ceil(len(drink_keys)/menu_page_size)
-     print(len(drink_keys))
-     print(menu_num_pages)
+     #print(len(drink_keys))
+     #print(menu_num_pages)
      sorted_drink_keys = sorted(drink_keys)
      drink_counter = 0
      return_list = []
@@ -65,6 +67,7 @@ def build_menu_list():  #this has to go here, because python won't let me forwar
              drink_name = drink_list[sorted_drink_keys[drink_counter]].get("name")
              drink_desc = drink_list[sorted_drink_keys[drink_counter]].get("menudesc")
              curr_embed.add_field(name=drink_name, value=drink_desc, inline=False)
+             curr_embed.set_footer(text=str(x + 1))
              drink_counter+=1
              if drink_counter == len(drink_keys):
                  break
@@ -72,7 +75,7 @@ def build_menu_list():  #this has to go here, because python won't let me forwar
      return return_list   
 
 #build the bot framework
-intentions = discord.Intents(guilds=True, members=True, emojis=True, messages=True)
+intentions = discord.Intents(guilds=True, members=True, emojis=True, messages=True, reactions=True)
 bot = commands.Bot(command_prefix='!bb - ', case_insensitive = True, intents=intentions)
 
 menu_list = build_menu_list()
@@ -169,23 +172,29 @@ async def serve(ctx):
      
      if curr_drink["alcoholic"] and not self_flag and not all_flag: #Is the recipient tagged as a minor?
          for r in recipient.roles:
-            if r.name in minor_roles:
-                await ctx.send("Sorry, " + ctx.author.display_name + ", but " + recipient.display_name + " is not old enough to consume alcoholic beverages.")
-                return
+             if r.name in minor_roles:
+                 await ctx.send("Sorry, " + ctx.author.display_name + ", but " + recipient.display_name + " is not old enough to consume alcoholic beverages.")
+                 return
                      
      
      
      embed = build_embed(ctx, recipient, curr_drink, serve_pronoun, self_flag, all_flag)
-     await ctx.send(embed=embed)
+     msg = await ctx.channel.send(embed=embed) #This never returns anything, for some reason
+    # print("msg.id") 
+    # await msg.add_reaction(":arrow_backward:")  #"\N{BLACK LEFT-POINTING TRIANGLE}"
+    # print("two")
+    # await msg.add_reaction(":arrow_forward:")  #"\N{BLACK RIGHT-POINTING TRIANGLE}"
+    # print("three")
+    # await ctx.send("\N{BLACK LEFT-POINTING TRIANGLE} stuff")
      return
     
 
         
 @bot.command()
-async def menu(ctx):
-     for x in range(len(menu_list)):
-         await ctx.send(embed=menu_list[x])
-    
+async def menu(ctx, page_no = 1, category = 'all'):
+     #await ctx.send(category + '  ' + str(page_no))
+     menu_page = await ctx.send(embed=menu_list[page_no - 1])
+
     
 @bot.command()
 async def suggest(ctx):
@@ -195,7 +204,7 @@ async def suggest(ctx):
 @bot.command()
 async def test(ctx):    
     await ctx.send(ctx.message.content)
-    print (ctx.send(ctx.message.content))
+    print (ctx.message.content)
     
 @bot.command() #Some easter eggs
 async def zork(ctx):
@@ -204,7 +213,39 @@ async def zork(ctx):
 @bot.command()
 async def nethack(ctx):
      await ctx.send('Who do you think you are, War?')
-    
+     
+     
+@bot.event  
+async def on_reaction_add(reaction, user):
+     cur_page_no = 0
+     next_page_no = 0
+     if reaction.message.author.id != bot.user.id:
+        return
+     elif len(reaction.message.embeds) == 0:
+        return
+     elif reaction.message.embeds[0].footer == discord.Embed.Empty:
+        return
+     else:
+         if isinstance(reaction.emoji, str):
+             emote = unicodedata.name(reaction.emoji[0])
+         else:
+             return
+         if emote == "BLACK LEFT-POINTING TRIANGLE":
+             cur_page_no = reaction.message.embeds[0].footer
+             next_page_no = int(cur_page_no.text) - 1
+             if next_page_no == 0:
+                next_page_no = len(menu_list)
+             await reaction.message.clear_reactions()
+             await reaction.message.edit(embed=menu_list[next_page_no - 1])
+             
+         elif emote == "BLACK RIGHT-POINTING TRIANGLE":
+             cur_page_no = reaction.message.embeds[0].footer
+             next_page_no = int(cur_page_no.text) + 1
+             if next_page_no > len(menu_list):
+                next_page_no = 1
+             await reaction.message.clear_reactions()
+             await reaction.message.edit(embed=menu_list[next_page_no - 1])
+        
     
 def build_embed(ctx, recipient, curr_drink, serve_pronoun, self_flag, all_flag):
 
