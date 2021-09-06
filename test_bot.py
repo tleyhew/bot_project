@@ -107,9 +107,17 @@ async def serve(ctx):
                  all_flag = True
              break
      
+     if not valid_user:
+         mention_list = ctx.message.mentions
+         if len(mention_list) == 1:
+             recipient = mention_list[0]
+             valid_user = True
+         elif len(mention_list) <= 2:
+             await ctx.send("Sorry, but you mentioned more than one user in this request. Please make two separate requests.")
+     
      for i in ctx.guild.members: #This tries to match on account name and on
          if valid_user == True:  #display name. Haven't decided what to do if multiple users
-             break               #share a name, or if a mention is put in this field
+             break               #share a name
          
          if i.name.lower() == modified_content[0].strip() or i.display_name.lower() == modified_content[0].strip():
              valid_user = True
