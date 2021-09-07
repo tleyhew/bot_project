@@ -32,7 +32,7 @@ server_roles_m = ["Bartender", "Barboy", "Barkeep"]    #Male server roles
 server_roles_f = ["Alewife", "Coffee Mom", "Meido"]    #Female server roles
 server_roles_n = ["Server","Barstaff"]                 #Neuter server roles
 minor_roles = ["Minor", "Underage"]
-drink_categories = ["beers","cocktails","hot coffee","iced coffee","spirits","tea","miscellaneous"]
+drink_categories = ["all","beers","cocktails","hot coffee","iced coffee","spirits","tea","miscellaneous"]
 menu_page_size = 10
 menu_num_pages = 0
 menu_list = []
@@ -179,13 +179,8 @@ async def serve(ctx):
      
      
      embed = build_embed(ctx, recipient, curr_drink, serve_pronoun, self_flag, all_flag)
-     msg = await ctx.channel.send(embed=embed) #This never returns anything, for some reason
-    # print("msg.id") 
-    # await msg.add_reaction(":arrow_backward:")  #"\N{BLACK LEFT-POINTING TRIANGLE}"
-    # print("two")
-    # await msg.add_reaction(":arrow_forward:")  #"\N{BLACK RIGHT-POINTING TRIANGLE}"
-    # print("three")
-    # await ctx.send("\N{BLACK LEFT-POINTING TRIANGLE} stuff")
+     #msg = await ctx.channel.send(embed=embed)  
+    
      return
     
 
@@ -194,6 +189,9 @@ async def serve(ctx):
 async def menu(ctx, page_no = 1, category = 'all'):
      #await ctx.send(category + '  ' + str(page_no))
      menu_page = await ctx.send(embed=menu_list[page_no - 1])
+     print(menu_page.id)
+     await menu_page.add_reaction("\N{BLACK LEFT-POINTING TRIANGLE}")  #"\N{BLACK LEFT-POINTING TRIANGLE}"
+     await menu_page.add_reaction("\N{BLACK RIGHT-POINTING TRIANGLE}")  #"\N{BLACK RIGHT-POINTING TRIANGLE}"
 
     
 @bot.command()
@@ -219,7 +217,7 @@ async def nethack(ctx):
 async def on_reaction_add(reaction, user):
      cur_page_no = 0
      next_page_no = 0
-     if reaction.message.author.id != bot.user.id:
+     if reaction.message.author.id == bot.user.id:
         return
      elif len(reaction.message.embeds) == 0:
         return
