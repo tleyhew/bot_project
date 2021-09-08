@@ -39,7 +39,7 @@ drink_file.close()
 
 drinkLoader.validateDrinkList(drink_list)
 
-categories = drinkLoader.generateCategories(drink_list)
+drink_categories = drinkLoader.generateCategories(drink_list)
 
 
 bot_token = token_file.read()
