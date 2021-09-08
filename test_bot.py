@@ -129,6 +129,7 @@ async def serve(ctx):
      
      if valid_user == False:
          await ctx.send( "Sorry, but " + modified_content[0].strip() + " is not a valid user.")
+         return
      
      if recipient != '':
          if ctx.author.id == recipient.id:
