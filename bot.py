@@ -39,7 +39,7 @@ drink_file.close()
 
 drinkLoader.validateDrinkList(drink_list)
 
-categories = drinkLoader.generateCategories(drink_list)
+drink_categories = drinkLoader.generateCategories(drink_list)
 
 
 bot_token = token_file.read()
@@ -149,17 +149,18 @@ async def serve(ctx):
             valid_user = True
             recipient = i
 
-    if valid_user == False:
-        await ctx.send("Sorry, but " + modified_content[0].strip() + " is not a valid user.")
-
-    if recipient != '':
-        if ctx.author.id == recipient.id:
-            self_flag = True
-
-    for drinks in drink_list.keys():  # moderately fuzzy string matching
-        if (drink_list[drinks].get("name").lower().startswith(modified_content[1].strip())
-            or drink_list[drinks].get("name").lower().endswith(modified_content[1].strip())
-                or modified_content[1].strip() in drink_list[drinks].get("name").lower()):
+     if valid_user == False:
+         await ctx.send( "Sorry, but " + modified_content[0].strip() + " is not a valid user.")
+         return
+     
+     if recipient != '':
+         if ctx.author.id == recipient.id:
+                 self_flag = True
+         
+     for drinks in drink_list.keys(): #moderately fuzzy string matching
+         if (drink_list[drinks].get("name").lower().startswith(modified_content[1].strip()) 
+         or drink_list[drinks].get("name").lower().endswith(modified_content[1].strip()) 
+         or modified_content[1].strip() in drink_list[drinks].get("name").lower()):
             valid_drink = True
             curr_drink = drink_list[drinks]
             # await ctx.send("this is placeholder for a valid drink message")
