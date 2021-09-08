@@ -149,23 +149,23 @@ async def serve(ctx):
             valid_user = True
             recipient = i
 
-     if valid_user == False:
-         await ctx.send( "Sorry, but " + modified_content[0].strip() + " is not a valid user.")
-         return
-     
-     if recipient != '':
-         if ctx.author.id == recipient.id:
-                 self_flag = True
-         
-     for drinks in drink_list.keys(): #moderately fuzzy string matching
-         if (drink_list[drinks].get("name").lower().startswith(modified_content[1].strip()) 
-         or drink_list[drinks].get("name").lower().endswith(modified_content[1].strip()) 
-         or modified_content[1].strip() in drink_list[drinks].get("name").lower()):
-            valid_drink = True
-            curr_drink = drink_list[drinks]
-            # await ctx.send("this is placeholder for a valid drink message")
-          #  print (curr_drink)
-            break
+    if valid_user == False:
+        await ctx.send( "Sorry, but " + modified_content[0].strip() + " is not a valid user.")
+        return
+    
+    if recipient != '':
+        if ctx.author.id == recipient.id:
+                self_flag = True
+        
+    for drinks in drink_list.keys(): #moderately fuzzy string matching
+        if (drink_list[drinks].get("name").lower().startswith(modified_content[1].strip()) 
+        or drink_list[drinks].get("name").lower().endswith(modified_content[1].strip()) 
+        or modified_content[1].strip() in drink_list[drinks].get("name").lower()):
+           valid_drink = True
+           curr_drink = drink_list[drinks]
+           # await ctx.send("this is placeholder for a valid drink message")
+         #  print (curr_drink)
+           break
         else:
             pass
 
@@ -186,8 +186,8 @@ async def serve(ctx):
         print(role_list)
         # Functional programming is best programming
         # Filter: returns objects x where f(x)==true
-        # Lambda (or f(x)): returns value of x.can_serve
-        allowed_roles = filter(lambda x: x.can_serve, config["server_roles"])
+        # Lambda (or f(x)): returns value of x[can_serve]
+        allowed_roles = list(filter(lambda x: config["server_roles"][x]["can_serve"], config["server_roles"].keys()))
         allowed_roles = allowed_roles + curr_drink["roles"]
         print(allowed_roles)
 
