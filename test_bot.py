@@ -97,6 +97,7 @@ async def serve(ctx):
      self_flag = False        #Is this user serving a drink to themselves?
      all_flag = False         #Are they serving the house?
      serve_pronoun = ''       #himself, herself, or themselves?
+     role_list = []
      recipient = ''
      content = ctx.message.content #get the text
      modified_content = content.lower().replace('!bb - serve','',1).split('-') #strip out the formatting
@@ -115,7 +116,7 @@ async def serve(ctx):
          if len(mention_list) == 1:
              recipient = mention_list[0]
              valid_user = True
-         elif len(mention_list) <= 2:
+         elif len(mention_list) >= 2:
              await ctx.send("Sorry, but you mentioned more than one user in this request. Please make two separate requests.")
      
      for i in ctx.guild.members: #This tries to match on account name and on
@@ -129,8 +130,9 @@ async def serve(ctx):
      if valid_user == False:
          await ctx.send( "Sorry, but " + modified_content[0].strip() + " is not a valid user.")
      
-     if ctx.author.id == recipient.id:
-             self_flag = True
+     if recipient != '':
+         if ctx.author.id == recipient.id:
+                 self_flag = True
          
      for drinks in drink_list.keys(): #moderately fuzzy string matching
          if (drink_list[drinks].get("name").lower().startswith(modified_content[1].strip()) 
@@ -139,6 +141,7 @@ async def serve(ctx):
             valid_drink = True
             curr_drink = drink_list[drinks]
             #await ctx.send("this is placeholder for a valid drink message")
+          #  print (curr_drink)
             break
          else: 
              pass
@@ -146,13 +149,20 @@ async def serve(ctx):
      if valid_drink == False:   
          await ctx.send ("Sorry, but I don't know what a " + modified_content[1].strip() + " is. Try ordering something else.")
          return
-     
-     if ctx.author.id in curr_drink["users"]: #Someone who suggests a drink can always serve it,
-        allowed_to_serve = True               #regardless of role
+         
+     #print(ctx.author.id)
+     if ctx.author.id == int('316005415211106305'): #316005415211106305
+         allowed_to_serve = True
+         #print(allowed_to_serve)
+     elif ctx.author.id in [int(x) for x in curr_drink["users"]]: #Someone who suggests a drink can always serve it,
+         allowed_to_serve = True               #regardless of role   
+        # print(allowed_to_serve)           
      else:
          role_list = ctx.author.roles #Does the invoker have a role that can serve this drink
+         print (role_list)
          allowed_roles = ["Bartender","Barkeep","Alewife","Server","Barstaff"]
-         allowed_roles + curr_drink["roles"]
+         allowed_roles = allowed_roles + curr_drink["roles"]
+         print (allowed_roles)
          for r in role_list:
              if r.name in allowed_roles:
                 allowed_to_serve = True
@@ -169,6 +179,8 @@ async def serve(ctx):
             serve_pronoun = 'herself'
          elif role.name in server_roles_n:
             serve_pronoun = 'themselves'
+         else:
+             serve_pronoun = 'themselves'
      
      if curr_drink["alcoholic"] and not self_flag and not all_flag: #Is the recipient tagged as a minor?
          for r in recipient.roles:
@@ -179,7 +191,7 @@ async def serve(ctx):
      
      
      embed = build_embed(ctx, recipient, curr_drink, serve_pronoun, self_flag, all_flag)
-     #msg = await ctx.channel.send(embed=embed)  
+     msg = await ctx.channel.send(embed=embed)  
     
      return
     
@@ -217,7 +229,7 @@ async def nethack(ctx):
 async def on_reaction_add(reaction, user):
      cur_page_no = 0
      next_page_no = 0
-     if reaction.message.author.id == bot.user.id:
+     if user.id == bot.user.id:
         return
      elif len(reaction.message.embeds) == 0:
         return
@@ -226,6 +238,7 @@ async def on_reaction_add(reaction, user):
      else:
          if isinstance(reaction.emoji, str):
              emote = unicodedata.name(reaction.emoji[0])
+             #print (emote)
          else:
              return
          if emote == "BLACK LEFT-POINTING TRIANGLE":
@@ -235,6 +248,8 @@ async def on_reaction_add(reaction, user):
                 next_page_no = len(menu_list)
              await reaction.message.clear_reactions()
              await reaction.message.edit(embed=menu_list[next_page_no - 1])
+             await reaction.message.add_reaction("\N{BLACK LEFT-POINTING TRIANGLE}")  #"\N{BLACK LEFT-POINTING TRIANGLE}"
+             await reaction.message.add_reaction("\N{BLACK RIGHT-POINTING TRIANGLE}")  #"\N{BLACK RIGHT-POINTING TRIANGLE}"
              
          elif emote == "BLACK RIGHT-POINTING TRIANGLE":
              cur_page_no = reaction.message.embeds[0].footer
@@ -243,7 +258,11 @@ async def on_reaction_add(reaction, user):
                 next_page_no = 1
              await reaction.message.clear_reactions()
              await reaction.message.edit(embed=menu_list[next_page_no - 1])
-        
+             await reaction.message.add_reaction("\N{BLACK LEFT-POINTING TRIANGLE}")  #"\N{BLACK LEFT-POINTING TRIANGLE}"
+             await reaction.message.add_reaction("\N{BLACK RIGHT-POINTING TRIANGLE}")  #"\N{BLACK RIGHT-POINTING TRIANGLE}"
+         
+         elif emote == "CROSS MARK":
+             await reaction.message.delete()
     
 def build_embed(ctx, recipient, curr_drink, serve_pronoun, self_flag, all_flag):
 
@@ -270,7 +289,7 @@ def build_embed(ctx, recipient, curr_drink, serve_pronoun, self_flag, all_flag):
 
 def starts_with_vowel(in_string):
     vowel = 'a','e','i','o','u'
-    if in_string.startswith(vowel):
+    if in_string.lower().startswith(vowel):
         return True
     else:
         return False
