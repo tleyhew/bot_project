@@ -123,7 +123,7 @@ async def serve(ctx):
          if valid_user == True:  #display name. Haven't decided what to do if multiple users
              break               #share a name
          
-         if i.name.lower() == modified_content[0].strip() or i.display_name.lower() == modified_content[0].strip():
+         if modified_content[0].strip() in i.name.lower() or modified_content[0].strip() in i.display_name.lower():
              valid_user = True
              recipient = i
      
