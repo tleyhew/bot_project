@@ -148,9 +148,17 @@ async def serve(ctx):
              pass
                  
      if valid_drink == False:   
-         await ctx.send ("Sorry, but I don't know what a " + modified_content[1].strip() + " is. Try ordering something else.")
+         await ctx.send ("Sorry, but we don't have " + modified_content[1].strip() + " in this establishment.")
          return
-         
+      
+     allowed_roles = []      
+     if "Coffee Mom" in curr_drink["roles"]:
+         allowed_roles = curr_drink["roles"]
+     elif "Meido" in curr_drink["roles"]:
+         allowed_roles = curr_drink["roles"]   
+     else:    
+         allowed_roles = ["Bartender","Barkeep","Alewife","Server","Barstaff"] 
+        
      #print(ctx.author.id)
      if ctx.author.id == int('316005415211106305'): #316005415211106305
          allowed_to_serve = True
@@ -161,8 +169,8 @@ async def serve(ctx):
      else:
          role_list = ctx.author.roles #Does the invoker have a role that can serve this drink
          print (role_list)
-         allowed_roles = ["Bartender","Barkeep","Alewife","Server","Barstaff"]
-         allowed_roles = allowed_roles + curr_drink["roles"]
+         #allowed_roles = ["Bartender","Barkeep","Alewife","Server","Barstaff"]
+         #allowed_roles = allowed_roles + curr_drink["roles"]
          print (allowed_roles)
          for r in role_list:
              if r.name in allowed_roles:
