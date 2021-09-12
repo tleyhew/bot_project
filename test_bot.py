@@ -46,14 +46,35 @@ except:
 drink_string = drink_file.read() # load and parse the JSON
 drink_file.close()
 drink_list = json.loads(drink_string)
-
+drink_keys = drink_list.keys()
 #print (json.dumps(drink_list)) #turn this on if you need to test it.
-#print (drink_list.keys())
-#print(type(drink_list))
+
+cocktails_list = []
+beers_list = []
+hot_coffee_list = []
+iced_coffee_list = []
+spirits_list = []
+tea_list = []
+miscellaneous_list = []
+
+for x in drink_keys:
+     if drink_list[x].get("categories") == "cocktails":
+         cocktails_list.append(x)
+     elif drink_list[x].get("categories") == "beers":
+         beers_list.append(x)
+     elif drink_list[x].get("categories") == "hot coffee":
+         hot_coffee_list.append(x)
+     elif drink_list[x].get("categories") == "iced coffee":
+         iced_coffee_list.append(x)
+     elif drink_list[x].get("categories") == "spirits":
+         spirits_list.append(x)
+     elif drink_list[x].get("categories") == "tea":
+         tea_list.append(x)
+     elif drink_list[x].get("categories") == "miscellaneous":
+         miscellaneous_list.append(x)
 
 def build_menu_list():  #this has to go here, because python won't let me forward declare it,
-     drink_keys = drink_list.keys()    #but I also can't call it before it's declared. Python, man. 
-     menu_num_pages  = math.ceil(len(drink_keys)/menu_page_size)
+     menu_num_pages  = math.ceil(len(drink_keys)/menu_page_size)#but I also can't call it before it's declared. Python, man. 
      #print(len(drink_keys))
      #print(menu_num_pages)
      sorted_drink_keys = sorted(drink_keys)
@@ -171,7 +192,7 @@ async def serve(ctx):
          print (role_list)
          #allowed_roles = ["Bartender","Barkeep","Alewife","Server","Barstaff"]
          #allowed_roles = allowed_roles + curr_drink["roles"]
-         print (allowed_roles)
+         #print (allowed_roles)
          for r in role_list:
              if r.name in allowed_roles:
                 allowed_to_serve = True
