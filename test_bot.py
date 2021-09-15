@@ -5,7 +5,22 @@ import json
 import datetime
 import math
 import unicodedata
+import datetime
 from discord.ext import commands
+import configLoader
+import drinkLoader
+
+
+try:  # If we don't have the drink list, why bother?
+    config_file = open("./resources/config.json", "r", encoding="utf-8")
+except:
+    print("Configuration File Not Found")
+    quit()
+
+config = json.load(config_file)  # load and parse the JSON
+config_file.close()
+
+configLoader.validateConfig(config)
 
 try: #Do we have a client token? If we don't, shut down
   token_file = open("./resources/bot_token.txt", "r")
@@ -13,8 +28,24 @@ except:
   print ("No client token found. Can't log in to discord without one, boss.")
   quit()
 
+
+try: #If we don't have the drink list, why bother?
+  drink_file = open("./resources/drinklist.json", "r",encoding="utf-8") 
+except:
+  print ("Drink list not found")
+  quit()
+
+
 bot_token = token_file.read()
 
+drink_string = drink_file.read() # load and parse the JSON
+drink_file.close()
+drink_list = json.loads(drink_string)
+
+drinkLoader.validateDrinkList(drink_list)
+drink_categories = drinkLoader.generateCategories(drink_list)
+drink_keys = drink_list.keys()
+sorted_drink_keys = sorted(drink_keys)
 
 #Set up some logging. I don't really know what I'm doing, but this 
 #is what professionals do, so here we are.
@@ -32,46 +63,29 @@ server_roles_m = ["Bartender", "Barboy", "Barkeep"]    #Male server roles
 server_roles_f = ["Alewife", "Coffee Mom", "Meido"]    #Female server roles
 server_roles_n = ["Server","Barstaff"]                 #Neuter server roles
 minor_roles = ["Minor", "Underage"]
-drink_categories = ["all","beers","cocktails","hot coffee","iced coffee","spirits","tea","miscellaneous"]
-menu_page_size = 10
+#drink_categories = ["all","beers","cocktails","hot coffee","iced coffee","spirits","tea","miscellaneous"]
+menu_page_size = config["menu_page_size"]
 menu_num_pages = 0
 menu_list = []
 
-try: #If we don't have the drink list, why bother?
-  drink_file = open("./resources/drinklist.json", "r",encoding="utf-8") 
-except:
-  print ("Drink list not found")
-  quit()
 
-drink_string = drink_file.read() # load and parse the JSON
-drink_file.close()
-drink_list = json.loads(drink_string)
+
 drink_keys = drink_list.keys()
+sorted_drink_keys = sorted(drink_keys)
 #print (json.dumps(drink_list)) #turn this on if you need to test it.
 
-cocktails_list = []
-beers_list = []
-hot_coffee_list = []
-iced_coffee_list = []
-spirits_list = []
-tea_list = []
-miscellaneous_list = []
+#menu_list_keys = dict.fromkeys(drink_categories, list())
 
-for x in drink_keys:
-     if drink_list[x].get("categories") == "cocktails":
-         cocktails_list.append(x)
-     elif drink_list[x].get("categories") == "beers":
-         beers_list.append(x)
-     elif drink_list[x].get("categories") == "hot coffee":
-         hot_coffee_list.append(x)
-     elif drink_list[x].get("categories") == "iced coffee":
-         iced_coffee_list.append(x)
-     elif drink_list[x].get("categories") == "spirits":
-         spirits_list.append(x)
-     elif drink_list[x].get("categories") == "tea":
-         tea_list.append(x)
-     elif drink_list[x].get("categories") == "miscellaneous":
-         miscellaneous_list.append(x)
+menu_list_keys = { key : list() for key in drink_categories}
+
+for x in sorted_drink_keys:
+     #print(drink_list[x].get("category"))
+     menu_list_keys[drink_list[x].get("category")].append(x)
+     
+
+print(menu_list_keys)
+categorized_menus = { key : list() for key in drink_categories}
+
 
 def build_menu_list():  #this has to go here, because python won't let me forward declare it,
      menu_num_pages  = math.ceil(len(drink_keys)/menu_page_size)#but I also can't call it before it's declared. Python, man. 
@@ -80,7 +94,7 @@ def build_menu_list():  #this has to go here, because python won't let me forwar
      sorted_drink_keys = sorted(drink_keys)
      drink_counter = 0
      return_list = []
-     
+     #this builds the primary list, that contains all drinks
      for x in range(menu_num_pages):
          title_string = "Menu Page " + str((x + 1))
          curr_embed = discord.Embed(title=title_string,color=0xffffff)
@@ -93,6 +107,11 @@ def build_menu_list():  #this has to go here, because python won't let me forwar
              if drink_counter == len(drink_keys):
                  break
          return_list.append(curr_embed)
+         
+         
+     for cat in menu_list_keys.keys():
+         menu_num_pages  = math.ceil(len(menu_list_keys.get(cat))/menu_page_size)
+         
      return return_list   
 
 #build the bot framework
@@ -205,24 +224,31 @@ async def serve(ctx):
      for role in role_list:
          if role.name in server_roles_m:
             serve_pronoun = 'himself'
+            break
          elif role.name in server_roles_f:
             serve_pronoun = 'herself'
+            break
          elif role.name in server_roles_n:
             serve_pronoun = 'themselves'
+            break
          else:
              serve_pronoun = 'themselves'
      
      if curr_drink["alcoholic"] and not self_flag and not all_flag: #Is the recipient tagged as a minor?
          for r in recipient.roles:
-             if r.name in minor_roles:
+             if r.name in config["minor_roles"]:
                  await ctx.send("Sorry, " + ctx.author.display_name + ", but " + recipient.display_name + " is not old enough to consume alcoholic beverages.")
                  return
                      
      
-     
+     #TO DO: put error handling here for when the image is missing.
      embed = build_embed(ctx, recipient, curr_drink, serve_pronoun, self_flag, all_flag)
-     msg = await ctx.channel.send(embed=embed)  
-    
+     
+     try:
+         msg = await ctx.channel.send(embed=embed)  
+     except discord.HTTPException:
+         print (datetime.datetime.now() + " The picture for " + curr_drink["name"] + " is not available")
+
      return
     
 

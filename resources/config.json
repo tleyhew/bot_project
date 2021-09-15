@@ -1,0 +1,43 @@
+{
+    "server_roles":{
+        "Bartender":{
+            "pronoun":"himself",
+            "can_serve":true
+        },
+        "Barboy":{
+            "pronoun":"himself",
+            "can_serve":true
+        },
+        "Barkeep":{
+            "pronoun":"himself",
+            "can_serve":true
+        },
+        "Alewife":{
+            "pronoun":"herself",
+            "can_serve":true
+        },
+        "Coffee Mom":{
+            "pronoun":"herself",
+            "can_serve":false
+        },
+        "Meido":{
+            "pronoun":"herself",
+            "can_serve":false
+        },
+        "Server":{
+            "pronoun":"themselves",
+            "can_serve":true
+        },
+        "Barstaff":{
+            "pronoun":"themselves",
+            "can_serve":true
+        }
+    },
+    "minor_roles":[
+        "Minor",
+        "Underage"
+    ],
+    "menu_page_size":10,
+    "drinkfile":"./resources/drinklist.json",
+    "tokenfile":"./resources/bot_token.txt"
+}
