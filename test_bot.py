@@ -76,14 +76,14 @@ sorted_drink_keys = sorted(drink_keys)
 
 #menu_list_keys = dict.fromkeys(drink_categories, list())
 
-menu_list_keys = { key : list() for key in drink_categories}
+categorized_key_list = { key : list() for key in drink_categories}
 
 for x in sorted_drink_keys:
      #print(drink_list[x].get("category"))
-     menu_list_keys[drink_list[x].get("category")].append(x)
+     categorized_key_list[drink_list[x].get("category")].append(x)
      
+print (categorized_key_list)
 
-print(menu_list_keys)
 categorized_menus = { key : list() for key in drink_categories}
 
 
@@ -109,9 +109,24 @@ def build_menu_list():  #this has to go here, because python won't let me forwar
          return_list.append(curr_embed)
          
          
-     for cat in menu_list_keys.keys():
-         menu_num_pages  = math.ceil(len(menu_list_keys.get(cat))/menu_page_size)
-         
+     for cat in categorized_key_list.keys():
+         menu_num_pages  = math.ceil(len(categorized_key_list.get(cat))/menu_page_size)
+         #print (cat + ' ' + str(menu_num_pages))
+         drink_counter = 0
+         for x in range (menu_num_pages):
+             title_string = cat.capitalize().replace("_"," ") + " Menu Page " + str((x + 1))
+             #print(title_string)
+             curr_embed = discord.Embed(title=title_string,color=0xffffff)
+             for i in range(menu_page_size):
+                 drink_name = drink_list[(categorized_key_list.get(cat))[drink_counter]].get("name")
+                 drink_desc = drink_list[(categorized_key_list.get(cat))[drink_counter]].get("menudesc")
+                 curr_embed.add_field(name=drink_name, value=drink_desc, inline=False)
+                 curr_embed.set_footer(text=str(x + 1))
+                 drink_counter+=1
+                 if drink_counter == len(categorized_key_list.get(cat)):
+                     break
+                 
+             categorized_menus[cat].append(curr_embed)
      return return_list   
 
 #build the bot framework
@@ -171,11 +186,13 @@ async def serve(ctx):
          await ctx.send( "Sorry, but " + modified_content[0].strip() + " is not a valid user.")
          return
      
-     if recipient != '':
+     if recipient != '' and not self_flag:
          if ctx.author.id == recipient.id:
                  self_flag = True
          
-     for drinks in drink_list.keys(): #moderately fuzzy string matching
+     sorted_drink_keys = sorted(drink_keys)
+         
+     for drinks in sorted_drink_keys: #drink_list.keys(): #moderately fuzzy string matching
          if (drink_list[drinks].get("name").lower().startswith(modified_content[1].strip()) 
          or drink_list[drinks].get("name").lower().endswith(modified_content[1].strip()) 
          or modified_content[1].strip() in drink_list[drinks].get("name").lower()):
@@ -198,7 +215,7 @@ async def serve(ctx):
          allowed_roles = curr_drink["roles"]   
      else:    
          allowed_roles = ["Bartender","Barkeep","Alewife","Server","Barstaff"] 
-        
+     role_list = ctx.author.roles   
      #print(ctx.author.id)
      if ctx.author.id == int('316005415211106305'): #316005415211106305
          allowed_to_serve = True
@@ -254,10 +271,56 @@ async def serve(ctx):
 
         
 @bot.command()
-async def menu(ctx, page_no = 1, category = 'all'):
+async def menu(ctx, *args):
+     if len(args) == 0:
+         category = "all"
+         page_no = 1
+     elif len(args) == 1:
+         if args[0].isdigit():
+             page_no = abs(int(args[0]))
+             category = "all"
+         elif isinstance(args[0], str):
+             if args[0].lower() in drink_categories:
+                 category = args[0].lower()
+                 page_no = 1
+             else:
+                 await ctx.send("I'm sorry, but that is not a category of drink that we serve here")
+                 return
+         else:
+             await ctx.send("I'm sorry, but that command was garbled and I am not sure what to make of it. Please try again.")
+             return
+     elif len(args) == 2:
+         if args[0].isdigit() and isinstance(args[1], str):
+             if args[1].lower() in drink_categories:
+                 page_no = int(args[0])
+                 category = args[1].lower()
+             else:
+                 await ctx.send("I'm sorry, but that is not a category of drink that we serve here")
+                 return
+         elif isinstance(args[0], str) and args[1].isdigit():
+             if args[0].lower() in drink_categories:
+                 page_no = int(args[1])
+                 category = args[0].lower()
+             else:    
+                 await ctx.send("I'm sorry, but that is not a category of drink that we serve here")
+                 return
+         else:
+             await ctx.send("I'm sorry, but that command was garbled and I am not sure what to make of it. Please try again.")
+             return
+     else:    
+         await ctx.send("I'm sorry, but that command was garbled and I am not sure what to make of it. Please try again.")
+         return
+     
      #await ctx.send(category + '  ' + str(page_no))
-     menu_page = await ctx.send(embed=menu_list[page_no - 1])
-     print(menu_page.id)
+     if category == "all":
+         if page_no > len(menu_list):
+             page_num = len(menu_list)
+         menu_page = await ctx.send(embed=menu_list[page_no - 1])
+     else:
+         if page_no > len (categorized_menus.get(category.lower())):
+             page_no = len (categorized_menus.get(category.lower()))
+         menu_page = await ctx.send(embed = categorized_menus.get(category.lower())[page_no - 1])     
+     #print(menu_page.id)
      await menu_page.add_reaction("\N{BLACK LEFT-POINTING TRIANGLE}")  #"\N{BLACK LEFT-POINTING TRIANGLE}"
      await menu_page.add_reaction("\N{BLACK RIGHT-POINTING TRIANGLE}")  #"\N{BLACK RIGHT-POINTING TRIANGLE}"
 
@@ -297,23 +360,31 @@ async def on_reaction_add(reaction, user):
              #print (emote)
          else:
              return
+             
+         if reaction.message.embeds[0].title.startswith("Menu Page"):
+             curr_menu = menu_list
+         else:
+             for x in drink_categories:
+                 if reaction.message.embeds[0].title.lower().startswith(x.lower()):
+                     curr_menu = categorized_menus[x]
+         
          if emote == "BLACK LEFT-POINTING TRIANGLE":
              cur_page_no = reaction.message.embeds[0].footer
              next_page_no = int(cur_page_no.text) - 1
              if next_page_no == 0:
-                next_page_no = len(menu_list)
+                next_page_no = len(curr_menu)
              await reaction.message.clear_reactions()
-             await reaction.message.edit(embed=menu_list[next_page_no - 1])
+             await reaction.message.edit(embed=curr_menu[next_page_no - 1])
              await reaction.message.add_reaction("\N{BLACK LEFT-POINTING TRIANGLE}")  #"\N{BLACK LEFT-POINTING TRIANGLE}"
              await reaction.message.add_reaction("\N{BLACK RIGHT-POINTING TRIANGLE}")  #"\N{BLACK RIGHT-POINTING TRIANGLE}"
              
          elif emote == "BLACK RIGHT-POINTING TRIANGLE":
              cur_page_no = reaction.message.embeds[0].footer
              next_page_no = int(cur_page_no.text) + 1
-             if next_page_no > len(menu_list):
+             if next_page_no > len(curr_menu):
                 next_page_no = 1
              await reaction.message.clear_reactions()
-             await reaction.message.edit(embed=menu_list[next_page_no - 1])
+             await reaction.message.edit(embed=curr_menu[next_page_no - 1])
              await reaction.message.add_reaction("\N{BLACK LEFT-POINTING TRIANGLE}")  #"\N{BLACK LEFT-POINTING TRIANGLE}"
              await reaction.message.add_reaction("\N{BLACK RIGHT-POINTING TRIANGLE}")  #"\N{BLACK RIGHT-POINTING TRIANGLE}"
          
