@@ -37,6 +37,10 @@
         "Minor",
         "Underage"
     ],
+    "exclusive_roles":[
+        "Meido",
+        "Coffee Mom"
+    ],
     "menu_page_size":10,
     "drinkfile":"./resources/drinklist.json",
     "tokenfile":"./resources/bot_token.txt"

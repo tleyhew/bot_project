@@ -19,6 +19,12 @@ def validateConfig(config):
     assert "minor_roles" in config
     assert type(config["minor_roles"]) is list
 
+    #Make sure there's exclusive roles
+    assert "exclusive_roles" in config
+    assert type(config["exclusive_roles"]) is list
+    #Make sure every role in the exclusive list is a real role
+    assert set(config["exclusive_roles"]).issubset(set(config["server_roles"]))
+
     #Make sure we specify a menu_page_size
     assert "menu_page_size" in config
     assert type(config["menu_page_size"]) is int
