@@ -82,7 +82,7 @@ for x in sorted_drink_keys:
      #print(drink_list[x].get("category"))
      categorized_key_list[drink_list[x].get("category")].append(x)
      
-print (categorized_key_list)
+#print (categorized_key_list)
 
 categorized_menus = { key : list() for key in drink_categories}
 
@@ -191,18 +191,22 @@ async def serve(ctx):
                  self_flag = True
          
      sorted_drink_keys = sorted(drink_keys)
-         
-     for drinks in sorted_drink_keys: #drink_list.keys(): #moderately fuzzy string matching
-         if (drink_list[drinks].get("name").lower().startswith(modified_content[1].strip()) 
-         or drink_list[drinks].get("name").lower().endswith(modified_content[1].strip()) 
-         or modified_content[1].strip() in drink_list[drinks].get("name").lower()):
-            valid_drink = True
-            curr_drink = drink_list[drinks]
-            #await ctx.send("this is placeholder for a valid drink message")
-          #  print (curr_drink)
-            break
-         else: 
-             pass
+     try:
+     #need to catch an index error here.    
+         for drinks in sorted_drink_keys: #drink_list.keys(): #moderately fuzzy string matching
+             if (drink_list[drinks].get("name").lower().startswith(modified_content[1].strip()) 
+             or drink_list[drinks].get("name").lower().endswith(modified_content[1].strip()) 
+             or modified_content[1].strip() in drink_list[drinks].get("name").lower()):
+                 valid_drink = True
+                 curr_drink = drink_list[drinks]
+                 #await ctx.send("this is placeholder for a valid drink message")
+                # print (curr_drink)
+                 break
+             else: 
+                 pass
+     except IndexError:
+         await ctx.send("That command was incorrectly formatted. Please include the '-'.")
+         return
                  
      if valid_drink == False:   
          await ctx.send ("Sorry, but we don't have " + modified_content[1].strip() + " in this establishment.")
@@ -264,8 +268,9 @@ async def serve(ctx):
      try:
          msg = await ctx.channel.send(embed=embed)  
      except discord.HTTPException:
-         print (datetime.datetime.now() + " The picture for " + curr_drink["name"] + " is not available")
-
+         print ("The picture for " + curr_drink["name"] + " is not available")
+         await ctx.channel.send("I'm sorry, but we seem to be out of the ingredients for " + curr_drink["name"] + ". Our staff is working on it. Would you like something else?")
+         
      return
     
 
@@ -328,6 +333,16 @@ async def menu(ctx, *args):
 @bot.command()
 async def suggest(ctx):
     await ctx.send('This will eventually be how drinks are added.')
+    
+    
+@bot.command()
+async def categories(ctx):
+     msg = "The valid categories are:\n"
+     for x in drink_categories:
+         msg+= (x + "\n")
+     
+     msg += "Use quotes around the multi word category names"
+     await ctx.send(msg)     
     
       
 @bot.command()
