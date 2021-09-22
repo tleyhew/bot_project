@@ -144,7 +144,10 @@ async def on_ready():
    for guild in bot.guilds:
       print(guild.name)
       
-@bot.command()
+@bot.command(help="""Serves a drink. 
+The correct invocation is '!bb - serve [person] - [drink].
+Replace [person] with the name of the individual getting the drink, and [drink] with the name of the beverage in question""",
+             brief="Serves a drink to a thirsty soul")
 async def serve(ctx):
      allowed_to_serve = False #Is the invoking user allowed to serve the drink?
      valid_user = False       #Is the user being served present in the server?
@@ -267,15 +270,20 @@ async def serve(ctx):
      
      try:
          msg = await ctx.channel.send(embed=embed)  
-     except discord.HTTPException:
-         print ("The picture for " + curr_drink["name"] + " is not available")
+     except discord.HTTPException as error:
+         print (curr_drink["name"])
+         print(error.text + ' ' + str(error.status) + ' ' + str(error.code))
+         err_string = error.text.split(".")
+         print(embed.fields[int(err_string[2])])
          await ctx.channel.send("I'm sorry, but we seem to be out of the ingredients for " + curr_drink["name"] + ". Our staff is working on it. Would you like something else?")
          
      return
     
 
         
-@bot.command()
+@bot.command(help="""Shows a menu. Use the arrow reacts to page through. React with an X emote to close the menu.
+You can bring up a more specific menu by invoking the command with a category name, a page number, or both.""",
+             brief="Displays a list of the beverages available in this establishment")
 async def menu(ctx, *args):
      if len(args) == 0:
          category = "all"
@@ -335,7 +343,8 @@ async def suggest(ctx):
     await ctx.send('This will eventually be how drinks are added.')
     
     
-@bot.command()
+@bot.command(help="Displays all valid drink categories.",
+             brief="Displays all valid drink categories.")
 async def categories(ctx):
      msg = "The valid categories are:\n"
      for x in drink_categories:
@@ -345,16 +354,16 @@ async def categories(ctx):
      await ctx.send(msg)     
     
       
-@bot.command()
+@bot.command(hidden=True)
 async def test(ctx):    
     await ctx.send(ctx.message.content)
     print (ctx.message.content)
     
-@bot.command() #Some easter eggs
+@bot.command(hidden=True) #Some easter eggs
 async def zork(ctx):
     await ctx.send('It is pitch black. You are likely to be eaten by a grue.')
     
-@bot.command()
+@bot.command(hidden=True)
 async def nethack(ctx):
      await ctx.send('Who do you think you are, War?')
      
