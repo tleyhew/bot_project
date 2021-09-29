@@ -340,9 +340,107 @@ async def menu(ctx, *args):
     
 @bot.command()
 async def suggest(ctx):
-    await ctx.send('This will eventually be how drinks are added.')
-    
-    
+
+     new_name = ""
+     name_provided = False
+     new_alcoholic = False
+     alcoholic_provided = False
+     new_category = ""
+     category_provided = False
+     new_pic = ""
+     pic_provided = False
+     new_menudesc = ""
+     menudesc_provided = False
+     new_desc = ""
+     desc_provided = False
+
+     is_bartender = False
+     is_meido = False
+     is_coffee = False
+
+     drink_dict = {
+        "name": "",
+		"alcoholic": False,
+		"category": "",
+		"pic": "",
+		"by": "",
+		"menudesc": "",
+		"desc": "",
+		"roles": [],
+		"users": [],
+		"checkAdditive": False
+        }
+
+     valid_channel = False
+     if ctx.channel.id == int("647089228999819264"):
+         await ctx.send("This is suggesting a drink in the proof of concept channel")
+         valid_channel = True
+     elif ctx.channel.id == int("650763541808283686"):
+         await ctx.send("This is a drink suggestion in the wine cellar")
+         valid_channel = True
+     else: 
+         await ctx.send('This is not the correct channel for suggesting new drinks')
+         
+     if not valid_channel:
+        return
+     
+     args_list = ctx.message.content.replace("!bb - suggest", "").replace("!bb","").split("|")
+     #await ctx.send(str(args_list))
+     drink_dict["by"] = ctx.author.display_name
+     drink_dict["users"] = ctx.author.id    
+     
+     for x in ctx.author.roles:
+         if "Coffee Mom" == x.name:
+             is_coffee = True
+         if "Meido" == x.name:
+             is_meido = True
+         if x in server_roles_m or x in server_roles_f or x in server_roles_n:
+             is_bartender = True
+             
+     if ((is_coffee and is_meido and is_bartender) or (is_bartender and is_meido) or
+          (is_bartender and is_coffee) or (is_coffee and is_meido)):
+         drink_dict["checkAdditive"] = True         
+     elif is_coffee:
+         drink_dict["roles"] = "Coffee Mom"
+     elif is_meido:
+         drink_dict["roles"] = "Meido"
+     
+     for x in args_list:
+         if x.lstrip().lower().startswith("name") and not name_provided:
+             drink_dict["name"] = x.replace('name="', '').strip('"')
+             name_provided = True
+         elif x.lstrip().lower().startswith("alcoholic") and not alcoholic_provided:
+             if "true" in x.lower():
+                 drink_dict["alcoholic"] = True
+                 alcoholic_provided = True
+             elif "false" in x.lower():
+                 alcoholic_provided = True
+         elif x.lstrip().lower().startswith("category") and not category_provided:
+             new_category = x.replace('category="', "").strip('"')
+             if new_category.strip() not in drink_categories:
+                 await ctx.send("It looks like you're trying to add a new category of drink. Please work with the mod team to get it added.")
+                 await ctx.send(new_category + '   ' + str(drink_categories))
+                 return
+             else:
+                 category_provided = True
+                 drink_dict["category"] = new_category.strip()
+         elif x.lstrip().lower().startswith("menudesc") and not menudesc_provided:
+             drink_dict["menudesc"] = x.replace('menudesc="', '').strip('"')
+             menudesc_provided = True
+         elif x.lstrip().lower().startswith("desc") and not desc_provided:
+             drink_dict["desc"] = x.replace('desc="', '').strip('"')
+             desc_provided = True
+         elif x.lstrip().lower().startswith("pic") and not pic_provided:
+             drink_dict["pic"] = x.replace('pic="', '').strip('"')
+             pic_provided = True
+                 
+     if not (desc_provided and menudesc_provided and category_provided and name_provided and alcoholic_provided): #and pic_provided):
+         await ctx.send("You don't seem to have provided all the necessary information. Check the help function for details.")
+         return
+     await ctx.send(str(drink_dict))    
+         
+         
+         
 @bot.command(help="Displays all valid drink categories.",
              brief="Displays all valid drink categories.")
 async def categories(ctx):
