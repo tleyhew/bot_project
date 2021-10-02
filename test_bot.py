@@ -83,14 +83,15 @@ for x in sorted_drink_keys:
      categorized_key_list[drink_list[x].get("category")].append(x)
      
 #print (categorized_key_list)
-
 categorized_menus = { key : list() for key in drink_categories}
 
 
-def build_menu_list():  #this has to go here, because python won't let me forward declare it,
+def build_menu_list(drink_keys):  #this has to go here, because python won't let me forward declare it,
      menu_num_pages  = math.ceil(len(drink_keys)/menu_page_size)#but I also can't call it before it's declared. Python, man. 
      #print(len(drink_keys))
      #print(menu_num_pages)
+
+     drink_keys = drink_list.keys()
      sorted_drink_keys = sorted(drink_keys)
      drink_counter = 0
      return_list = []
@@ -133,7 +134,7 @@ def build_menu_list():  #this has to go here, because python won't let me forwar
 intentions = discord.Intents(guilds=True, members=True, emojis=True, messages=True, reactions=True)
 bot = commands.Bot(command_prefix='!bb - ', case_insensitive = True, intents=intentions)
 
-menu_list = build_menu_list()
+menu_list = build_menu_list(drink_keys)
 
 
 @bot.event
@@ -371,6 +372,22 @@ async def suggest(ctx):
 		"checkAdditive": False
         }
 
+
+     base_string = """
+     "!TITLE!":{
+        "name": "!NAME!",
+		"alcoholic": !ALCOHOLIC!,
+		"category": "!CAT!",
+		"pic": "!PIC!",
+		"by": "!BY!",
+		"menudesc": "!MENUDESC!",
+		"desc": "!DESC!",
+		"roles": [!ROLES!],
+		"users": [!USERS!],
+		"checkAdditive": !CHECK!
+        }"""
+
+
      valid_channel = False
      if ctx.channel.id == int("647089228999819264"):
          await ctx.send("This is suggesting a drink in the proof of concept channel")
@@ -407,7 +424,7 @@ async def suggest(ctx):
      
      for x in args_list:
          if x.lstrip().lower().startswith("name") and not name_provided:
-             drink_dict["name"] = x.replace('name="', '').strip('"')
+             drink_dict["name"] = x.replace('name="', '').strip('"').lstrip()
              name_provided = True
          elif x.lstrip().lower().startswith("alcoholic") and not alcoholic_provided:
              if "true" in x.lower():
@@ -437,8 +454,34 @@ async def suggest(ctx):
      if not (desc_provided and menudesc_provided and category_provided and name_provided and alcoholic_provided): #and pic_provided):
          await ctx.send("You don't seem to have provided all the necessary information. Check the help function for details.")
          return
-     await ctx.send(str(drink_dict))    
-         
+     #await ctx.send(str(drink_dict))
+     
+     for x in drink_list:
+         if drink_list[x].get("name").lower() == drink_dict["name"].lower():
+             await ctx.send("Sorry, but we already have a drink named " + drink_dict["name"] + ". Consult with the bar staff if you think that this submission is meaningfully distinct")
+     
+
+     drink_title = drink_dict["name"].replace(' ', '').lower()
+     drink_list[drink_title] = drink_dict
+     global menu_list
+     global drink_keys 
+     drink_keys = drink_list.keys()
+     menu_list = build_menu_list(drink_keys)
+     
+     out_string = base_string.replace('!TITLE!', drink_title)   
+     out_string = out_string.replace ('!NAME!',drink_dict["name"])
+     out_string = out_string.replace ('!ALCOHOLIC!', str(drink_dict["alcoholic"]).lower())
+     out_string = out_string.replace ('!CAT!', drink_dict["category"])
+     out_string = out_string.replace ('!PIC!', drink_dict["pic"])
+     out_string = out_string.replace ('!BY!', drink_dict["by"])
+     out_string = out_string.replace ('!MENUDESC!',drink_dict["menudesc"])
+     out_string = out_string.replace ('!DESC!', drink_dict["desc"])
+     out_string = out_string.replace ('!ROLES!', str(drink_dict["roles"]))
+     out_string = out_string.replace ('!USERS!', str(drink_dict["users"]))
+     out_string = out_string.replace ('!CHECK!',str(drink_dict["checkAdditive"]).lower())
+     
+     await ctx.send(out_string)
+ 
          
          
 @bot.command(help="Displays all valid drink categories.",
@@ -538,7 +581,7 @@ def build_embed(ctx, recipient, curr_drink, serve_pronoun, self_flag, all_flag):
 
 def starts_with_vowel(in_string):
     vowel = 'a','e','i','o','u'
-    if in_string.lower().startswith(vowel):
+    if in_string.lstrip().lower().startswith(vowel):
         return True
     else:
         return False
