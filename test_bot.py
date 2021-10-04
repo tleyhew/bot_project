@@ -11,7 +11,7 @@ import configLoader
 import drinkLoader
 
 
-try:  # If we don't have the drink list, why bother?
+try:
     config_file = open("./resources/config.json", "r", encoding="utf-8")
 except:
     print("Configuration File Not Found")
@@ -373,19 +373,19 @@ async def suggest(ctx):
         }
 
 
-     base_string = """
+     base_string = """,
      "!TITLE!":{
-        "name": "!NAME!",
-		"alcoholic": !ALCOHOLIC!,
-		"category": "!CAT!",
-		"pic": "!PIC!",
-		"by": "!BY!",
-		"menudesc": "!MENUDESC!",
-		"desc": "!DESC!",
-		"roles": [!ROLES!],
-		"users": [!USERS!],
-		"checkAdditive": !CHECK!
-        }"""
+     "name": "!NAME!",
+     "alcoholic": !ALCOHOLIC!,
+     "category": "!CAT!",
+     "pic": "!PIC!",
+     "by": "!BY!",
+	 "menudesc": "!MENUDESC!",
+	 "desc": "!DESC!",
+	 "roles": [!ROLES!],
+	 "users": [!USERS!],
+	 "checkAdditive": !CHECK!
+     }"""
 
 
      valid_channel = False
@@ -404,7 +404,7 @@ async def suggest(ctx):
      args_list = ctx.message.content.replace("!bb - suggest", "").replace("!bb","").split("|")
      #await ctx.send(str(args_list))
      drink_dict["by"] = ctx.author.display_name
-     drink_dict["users"] = ctx.author.id    
+     drink_dict["users"].append(str(ctx.author.id))    
      
      for x in ctx.author.roles:
          if "Coffee Mom" == x.name:
@@ -468,20 +468,16 @@ async def suggest(ctx):
      drink_keys = drink_list.keys()
      menu_list = build_menu_list(drink_keys)
      
-     out_string = base_string.replace('!TITLE!', drink_title)   
-     out_string = out_string.replace ('!NAME!',drink_dict["name"])
-     out_string = out_string.replace ('!ALCOHOLIC!', str(drink_dict["alcoholic"]).lower())
-     out_string = out_string.replace ('!CAT!', drink_dict["category"])
-     out_string = out_string.replace ('!PIC!', drink_dict["pic"])
-     out_string = out_string.replace ('!BY!', drink_dict["by"])
-     out_string = out_string.replace ('!MENUDESC!',drink_dict["menudesc"])
-     out_string = out_string.replace ('!DESC!', drink_dict["desc"])
-     out_string = out_string.replace ('!ROLES!', str(drink_dict["roles"]))
-     out_string = out_string.replace ('!USERS!', str(drink_dict["users"]))
-     out_string = out_string.replace ('!CHECK!',str(drink_dict["checkAdditive"]).lower())
-     
-     await ctx.send(out_string)
+     try: #If we don't have the drink list, why bother?
+         drink_file = open("./resources/drinklist.json", "w",encoding="utf-8") 
+     except:
+         print ("Drink list not found")
+         quit()
  
+     out_string = json.dumps(drink_list,indent=2)
+ 
+     drink_file.write(out_string)
+     drink_file.close()
          
          
 @bot.command(help="Displays all valid drink categories.",
