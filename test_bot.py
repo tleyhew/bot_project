@@ -339,7 +339,24 @@ async def menu(ctx, *args):
      await menu_page.add_reaction("\N{BLACK RIGHT-POINTING TRIANGLE}")  #"\N{BLACK RIGHT-POINTING TRIANGLE}"
 
     
-@bot.command()
+@bot.command(help="""Adds a drink to the menu. This command can only be performed in the wine-cellar channel. If you don't have access and want to add a drink, wait for your turn to be a bartender.
+The correct command format is: 
+!bb - suggest name="example"|menudesc="example menu blurb"| desc="Come up with an Eagles song for THIS one, Joe!"|pic="https://i.imgur.com/ceiXDPT.jpeg" |category="beers"|alcoholic="True" 
+
+name - should be the name of the drink.
+
+menudesc - should be the ingredients list. Don't get too flowery here, as it is also what will show up in the menu, oddly enough.
+
+desc -  is the actual description of the drink. Get as flowery as you want here, or even take the opportunity to get in a cheap joke.
+
+pic - needs to be an imgur link, if at all possible. If you can't find one, ask around, see if someone else can.
+
+category - tells us what kind of drink it is. Use '!bb - categories' to see a list of valid categories. If you think that you need to add a new one, work with the barstaff on that.
+
+alcoholic - tells us whether the drink contains alcohol. Crazy, right?
+
+Make sure that you separate each field with a vertical bar character: '|'.""",
+brief="Allows a bartender to add a drink to the menu.")
 async def suggest(ctx):
 
      new_name = ""
@@ -358,6 +375,8 @@ async def suggest(ctx):
      is_bartender = False
      is_meido = False
      is_coffee = False
+
+     add_category = False
 
      drink_dict = {
         "name": "",
@@ -413,6 +432,8 @@ async def suggest(ctx):
              is_meido = True
          if x in server_roles_m or x in server_roles_f or x in server_roles_n:
              is_bartender = True
+         if x.name == "Bouncer":
+             add_category = True
              
      if ((is_coffee and is_meido and is_bartender) or (is_bartender and is_meido) or
           (is_bartender and is_coffee) or (is_coffee and is_meido)):
@@ -434,7 +455,7 @@ async def suggest(ctx):
                  alcoholic_provided = True
          elif x.lstrip().lower().startswith("category") and not category_provided:
              new_category = x.replace('category="', "").strip('"')
-             if new_category.strip() not in drink_categories:
+             if new_category.strip() not in drink_categories and str(ctx.author.id) not in ["316005415211106305"] and not add_category:
                  await ctx.send("It looks like you're trying to add a new category of drink. Please work with the mod team to get it added.")
                  await ctx.send(new_category + '   ' + str(drink_categories))
                  return
