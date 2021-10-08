@@ -43,5 +43,7 @@
     ],
     "menu_page_size":10,
     "drinkfile":"./resources/drinklist.json",
-    "tokenfile":"./resources/bot_token.txt"
+    "tokenfile":"./resources/bot_token.txt",
+    "discordlog":"/var/log/discordbot/bot.log",
+    "stdoutlog":"/var/log/discordbot/bot_std_out.txt"
 }

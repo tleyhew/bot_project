@@ -10,11 +10,12 @@ from discord.ext import commands
 import configLoader
 import drinkLoader
 
+configurationfile = "./resources/config.json"
 
 try:
-    config_file = open("./resources/config.json", "r", encoding="utf-8")
+    config_file = open(configurationfile, "r", encoding="utf-8")
 except:
-    print("Configuration File Not Found")
+    print(f"Configuration File {configurationfile} Not Found")
     quit()
 
 config = json.load(config_file)  # load and parse the JSON
@@ -22,19 +23,28 @@ config_file.close()
 
 configLoader.validateConfig(config)
 
+#Set up some logging. I don't really know what I'm doing, but this 
+#is what professionals do, so here we are.
+logger = logging.getLogger('discord')
+logger.setLevel(logging.INFO)
+handler = logging.FileHandler(filename=config.discordlog, encoding='UTF-8', mode='a')
+handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
+logger.addHandler(handler)
+
+bot_std_out = open(config.stdoutlog, 'a',encoding='UTF-8')
+sys.stdout = bot_std_out
+
 try: #Do we have a client token? If we don't, shut down
   token_file = open("./resources/bot_token.txt", "r")
 except:
   print ("No client token found. Can't log in to discord without one, boss.")
   quit()
 
-
 try: #If we don't have the drink list, why bother?
   drink_file = open("./resources/drinklist.json", "r",encoding="utf-8") 
 except:
   print ("Drink list not found")
   quit()
-
 
 bot_token = token_file.read()
 
@@ -46,17 +56,6 @@ drinkLoader.validateDrinkList(drink_list)
 drink_categories = drinkLoader.generateCategories(drink_list)
 drink_keys = drink_list.keys()
 sorted_drink_keys = sorted(drink_keys)
-
-#Set up some logging. I don't really know what I'm doing, but this 
-#is what professionals do, so here we are.
-logger = logging.getLogger('discord')
-logger.setLevel(logging.INFO)
-handler = logging.FileHandler(filename='bot.log', encoding='UTF-8', mode='a')
-handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
-logger.addHandler(handler)
-
-bot_std_out = open('bot_std_out.txt', 'a',encoding='UTF-8')
-sys.stdout = bot_std_out
 
 special_names = ['everyone', 'the house', 'here','me'] #These 'users' are always present
 server_roles_m = ["Bartender", "Barboy", "Barkeep"]    #Male server roles

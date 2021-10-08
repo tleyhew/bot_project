@@ -36,3 +36,11 @@ def validateConfig(config):
     #Make sure we have a token file specified
     assert "tokenfile" in config
     assert type(config["tokenfile"]) is str
+
+    #Make sure we have a discord log file specified
+    assert "discordlog" in config
+    assert type(config["discordlog"]) is str
+
+    #Make sure we have a stdout log file specified
+    assert "stdoutlog" in config
+    assert type(config["stdoutlog"]) is str
