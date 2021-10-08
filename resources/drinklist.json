@@ -1,1279 +1,1408 @@
 {
-	"Lambanog": {
-		"name": "Lambanog",
-		"alcoholic": true,
-		"category": "spirits",
-		"pic": "https://i.imgur.com/sRGFAUt.png",
-		"by": "Vanitas",
-		"menudesc": "A spirit made from distilled coconut sap, common in Southeast Asia.\n Also known as coconut vodka or wine. 40%-45% ABV.",
-		"desc": "Smooth and tropical. _Tagay!_",
-		"roles": [],
-		"users": []
-	},
-	"Tuak": {
-		"name": "Tuak",
-		"alcoholic": true,
-		"category": "spirits",
-		"pic": "https://i.imgur.com/G4CEsbJ.jpg",
-		"by": "Eric",
-		"menudesc": "A traditional rice wine indigenous to the Bornean region. 15-18% ABV.",
-		"desc": "A primitive wine, said to have kept the ones that brew it drunk '100 out of 365 days'. ",
-		"roles": [],
-		"users": []
-	},
-	"Water": {
-		"name": "Water",
-		"alcoholic": false,
-		"category": "miscellaneous",
-		"pic": "https://i.imgur.com/tvOIeJF.jpg",
-		"by": "",
-		"menudesc": "2 parts hydrogen, 1 part oxygen.",
-		"desc": "Plain ol' drinking water, straight from the tap.\n A timeless classic.",
-		"roles": ["Meido"],
-		"users": [],
-		"checkAdditive": true
-	},
-	"SparklingWater": {
-		"name": "Sparkling Water",
-		"alcoholic": false,
-		"category": "miscellaneous",
-		"pic": "https://i.imgur.com/dSQmYol.jpg",
-		"by": "lastfire",
-		"menudesc": "Carbonated drinking water.",
-		"desc": "For those of you who think plain old drinking water is just too boring.",
-		"roles": ["Meido"],
-		"users": [],
-		"checkAdditive": true
-	},
-	"Sangria": {
-		"name": "Sangria",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://i.imgur.com/bZpJJGV.jpg",
-		"by": "Mustang",
-		"menudesc": "A fruity wine punch of Spanish origin.\n Mainly red wine and chopped fruit.",
-		"desc": "Technically this is just a liquid and alcoholic fruit salad.\n Cheers to your healthy diet.",
-		"roles": [],
-		"users": []
-	},
-	"Aviation": {
-		"name": "Aviation",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://i.imgur.com/kCiI6he.jpg",
-		"by": "Unif0rm",
-		"menudesc": "3:1:1:1 Gin, Maraschino liqueur, creme de violette and lemon juice.",
-		"desc": "For those who aim high and achieve great things.",
-		"roles": [],
-		"users": ["137097926441697282"],
-		"checkAdditive": true
-	},
-	"MoscowMule": {
-		"name": "Moscow Mule",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/x3jKAMr.jpg",
-		"by": "Foxbat",
-		"menudesc": "6:3:1 Ginger beer, vodka, lime juice, all served in a copper mug.",
-		"desc": "A cocktail that in 1941 solved the problem of three unsuccessful business people: a copper mug salesman, a barkeep, and a vodka distiller.",
-		"roles": [],
-		"users": []
-	},
-	"Deathintheafternoon": {
-		"name": "Death in the Afternoon",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://gardenandgun.com/wp-content/uploads/2017/01/GG0410_Anatomy-of-a-Classic_01-822x1100.jpg",
-		"by": "Un1f0rm",
-		"menudesc": "9:2 Champagne and Absinthe in a champagne flute, garnished with a lemon peel",
-		"desc": "Invented by Ernest Hemingway, and if followed his drinking instructions, which say to drink three to five glasses, may lead to an early retirement from this world. \n It is unclear however, whether that would happen in the afternoon.",
-		"roles": [],
-		"users": []
-	},
-	"LycheeMartini": {
-		"name": "Lychee Martini",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/qdt77EI.png",
-		"by": "QT",
-		"menudesc": "Martini mixed with lychee juice.",
-		"desc": "A martini that tastes like lychees. Simple enough.",
-		"roles": [],
-		"users": []
-	},
-	"MulledWine": {
-		"name": "Mulled Wine",
-		"alcoholic": false,
-		"category": "cocktails",
-		"pic": "https://imgur.com/ul6FNYz.jpg",
-		"by": "",
-		"menudesc": "Red wine mixed with a cocktail of spices and served either hot or warm, alcoholic or non-alcoholic.",
-		"desc": "Warms the soul like nothing else.",
-		"roles": [],
-		"users": []
-	},
-	"SingaporeSling": {
-		"name": "Singapore Sling",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/MqqMqVB.jpg",
-		"by": "QT",
-		"menudesc": "2:1:1:1 Pineapple juice, gin, cherry liqueur and lime juice.",
-		"desc": "Originally called a Gin Sling, this classic hails from as far back as 1915.",
-		"roles": [],
-		"users": []
-	},
-	"HairOfTheDog": {
-		"name": "Hair of the Dog",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://i.imgur.com/xZykJsN.jpg",
-		"by": "Uniform",
-		"menudesc": "2:1:1 Scotch whisky, cream and honey",
-		"desc": "Just like healing a dog's bite with dog hair, healing hangovers can be done with more alcohol. And this one's perfect for the job.",
-		"roles": [],
-		"users": []
-	},
-	"TequilaSunrise": {
-		"name": "Tequila Sunrise",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/m3yKfZx.jpg",
-		"by": "Foxbat",
-		"menudesc": "A sweet mix of Tequila, orange juice, and grenadine syrup.",
-		"desc": "Some people say it gets its name because it looks like a sunrise. I prefer to think it means I get to share your company until then.",
-		"roles": [],
-		"users": []
-	},
-	"StrawberryDaquiri": {
-		"name": "Strawberry Daquiri",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/5xnNZkV.jpg",
-		"by": "QT",
-		"menudesc": "A daiquiri with strawberries added to the mix.",
-		"desc": "Perfect for beating the summer heat.",
-		"roles": [],
-		"users": []
-	},
-	"Margarita": {
-		"name": "Margarita",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/5zTifFY.jpg",
-		"by": "Foxbat",
-		"menudesc": "2:1:1 Tequila, Triple Sec and lime juice.",
-		"desc": "So what's a cougar like you doing here?",
-		"roles": [],
-		"users": []
-	},
-	"JackFrost": {
-		"name": "Jack Frost",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/G2Jj6sG.jpg",
-		"by": "QT",
-		"menudesc": "Vodka, pineapple juice, cream of coconut, blue curacao, coconut, all blended with ice.",
-		"desc": "The Pina Colada's winter version. Tropical, yet festive.",
-		"roles": [],
-		"users": []
-	},
-	"SexOnTheBeach": {
-		"name": "Sex on the Beach",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/vXx3kOU.jpg",
-		"by": "",
-		"menudesc": "2:2:1 Vodka, cranberry juice and Peach Schnapps, topped with orange juice.",
-		"desc": "Not a good idea. It's all coarse, and rough, and irritating. And it gets everywhere.",
-		"roles": [],
-		"users": []
-	},
-	"Mojito": {
-		"name": "Mojito",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/JaLrhdi.png",
-		"by": "Mustang",
-		"menudesc": "Rum, lime juice, brown sugar, and mint, topped with soda.",
-		"desc": "One of those cocktails that takes forever to make, but people order them in gargantuan quantities anyway.\n Be sure to leave a generous tip.",
-		"roles": [],
-		"users": []
-	},
-	"VirginMojito": {
-		"name": "Virgin Mojito",
-		"alcoholic": false,
-		"category": "cocktails",
-		"pic": "https://imgur.com/JaLrhdi.png",
-		"by": "Uniform",
-		"menudesc": "Lime juice, brown sugar, and mint, topped with soda.",
-		"desc": "It's a mojito, but named and served just for you.",
-		"roles": ["Meido"],
-		"users": [],
-		"checkAdditive": true
-	},
-	"RoyRogers": {
-		"name": "Roy Rogers",
-		"alcoholic": false,
-		"category": "cocktails",
-		"pic": "https://i.imgur.com/oAzDwbs.png",
-		"by": "Uniform",
-		"menudesc": "Coca-Cola with grenadine syrup, garnished with a maraschino cherry",
-		"desc": "Not named after Dread Pirate Rogers, but after a famous spaghetti western actor, this one is perfect when you need your wits about before a shootout.",
-		"roles": ["Meido"],
-		"users": [],
-		"checkAdditive": true
-	},
-	"Cinderella": {
-		"name": "Cinderella",
-		"alcoholic": false,
-		"category": "cocktails",
-		"pic": "https://i.imgur.com/0mQWxbi.png",
-		"by": "Uniform",
-		"menudesc": "Equal parts of lemon, orange and pineapple juice, with a dash of grenadine and topped with ginger ale.",
-		"desc": "Don't leave in a hurry, lest you forget your footwear.",
-		"roles": ["Meido"],
-		"users": [],
-		"checkAdditive": true
-	},
-	"WhiteRussian": {
-		"name": "White Russian",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/sshjo8N.jpg",
-		"by": "Un1form",
-		"menudesc": "5:2:3 Vodka, Kahlua, and double cream.",
-		"desc": "Made popular by The Dude in The Big Lebowski movie. \n If you don't like it, then well, that's just, like, your opinion, man.",
-		"roles": [],
-		"users": []
-	},
-	"BlackRussian": {
-		"name": "Black Russian",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/rzVMDxe.jpg",
-		"by": "Un1form",
-		"menudesc": "Coffee liqueur and vodka.",
-		"desc": "Somewhat of a rarity, Black Russian is a mix of vodka and coffee liqueur, mostly in a 5:3 ratio.",
-		"roles": [],
-		"users": []
-	},
-	"OldFashioned": {
-		"name": "Old Fashioned",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/OcGRHXH.jpg",
-		"by": "Un1form",
-		"menudesc": "12:2:1 Bourbon, sugar syrup, squeezed orange peel, and Angostura bitters.",
-		"desc": "Reminiscent of the times when cocktails were simply alcohol with anything fruity over ice.",
-		"roles": [],
-		"users": []
-	},
-	"WhiskeySour": {
-		"name": "Whiskey Sour",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/BhmaVUd.jpg",
-		"by": "Un1form",
-		"menudesc": "4:2:1 Whiskey, lemon juice, and sugar syrup.",
-		"desc": "The original 'sour'. Like other sours, it's made up by 4:2:1 of whiskey, lemon juice, and sugar syrup. Add an egg white into the mix for some frothy texture.",
-		"roles": [],
-		"users": []
-	},
-	"Whisky": {
-		"name": "Whisky",
-		"alcoholic": true,
-		"category": "spirits",
-		"pic": "https://i.imgur.com/yfAYaL4.jpg",
-		"by": "Un1form",
-		"menudesc": "A spirit made from fermented grain mash, aged in wooden casks. 40–68% ABV.",
-		"desc": "Modern spelling of uisce beatha, Gaelic for 'water of life'. Because what would life be without a bit of whisky?",
-		"roles": [],
-		"users": []
-	},
-	"Manhattan": {
-		"name": "Manhattan",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/gF7Tjbh.jpg",
-		"by": "Un1form",
-		"menudesc": "2:1 Rye and Sweet Vermouth, plus a few dashes of Angostura bitters.",
-		"desc": "",
-		"roles": [],
-		"users": []
-	},
-	"BlackVelvet": {
-		"name": "Black Velvet",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/x7HHNf1.jpg",
-		"by": "Un1form",
-		"menudesc": "A glass of Champagne poured into a perfect pint of Guinness.",
-		"desc": "For when a pint of Guinness just isn't fancy enough for the occasion.",
-		"roles": [],
-		"users": []
-	},
-	"MintJulep": {
-		"name": "Mint Julep",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/SkM310k.jpg",
-		"by": "Un1form",
-		"menudesc": "Bourbon, sugar syrup, and muddled mint leaves.",
-		"desc": "An American classic, famously served by Daisy in The Great Gastby.",
-		"roles": [],
-		"users": []
-	},
-	"BloodyMary": {
-		"name": "Bloody Mary",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/XfAeIbm.jpg",
-		"by": "Un1form",
-		"menudesc": "Vodka, tomato juice, lemon juice, salt, pepper, tabasco, and Worcestershire sauce, garnished with a stalk of celery.",
-		"desc": "A breakfast cocktail perfect for jumpstarting your day.",
-		"roles": [],
-		"users": []
-	},
-	"Screwdriver": {
-		"name": "Screwdriver",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/6tBjp3i.jpg",
-		"by": "Un1form",
-		"menudesc": "1:2 Vodka and orange juice.",
-		"desc": "Named after NYC construction workers using screwdrivers to stir their orange-juice-carton-smuggled vodka, this one is as simple as it gets.",
-		"roles": [],
-		"users": []
-	},
-	"Daiquiri": {
-		"name": "Daiquiri",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/kVjwjGe.jpg",
-		"by": "Un1form",
-		"menudesc": "4:2:1 Rum, lime juice, and sugar syrup.",
-		"desc": "Famously drunk by Ernest Hemingway, a Daiquiri could also be called a 'Rum Sour', but that doesn't sound quite as catchy now, does it?",
-		"roles": [],
-		"users": []
-	},
-	"Bacardi": {
-		"name": "Bacardi",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/DXYLlnu.jpg",
-		"by": "Un1form",
-		"menudesc": "3:1:1 Bacardi, lime juice, and grenadine.",
-		"desc": "Made by Bacardi in an attempt to popularise their ethanol.",
-		"roles": [],
-		"users": []
-	},
-	"DirtyMartini": {
-		"name": "Dirty Martini",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/mwsduRX.jpg",
-		"by": "Un1form",
-		"menudesc": "6:1:1 Vodka, Dry Vermouth, and olive brine.",
-		"desc": "Unlike its pornstar sister, Dirty Martini isn't named as an innuendo, but because of how the olive juice affects its opacity. Served with an olive garnish.",
-		"roles": [],
-		"users": []
-	},
-	"Vesper": {
-		"name": "Vesper",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/zT6pYGJ.jpg",
-		"by": "Un1form",
-		"menudesc": "6:2:1 Gin, Vodka, and dry vermouth.",
-		"desc": "Shaken, not stirred. Invented by Ian Fleming, and popularised by his character James Bond.\n Served with a twisted lemon peel garnish.",
-		"roles": [],
-		"users": []
-	},
-	"DarkNStormy": {
-		"name": "Dark'N'Stormy",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/SEMswui.jpg",
-		"by": "Un1form",
-		"menudesc": "7:4 Ginger beer and dark rum, bitters to taste.",
-		"desc": "Dark rum, stormy ginger beer. Perfect for sailors and pirates alike.",
-		"roles": [],
-		"users": []
-	},
-	"Godfather": {
-		"name": "Godfather",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/TxX3xwv.jpg",
-		"by": "Un1form",
-		"menudesc": "Equal parts Bourbon and Amaretto.",
-		"desc": "Referencing the classic movie, the Godfather is an equal split between Amaretto (Sicilian Mafia) and Bourbon (American Mafia). Served over ice.",
-		"roles": [],
-		"users": []
-	},
-	"Caipirinha": {
-		"name": "Caipirinha",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/WgkWRMz.jpg",
-		"by": "Un1form",
-		"menudesc": "3:2:1 Cachaca, lime juice, and sugar.",
-		"desc": "'The countryside lady', Brazil's national cocktail. \n Fica à vontade.",
-		"roles": [],
-		"users": []
-	},
-	"Greyhound": {
-		"name": "Greyhound",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/lfDt3aX.png",
-		"by": "Un1form",
-		"menudesc": "1:4 Vodka and grapefruit juice.",
-		"desc": "",
-		"roles": [],
-		"users": []
-	},
-	"Gimlet": {
-		"name": "Gimlet",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/KOMCBLm.jpg",
-		"by": "Un1form",
-		"menudesc": "4:2:1 Gin, lime juice, and sugar syrup",
-		"desc": "Could've called it a Gin Sour, but I suppose Gimlet does have a nice ring to it…",
-		"roles": [],
-		"users": []
-	},
-	"ShirleyTemple": {
-		"name": "Shirley Temple",
-		"alcoholic": false,
-		"category": "cocktails",
-		"pic": "https://imgur.com/Y86w8tn.jpg",
-		"by": "Un1form",
-		"menudesc": "Ginger ale and grenadine syrup.",
-		"desc": "Just like its namesake, this mocktail is quite sweet.",
-		"roles": ["Meido"],
-		"users": [],
-		"checkAdditive": true
-	},
-	"HairyNavel": {
-		"name": "Hairy Navel",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/SflpY4C.jpg",
-		"by": "",
-		"menudesc": "1:1:2 Peach Schnapps, Vodka, and pulpy orange juice.",
-		"desc": "Just order a Fuzzy Navel instead.",
-		"roles": [],
-		"users": []
-	},
-	"FuzzyNavel": {
-		"name": "Fuzzy Navel",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/77hKy45.jpg",
-		"by": "",
-		"menudesc": "Equal parts Peach Schnapps, orange juice.",
-		"desc": "Just order a Hairy Navel instead.",
-		"roles": [],
-		"users": []
-	},
-	"SkinnyBitch": {
-		"name": "Skinny Bitch",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/bsqvYLl.jpg",
-		"by": "",
-		"menudesc": "Vodka, soda water, and lime juice.\n Garnished with one lime wedge.",
-		"desc": "A favourite of calorie-cutting party goers and keto dieters everywhere.",
-		"roles": [],
-		"users": []
-	},
-	"Sidecar": {
-		"name": "Sidecar",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/wu81DFp.jpg",
-		"by": "Serpentine",
-		"menudesc": "5:2:2 Cognac, Cointreau, and lemon juice",
-		"desc": "Made of 5 parts Cognac, 2 parts Cointreau, and 2 parts lemon juice.\n As the Cointreau is the sidecar to the leading flavour of Cognac, it's unclear where lemon juice fits in this allegory.",
-		"roles": [],
-		"users": []
-	},
-	"Appletini": {
-		"name": "Appletini",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/pdsJHFH.jpg",
-		"by": "Serpentine",
-		"menudesc": "3:1:1 Vodka, apple liqueur, and Cointreau.",
-		"desc": "Yet another Martini variation, with a fruity twist.",
-		"roles": [],
-		"users": []
-	},
-	"PinaColada": {
-		"name": "Pina Colada",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://i.imgur.com/iWz3ZEH.jpg",
-		"by": "Uniform",
-		"menudesc": "3:1:1 Pinapple juice, white rum and coconut milk.",
-		"desc": "We offer umbrellas for customers in this establishment.",
-		"roles": [],
-		"users": []
-	},
-	"HotToddy": {
-		"name": "Hot Toddy",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/LGvbkQv.jpg",
-		"by": "Serpentine",
-		"menudesc": "Lemon honey tea, but also Whisky.",
-		"desc": "For the times when a cup of tea just needs a bit of an extra punch.",
-		"roles": [],
-		"users": []
-	},
-	"Wassail": {
-		"name": "Wassail",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/rDk41Gy.jpg",
-		"by": "Serpentine",
-		"menudesc": "Mulled cider punch, served nice and hot.",
-		"desc": "From the Anglo-Saxon _wes hál_, meaning 'be healthy', this traditional English drink is perfect for anyone wishing to celebrate the Yuletide or harrass the local Lordship.\n Drinc hál!",
-		"roles": [],
-		"users": []
-	},
-	"ScreamingOrgasm": {
-		"name": "Screaming Orgasm",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/AIwyDCN.jpg",
-		"by": "Krobos",
-		"menudesc": "Equal parts Vodka, Kahlua, Amaretto, cream liqueur and milk.\n It's a mystery where this thick white cocktail got its name.",
-		"desc": "We know you've never had one, so might as well get one here.\n Just don't spill any of that stuff on the counter.",
-		"roles": [],
-		"users": []
-	},
-	"TomandJerry": {
-		"name": "Tom and Jerry",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/dspxT83.jpg",
-		"by": "Un1form",
-		"menudesc": "1:1: Dark rum, brandy and Cognac topped with hot milk.",
-		"desc": "No, it's not named after a cartoon.\n Introduced as a way of popularising his book, Pierce Egan put a spin on the classic egnogg recipe by adding brandy to it.",
-		"roles": [],
-		"users": []
-	},
-	"NoName": {
-		"name": "No Name",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/MGOxzXp.jpg",
-		"by": "Un1form",
-		"menudesc": "4:1 rum and honey. Cinnamon sticks to taste.",
-		"desc": "Uniquely crafted to go with a cigar, this one consists of 4 parts of rum, 1 part of honey, some cinnamon sticks, all put into a shaker. \n It doesn't have a name; the customer names it.",
-		"roles": [],
-		"users": []
-	},
-	"A1": {
-		"name": "A1",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/QPE2luJ.jpg",
-		"by": "Un1form",
-		"menudesc": "6:4:1 Gin, Grand Marnier, lemon juice with a dash of grenadine",
-		"desc": "A cocktail that was named in such a way that in any alphabetically sorted book it would be on the first page.",
-		"roles": [],
-		"users": []
-	},
-	"LastKiss": {
-		"name": "Last Kiss",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/SySFtgQ.jpg",
-		"by": "Un1form",
-		"menudesc": "6:2:1:1:1:1 Light rum, gin, brandy, dry vermouth, lemon juice and sugar syrup.",
-		"desc": "What can I say? We may not meet again, so let me give you one Last Kiss.",
-		"roles": [],
-		"users": []
-	},
-	"RustyNail": {
-		"name": "Rusty Nail",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/UMnRYAg.jpg",
-		"by": "Un1form",
-		"menudesc": "9:5 Scotch and Drambuie.",
-		"desc": "You won't need a tetanus shot after this one.",
-		"roles": [],
-		"users": []
-	},
-	"GinFizz": {
-		"name": "Gin Fizz",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/e6I0hcw.jpg",
-		"by": "Un1form",
-		"menudesc": "2:1:1 Gin, lime juice and sugar syrup, shaken with an egg white and topped with soda.",
-		"desc": "It's a Gimlet but with soda and egg whites.",
-		"roles": [],
-		"users": []
-	},
-	"Bannockburn": {
-		"name": "Bannockburn",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/sBX4Ziw.jpg",
-		"by": "Un1form",
-		"menudesc": "It's a Bloody Mary with whiskey.",
-		"desc": "Scottish people put their own spin on Bloody Mary.\n They replaced vodka with whiskey and renamed it after one of the their most impressive victories over the English.",
-		"roles": [],
-		"users": []
-	},
-	"Sledgehammer": {
-		"name": "Sledgehammer",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://imgur.com/5qR5cAg.jpg",
-		"by": "Un1form",
-		"menudesc": "9:2:1 Vodka, Orange juice and lime juice.",
-		"desc": "True to its name, will get you smashed right and proper.",
-		"roles": [],
-		"users": []
-	},
-	"Brandy": {
-		"name": "Brandy",
-		"alcoholic": true,
-		"category": "spirits",
-		"pic": "https://imgur.com/n9nISPd.jpg",
-		"by": "Vanitas",
-		"menudesc": "A spirit produced by distilling wine. 40% ABV.",
-		"desc": "The preferred drink of cigar-puffing suits and afro-american rappers alike.",
-		"roles": [],
-		"users": []
-	},
-	"Gin": {
-		"name": "Gin",
-		"alcoholic": true,
-		"category": "spirits",
-		"pic": "https://i.pinimg.com/originals/47/04/7f/47047faf24dc423944ede729398258f2.jpg",
-		"by": "Vanitas",
-		"menudesc": "A grain spirit whose characteristic flavour comes from juniper berries. 40% ABV.",
-		"desc": "Gin, sans tonic. Herbal and piney in flavour, thanks to the juniper berries present in most traditional recipes.",
-		"roles": [],
-		"users": []
-	},
-	"Rum": {
-		"name": "Rum",
-		"alcoholic": true,
-		"category": "spirits",
-		"pic": "https://imgur.com/F1myjCi.jpg",
-		"by": "Vanitas",
-		"menudesc": "A distilled alcoholic drink made by fermenting then distilling sugarcane molasses or sugarcane juice, which is then aged in oak barrels. Has famous associations with piracy. 40-45% ABV.",
-		"desc": "Rum, the one thing that both the Navy and pirates can bond over.\nThanks to being made with sugarcane, you can always count on a hint of sweetness within.",
-		"roles": [],
-		"users": []
-	},
-	"Tequila": {
-		"name": "Tequila",
-		"alcoholic": true,
-		"category": "spirits",
-		"pic": "https://imgur.com/9EhNRbZ.jpg",
-		"by": "Vanitas",
-		"menudesc": "A spirit made from the blue agave plant. Served neat as a shot with salt and lime. 35-55% ABV.",
-		"desc": "Sip it nice and despacito.",
-		"roles": [],
-		"users": []
-	},
-	"Vodka": {
-		"name": "Vodka",
-		"alcoholic": true,
-		"category": "spirits",
-		"pic": "https://imgur.com/F2eFURi.jpg",
-		"by": "Vanitas",
-		"menudesc": "Water and ethanol. A spirit made from literally anything that could be fermented to make alcohol, but typically grain, less commonly potatoes. 40% ABV.",
-		"desc": "Everyone likes water, so why not try some water with alcohol?",
-		"roles": [],
-		"users": []
-	},
-	"Absinthe": {
-		"name": "Absinthe",
-		"alcoholic": true,
-		"category": "spirits",
-		"pic": "https://imgur.com/bRqgfLe.jpg",
-		"by": "Vanitas",
-		"menudesc": "'Green fairy'. A distilled, highly alcoholic spirit that is bitter and anise-flavoured, made mostly from the leaves and flowers of wormwood. 60-80% ABV.",
-		"desc": "Ah, 'la fée verte', our green fairy that was a common sight among 19th century Parisians.\n Beware her grasp; absinthe is quite strong.",
-		"roles": [],
-		"users": []
-	},
-	"Everclear": {
-		"name": "Everclear",
-		"alcoholic": true,
-		"category": "spirits",
-		"pic": "https://imgur.com/0X9rOel.jpg",
-		"by": "Vanitas",
-		"menudesc": "A distilled spirit that has a notorious reputation for its high alcohol content, up to 95% ABV. Typically mixed with other ingredients to create cocktails, or with water to create vodka.",
-		"desc": "You've tried water with alcohol, now try alcohol with water.\n Guaranteed to fuck you up.",
-		"roles": [],
-		"users": []
-	},
-	"Lager": {
-		"name": "Lager",
-		"alcoholic": true,
-		"category": "beers",
-		"pic": "https://imgur.com/QNLzRWu.jpg",
-		"by": "Vanitas",
-		"menudesc": "The most widely consumed and commercially available style of beer.\n Easily recognizable by its golden colour and light flavour.",
-		"desc": "Crisp and refreshing.",
-		"roles": [],
-		"users": []
-	},
-	"WheatBeer": {
-		"name": "Wheat Beer",
-		"alcoholic": true,
-		"category": "beers",
-		"pic": "https://i.imgur.com/OHq3Cx1.jpg",
-		"by": "Cookie",
-		"menudesc": "One of the oldest styles of beer still in existence today, brewed with anywhere from 30 to 70% wheat in the grain mix.",
-		"desc": "Golden, hazy, goes down easy.",
-		"roles": [],
-		"users": []
-	},
-	"EnglishBitter": {
-		"name": "English Bitter",
-		"alcoholic": true,
-		"category": "beers",
-		"pic": "https://i.imgur.com/JAU0A76.jpg",
-		"by": "Vanitas",
-		"menudesc": "Contrary to its name, this beer won't make you gag from the taste.\n A light and 'sessionable' beer, thanks to its comparatively low alcohol content.",
-		"desc": "The quintessential after-work pint.",
-		"roles": [],
-		"users": []
-	},
-	"India Pale Ale": {
-		"name": "India Pale Ale",
-		"alcoholic": true,
-		"category": "beers",
-		"pic": "https://imgur.com/xkMURGQ.jpg",
-		"by": "Vanitas",
-		"menudesc": "A variant of the Pale Ale that has an increased hops content.\n Was a result of British brewers looking for a way to ship pale ale to soldiers stationed in India without the drink spoiling during the voyage.",
-		"desc": "Hoppy and bitter.",
-		"roles": [],
-		"users": []
-	},
-	"Porter": {
-		"name": "Porter",
-		"alcoholic": true,
-		"category": "beers",
-		"pic": "https://imgur.com/a6il0LQ.jpg",
-		"by": "Vanitas",
-		"menudesc": "A dark style of beer developed in London that has flavors and aromas of coffee, chocolate and toast. ",
-		"desc": "Smooth and creamy.",
-		"roles": [],
-		"users": []
-	},
-	"Stout": {
-		"name": "Stout",
-		"alcoholic": true,
-		"category": "beers",
-		"pic": "https://imgur.com/dTy8xVA.jpg",
-		"by": "Vanitas",
-		"menudesc": "A stronger, 'stouter' version of the Porter, popularized by Guinness.",
-		"desc": "Be honest with yourself and just call it a Guinness.",
-		"roles": [],
-		"users": []
-	},
-	"Lambic": {
-		"name": "Lambic",
-		"alcoholic": true,
-		"category": "beers",
-		"pic": "https://i.imgur.com/eKxEtQ1.jpg",
-		"by": "RustyRat",
-		"menudesc": "A Belgian beer. Its most popular variant is Kriek, which is brewed with sour cherries.",
-		"desc": "Some people think this tastes like cough syrup. Those people are wrong.",
-		"roles": [],
-		"users": []
-	},
-	"Cider": {
-		"name": "Cider",
-		"alcoholic": true,
-		"category": "beers",
-		"pic": "https://imgur.com/R6ezZEt.jpg",
-		"by": "RustyRat",
-		"menudesc": "Fermented apple juice. Amber to gold sour-sweet nectar.",
-		"desc": "For when you want to drink apple juice but also want to get plastered.",
-		"roles": [],
-		"users": []
-	},
-	"ColdBrew": {
-		"name": "Cold Brew",
-		"alcoholic": false,
-		"category": "iced coffee",
-		"pic": "https://i.imgur.com/GhM9BLS.jpg",
-		"by": "Zae",
-		"menudesc": "Low acidity dark roasted coffee brewed overnight & served over water & ice.",
-		"desc": "",
-		"roles": ["Coffee Mom"],
-		"users": []
-	},
-	"NitroColdBrew": {
-		"name": "Nitro Cold Brew",
-		"alcoholic": false,
-		"category": "iced coffee",
-		"pic": "https://i.imgur.com/BZlI0Sj.jpg",
-		"by": "Zae",
-		"menudesc": "Cold brewed coffee infused with nitrogen for a naturally sweet flavor and cascading, velvety crema.",
-		"desc": "",
-		"roles": ["Coffee Mom"],
-		"users": []
-	},
-	"ColdMoo": {
-		"name": "Cold Moo",
-		"alcoholic": false,
-		"category": "iced coffee",
-		"pic": "https://i.imgur.com/QbmqkEY.jpg",
-		"by": "Zae",
-		"menudesc": "Cold brewed coffee with cream.",
-		"desc": "",
-		"roles": ["Coffee Mom"],
-		"users": []
-	},
-	"IcedAmericano": {
-		"name": "Iced Americano",
-		"alcoholic": false,
-		"category": "iced coffee",
-		"pic": "https://i.imgur.com/ZoTJfNK.jpg",
-		"by": "Zae",
-		"menudesc": "Two shots of espresso coffee + iced water for a long lasting drink.",
-		"desc": "",
-		"roles": ["Coffee Mom"],
-		"users": []
-	},
-	"IcedCoffee": {
-		"name": "Iced Coffee",
-		"alcoholic": false,
-		"category": "iced coffee",
-		"pic": "https://i.imgur.com/lZ0gmVP.jpg",
-		"by": "Zae",
-		"menudesc": "Freshly brewed coffee in the roast of your choice served over ice.",
-		"desc": "",
-		"roles": ["Coffee Mom"],
-		"users": []
-	},
-	"BrewedCoffee": {
-		"name": "Plain Hot Coffee",
-		"alcoholic": false,
-		"category": "hot coffee",
-		"pic": "https://i.imgur.com/h4nfJia.jpg",
-		"by": "Zae",
-		"menudesc": "Freshly brewed coffee in the roast of your choice - flavoring, sugar, cream all optional.",
-		"desc": "",
-		"roles": ["Coffee Mom"],
-		"users": []
-	},
-	"Macchiato": {
-		"name": "Macchiato",
-		"alcoholic": false,
-		"category": "hot coffee",
-		"pic": "https://i.imgur.com/PvEAZkD.jpg",
-		"by": "Zae",
-		"menudesc": "Espresso & a small amount of foamed milk.",
-		"desc": "",
-		"roles": ["Coffee Mom"],
-		"users": []
-	},
-	"FlatWhite": {
-		"name": "Flat White",
-		"alcoholic": false,
-		"category": "hot coffee",
-		"pic": "https://i.imgur.com/Appqyad.jpg",
-		"by": "Zae",
-		"menudesc": "Two shots of espresso coffee (blonde or dark roast) with steam milk microfoam. Velvety luxury.",
-		"desc": "",
-		"roles": ["Coffee Mom"],
-		"users": []
-	},
-	"Cappuccino": {
-		"name": "Cappucino",
-		"alcoholic": false,
-		"category": "hot coffee",
-		"pic": "https://i.imgur.com/4vCM8wC.jpg",
-		"by": "Zae",
-		"menudesc": "Two shots of espresso coffee, with milk of your choice (almond, coconut, regular), topped with microfoam.",
-		"desc": "",
-		"roles": ["Coffee Mom"],
-		"users": []
-	},
-	"Americano": {
-		"name": "Americano",
-		"alcoholic": false,
-		"category": "hot coffee",
-		"pic": "https://i.imgur.com/cmsoWzQ.jpg",
-		"by": "Zae",
-		"menudesc": "Two shots of espresso coffee + water for a long lasting drink served hot.",
-		"desc": "",
-		"roles": ["Coffee Mom"],
-		"users": []
-	},
-	"Mocha": {
-		"name": "Mocha",
-		"alcoholic": false,
-		"category": "hot coffee",
-		"pic": "https://i.imgur.com/NYc4Ymd.jpg",
-		"by": "Zae",
-		"menudesc": "Espresso and hot milk with cocoa powder + sugar.",
-		"desc": "",
-		"roles": ["Coffee Mom"],
-		"users": []
-	},
-	"Latte": {
-		"name": "Latte",
-		"alcoholic": false,
-		"category": "hot coffee",
-		"pic": "https://i.imgur.com/sznF5Aq.jpg",
-		"by": "Zae",
-		"menudesc": "2 shots of espresso with steamed milk.",
-		"desc": "",
-		"roles": ["Coffee Mom"],
-		"users": []
-	},
-	"SpicyWater": {
-		"name": "Spicy Water",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://i.imgur.com/EKJptYq.jpg",
-		"by": "Eric",
-		"menudesc": "Literally just water and vodka. Toss a lime wedge in if you're adventurous.",
-		"desc": "It ain’t fancy, but you're here to get drunk, and it does the job.",
-		"roles": [],
-		"users": []
-	},
-	"Kvass": {
-		"name": "Kvass",
-		"alcoholic": false,
-		"category": "beers",
-		"pic": "https://i.imgur.com/lEGrels.jpg",
-		"by": "Van",
-		"menudesc": "A fermented beverage, not unlike beer, made from rye bread that is enjoyed as a summertime drink in many Slavic countries.\n Mildly alcoholic, around 0.5-1% ABV, but classified as a non-alcoholic beverage nonetheless.",
-		"desc": "Delicious and thirst-quenching bread juice. Tastes a bit like raisins.",
-		"roles": ["Meido"],
-		"users": [],
-		"checkAdditive": true
-	},
-	"Pilsner": {
-		"name": "Pilsner",
-		"alcoholic": true,
-		"category": "beers",
-		"pic": "https://i.imgur.com/KaOEHgW.jpg",
-		"by": "prohunter",
-		"menudesc": "A style of beer invented by a German brewer in 1843 in the city of Pilsen, characterised by its bittersweet earthy taste, bright gold colour and clear liquid.",
-		"desc": "Hoppy and delightfully bitter. Go big or go home.",
-		"roles": [],
-		"users": []
-	},
-	"EarlGrey": {
-		"name": "Earl Grey Tea",
-		"alcoholic": false,
-		"category": "tea",
-		"pic": "https://i.imgur.com/D4mJacE.jpg",
-		"by": "Skye",
-		"menudesc": "Black tea with a splash of bergamot (orange) oil infused in the leaves.",
-		"desc": "Nice, wholesome, and Grey. Sounds like good weather.",
-		"roles": ["Meido"],
-		"users": [],
-		"checkAdditive": true
-	},
-	"GreenTea": {
-		"name": "Green Tea",
-		"alcoholic": false,
-		"category": "tea",
-		"pic": "https://i.imgur.com/tTUw5Wv.jpg",
-		"by": "Skye",
-		"menudesc": "Camellia sinensis leaves oxidized much less than the black variant.",
-		"desc": "Not actually green most of the time.",
-		"roles": ["Meido"],
-		"users": [],
-		"checkAdditive": true
-	},
-	"EnglishBreakfast": {
-		"name": "English Breakfast Tea",
-		"alcoholic": false,
-		"category": "tea",
-		"pic": "https://i.imgur.com/1mby6IH.jpg",
-		"by": "Vanitas",
-		"menudesc": "A blend of black teas, commonly Assam, Ceylon, and Kenyan, traditionally served as part of the full English breakfast.\n Goes well with milk and sugar.",
-		"desc": "Puts the 'good' in 'good morning.'",
-		"roles": ["Meido"],
-		"users": [],
-		"checkAdditive": true
-	},
-	"Darjeeling": {
-		"name": "Darjeeling Tea",
-		"alcoholic": false,
-		"category": "tea",
-		"pic": "https://i.imgur.com/sU6f4pM.jpg",
-		"by": "Vanitas",
-		"menudesc": "A famous tea grown in West Bengal, India. Brews thin and light with a floral aroma.",
-		"desc": "The Champagne of teas.",
-		"roles": ["Meido"],
-		"users": [],
-		"checkAdditive": true
-	},
-	"SilverNeedle": {
-		"name": "Silver Needle Tea",
-		"alcoholic": false,
-		"category": "tea",
-		"pic": "https://i.imgur.com/P1o4BfX.jpg",
-		"by": "Serpentine",
-		"menudesc": "A prized white tea produced in Fujian Province, China. Sweet and delicate.",
-		"desc": "Golden luxury.",
-		"roles": ["Meido"],
-		"users": [],
-		"checkAdditive": true
-	},
-	"CaféConLeche": {
-		"name": "Café Con Leche",
-		"alcoholic": false,
-		"category": "hot coffee",
-		"pic": "https://i.imgur.com/YUg3m1e.jpg",
-		"by": "Indy",
-		"menudesc": "A traditional beverage of Spanish and Latin American origin that consists of strong and bold dark-roasted coffee (usually espresso) mixed with scalded milk in approximately a 1:1 ratio. Sugar or sweetener is added according to taste. Comes with two variants, both with more amounts of milk. Café Con Leche en Vaso (Coffee with Milk in Cup) or Café Con Leche de Desayuno (Breakfast Coffee with Milk).",
-		"desc": "Gets you up and running.",
-		"roles": ["Coffee Mom"],
-		"users": ["175052342633168903"],
-		"checkAdditive": true
-	},
-	"Espresso": {
-		"name": "Espresso",
-		"alcoholic": false,
-		"category": "hot coffee",
-		"pic": "https://i.imgur.com/XcpL39g.jpg",
-		"by": "Zae",
-		"menudesc": "Coffee made by forcing high pressure water through finely ground beans.",
-		"desc": "Very concentrated.",
-		"roles": ["Coffee Mom"],
-		"users": [],
-		"checkAddititve": false
-	},
-	"CorpseReviver2": {
-		"name": "Corpse Reviver No. 2",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://i.imgur.com/Tyeklqh.jpg",
-		"by": "Uniform",
-		"menudesc": "4:3:3:3 of Gin, Triple Sec, Lemon juice and dry vermouth with few dashes of absinthe.",
-		"desc": "For when you really need to be jolted awake. \nHey, you. You are finally awake...",
-		"roles": [],
-		"users": []
-	},
-	"Mead": {
-		"name": "Mead",
-		"alcoholic": true,
-		"category": "beers",
-		"pic": "https://i.imgur.com/UFe5j9I.jpg",
-		"by": "Mia",
-		"menudesc": "Fermented honey with water, sometimes with fruits, spices, grains or hops. Colour varies by honey type. 3.5% ABV and upwards.",
-		"desc": "The drink of Gods and Vikings, perfect for those days when you have Dragons to slay.",
-		"roles": [],
-		"users": ["385445076165197824"],
-		"checkAdditive": true
-	},
-	"BlackSambuca": {
-		"name": "Black Sambuca",
-		"alcoholic": true,
-		"category": "spirits",
-		"pic": "https://i.imgur.com/IkPRkMu.jpg",
-		"by": "Extra",
-		"menudesc": "An anise-flavored liqueur of Italian origin. 38% ABV.",
-		"desc": "When you 'n' the lads are getting a bit lairy and you need yourself a nice shot to ripen the mood",
-		"roles": [],
-		"users": ["209472888313479168"],
-		"checkAdditive": true
-	},
-	"DrinkName": {
-		"name": "Solo",
-		"alcoholic": false,
-		"category": "miscellaneous",
-		"pic": "https://i.imgur.com/aoBVXi3.jpg",
-		"by": "Malinux",
-		"menudesc": "An orange-flavoured Norwegian soft drink",
-		"desc": "For when you and the lads want some classic Norwegian goodness",
-		"roles": [],
-		"users": ["317413012686372864"],
-		"checkAdditive": true
-	},
-	"BeesKnees": {
-		"name": "Bee's Knees",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://kitchenswagger.com/wp-content/uploads/2019/08/bees-knees-cocktail1.jpg",
-		"by": "Un1f0rm",
-		"menudesc": "8:6:6 parts of gin, honey, and lemon juice",
-		"desc": "A cocktail from the Prohibition era.\nThe name meant 'the best'. Just like you.",
-		"roles": [],
-		"users": ["129277263165259776", "255114737598201856"],
-		"checkAdditive": true
-	},
-	"WhiteLady": {
-		"name": "White Lady",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://www.london-unattached.com/wp-content/uploads/2019/12/White-Lady-Cocktail-2-scaled.jpg",
-		"by": "Un1f0rm",
-		"menudesc": "4:3:2 parts gin, Triple Sec and lemon juice",
-		"desc": "Everyone can drink it regardless of skin colour, though maybe refrain if you are named Karen.",
-		"roles": [],
-		"users": ["129277263165259776"],
-		"checkAdditive": true
-	},
-	"TheLastWord": {
-		"name": "The Last Word",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://noseychef.com/wp-content/uploads/2019/02/IMG_4398.jpg",
-		"by": "Un1f0rm",
-		"menudesc": "1:1:1:1 parts gin, lime juice, green Chartreuse, and maraschino liquer.",
-		"desc": "Yours, until the last flame dies and all words have been spoken.",
-		"roles": [],
-		"users": ["129277263165259776"],
-		"checkAdditive": true
-	},
-	"SufferingBastard": {
-		"name": "Suffering Bastard",
-		"alcoholic": true,	
-		"category": "cocktails",
-		"pic": "https://imgur.com/a/C4f172x",
-		"by": "Un1f0rm",
-		"menudesc": "8:2:2:1 parts ginger beer, gin, bourbon and lime juice, with a dash of Angostura bitters.",
-		"desc": "You did ask for the manager, right?",
-		"roles": [],
-		"users": ["129277263165259776"],
-		"checkAdditive": true
-	},
-	"MotorOilShot": {
-		"name": "Motor Oil Shot",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://i.pinimg.com/originals/b4/4a/96/b44a96026c22cf2515cb09e2017a2fcb.jpg",
-		"by": "Mustang",
-		"menudesc": "1:1:1:1 parts Jägermeister, peppermint schnapps, goldschläger and coconut rum.",
-		"desc": "Feeling old, cranky or mouldy? Something grinding your gears? What you need is a glass of the finest motor oil in this establishment. Fear not, this one is engineered uniquely to lubricate your inner workings.",
-		"roles": [],
-		"users": ["221913315079618560"],
-		"checkAdditive": true
-	},
-	"Ramune": {
-		"name": "Ramune (ラムネ)",
-		"alcoholic": false,
-		"category": "miscellaneous",
-		"pic": "https://i.imgur.com/ZBMzAKd.jpg",
-		"by": "Taco",
-		"menudesc": "Carbonated water, sugar, citric acid, and lemon flavoring, served in a glass codd-neck bottle sealed with a marble.",
-		"desc": "The quintessential Japanese summer drink. You can't go wrong with a bottle of faintly sweet, fizzy marble soda on a hot and humid day.",
-		"roles": ["Meido"],
-		"users": ["115793141809807365"],
-		"checkAdditive": true
-	},
-	"PanGalacticGargleBlaster": {
-		"name": "Pan Galactic Gargle Blaster",
-		"alcoholic": true,
-		"category": "cocktails",
-		"pic": "https://i.imgur.com/dqjNCrO.jpg",
-		"by": "Taylor",
-		"menudesc": "1:1:5 bourbon, peach schnapps, and orange juice, with a splash of blue curacao liqueur. Garnish with a citrus twist and possibly an olive.",
-		"desc": "Like having your brains smashed out by a slice of lemon wrapped round a large gold brick. Don't panic, it's mostly harmless.",
-		"roles": [],
-		"users": ["316005415211106305"],
-		"checkAdditive": false
-	},
-	"Mugicha": {
-		"name": "Mugicha (麦茶)",
-		"alcoholic": false,
-		"category": "tea",
-		"pic": "https://i.imgur.com/4vybEH9.jpg",
-		"by": "Taco",
-		"menudesc": "Made with roasted barley grains, often served chilled with ice.",
-		"desc": "The perfect accompaniment to the sound of cicadas on a hot summer day.",
-		"roles": ["Meido"],
-		"users": ["115793141809807365"],
-		"checkAdditive": true
-	},
-	"IchigoMilk": {
-		"name": "Ichigo Milk (いちごミルク)",
-		"vessel": "",
-		"alcoholic": false,
-		"category": "miscellaneous",
-		"infoLink": "",
-		"pic": "https://i.imgur.com/lxXdUIj.jpg",
-		"by": "Taco",
-		"menudesc": "Fresh milk blended with strawberry puree.",
-		"desc": "Flows through the veins of cute anime girls, probably.",
-		"roles": ["Meido"],
-		"users": ["115793141809807365"],
-		"checkAdditive": true
-	},
-	"AppleJuice": {
-		"name": "Apple Juice",
-		"alcoholic": false,
-		"category": "miscellaneous",
-		"pic": "https://www.cateringsupplier.co.uk/wp-content/uploads/2017/02/apple-juice.jpg",
-		"by": "Evieµ",
-		"menudesc": "Freshly pressed, served cold.",
-		"desc": "When you want a simple but tasteful drink without alcohol.",
-		"roles": [],
-		"users": ["671289732919066644"],
-		"checkAdditive": true
-	},
-	"OrangeJuice": {
-		"name": "Orange Juice",
-		"alcoholic": false,
-		"category": "miscellaneous",
-		"pic": "https://cdn.dribbble.com/users/33267/screenshots/2043335/dr_1x.jpg",
-		"by": "Evieµ",
-		"menudesc": "Freshly pressed, served cold.",
-		"desc": "When you want a simple but tasteful drink without alcohol.",
-		"roles": [],
-		"users": ["671289732919066644"],
-		"checkAdditive": true
-	},
-	"CreamSoda": {
-		"name": "Cream Soda (クリームソーダ)",
-		"alcoholic": false,
-		"category": "miscellaneous",
-		"pic": "https://i.imgur.com/A29abDp.jpg",
-		"by": "Taco",
-		"menudesc": "Club soda mixed with melon syrup, topped with a scoop of vanilla ice cream and a maraschino cherry",
-		"desc": "This fizzy emerald drink is a Japanese diner classic, and is well-loved by kids and adults alike.",
-		"roles": ["Meido"],
-		"users": ["115793141809807365"],
-		"checkAdditive": true
-	},
-	"MilkTea": {
-		"name": "Milk Tea(タピオカミルクティー)",
-		"alcoholic": false,
-		"category": "tea",
-		"pic": "https://i.imgur.com/qeC90gS.jpg",
-		"by": "Taco",
-		"menudesc": "Black tea base mixed with sweetened condensed milk, served over chewy tapioca pearls.",
-		"desc": "Sweet and creamy, complemented well by the soft, chewy texture of the tapioca pearls.",
-		"roles": ["Meido"],
-		"users": ["115793141809807365"],
-		"checkAdditive": true
-	},
-	"CocaCola": {
+  "Lambanog": {
+    "name": "Lambanog",
+    "alcoholic": true,
+    "category": "spirits",
+    "pic": "https://i.imgur.com/sRGFAUt.png",
+    "by": "Vanitas",
+    "menudesc": "A spirit made from distilled coconut sap, common in Southeast Asia.\n Also known as coconut vodka or wine. 40%-45% ABV.",
+    "desc": "Smooth and tropical. _Tagay!_",
+    "roles": [],
+    "users": []
+  },
+  "Tuak": {
+    "name": "Tuak",
+    "alcoholic": true,
+    "category": "spirits",
+    "pic": "https://i.imgur.com/G4CEsbJ.jpg",
+    "by": "Eric",
+    "menudesc": "A traditional rice wine indigenous to the Bornean region. 15-18% ABV.",
+    "desc": "A primitive wine, said to have kept the ones that brew it drunk '100 out of 365 days'. ",
+    "roles": [],
+    "users": []
+  },
+  "Water": {
+    "name": "Water",
+    "alcoholic": false,
+    "category": "miscellaneous",
+    "pic": "https://i.imgur.com/tvOIeJF.jpg",
+    "by": "none",
+    "menudesc": "2 parts hydrogen, 1 part oxygen.",
+    "desc": "Plain ol' drinking water, straight from the tap.\n A timeless classic.",
+    "roles": [
+      "Meido"
+    ],
+    "users": [],
+    "checkAdditive": true
+  },
+  "SparklingWater": {
+    "name": "Sparkling Water",
+    "alcoholic": false,
+    "category": "miscellaneous",
+    "pic": "https://i.imgur.com/dSQmYol.jpg",
+    "by": "lastfire",
+    "menudesc": "Carbonated drinking water.",
+    "desc": "For those of you who think plain old drinking water is just too boring.",
+    "roles": [
+      "Meido"
+    ],
+    "users": [],
+    "checkAdditive": true
+  },
+  "Sangria": {
+    "name": "Sangria",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://i.imgur.com/bZpJJGV.jpg",
+    "by": "Mustang",
+    "menudesc": "A fruity wine punch of Spanish origin.\n Mainly red wine and chopped fruit.",
+    "desc": "Technically this is just a liquid and alcoholic fruit salad.\n Cheers to your healthy diet.",
+    "roles": [],
+    "users": []
+  },
+  "Aviation": {
+    "name": "Aviation",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://i.imgur.com/kCiI6he.jpg",
+    "by": "Unif0rm",
+    "menudesc": "3:1:1:1 Gin, Maraschino liqueur, creme de violette and lemon juice.",
+    "desc": "For those who aim high and achieve great things.",
+    "roles": [],
+    "users": [
+      "137097926441697282"
+    ],
+    "checkAdditive": true
+  },
+  "MoscowMule": {
+    "name": "Moscow Mule",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/x3jKAMr.jpg",
+    "by": "Foxbat",
+    "menudesc": "6:3:1 Ginger beer, vodka, lime juice, all served in a copper mug.",
+    "desc": "A cocktail that in 1941 solved the problem of three unsuccessful business people: a copper mug salesman, a barkeep, and a vodka distiller.",
+    "roles": [],
+    "users": []
+  },
+  "Deathintheafternoon": {
+    "name": "Death in the Afternoon",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://gardenandgun.com/wp-content/uploads/2017/01/GG0410_Anatomy-of-a-Classic_01-822x1100.jpg",
+    "by": "Un1f0rm",
+    "menudesc": "9:2 Champagne and Absinthe in a champagne flute, garnished with a lemon peel",
+    "desc": "Invented by Ernest Hemingway, and if followed his drinking instructions, which say to drink three to five glasses, may lead to an early retirement from this world. \n It is unclear however, whether that would happen in the afternoon.",
+    "roles": [],
+    "users": []
+  },
+  "LycheeMartini": {
+    "name": "Lychee Martini",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/qdt77EI.png",
+    "by": "QT",
+    "menudesc": "Martini mixed with lychee juice.",
+    "desc": "A martini that tastes like lychees. Simple enough.",
+    "roles": [],
+    "users": []
+  },
+  "MulledWine": {
+    "name": "Mulled Wine",
+    "alcoholic": false,
+    "category": "cocktails",
+    "pic": "https://imgur.com/ul6FNYz.jpg",
+    "by": "Mia",
+    "menudesc": "Red wine mixed with a cocktail of spices and served either hot or warm, alcoholic or non-alcoholic.",
+    "desc": "Warms the soul like nothing else.",
+    "roles": [],
+    "users": []
+  },
+  "SingaporeSling": {
+    "name": "Singapore Sling",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/MqqMqVB.jpg",
+    "by": "QT",
+    "menudesc": "2:1:1:1 Pineapple juice, gin, cherry liqueur and lime juice.",
+    "desc": "Originally called a Gin Sling, this classic hails from as far back as 1915.",
+    "roles": [],
+    "users": []
+  },
+  "HairOfTheDog": {
+    "name": "Hair of the Dog",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://i.imgur.com/xZykJsN.jpg",
+    "by": "Uniform",
+    "menudesc": "2:1:1 Scotch whisky, cream and honey",
+    "desc": "Just like healing a dog's bite with dog hair, healing hangovers can be done with more alcohol. And this one's perfect for the job.",
+    "roles": [],
+    "users": []
+  },
+  "TequilaSunrise": {
+    "name": "Tequila Sunrise",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/m3yKfZx.jpg",
+    "by": "Foxbat",
+    "menudesc": "A sweet mix of Tequila, orange juice, and grenadine syrup.",
+    "desc": "Some people say it gets its name because it looks like a sunrise. I prefer to think it means I get to share your company until then.",
+    "roles": [],
+    "users": []
+  },
+  "StrawberryDaquiri": {
+    "name": "Strawberry Daquiri",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/5xnNZkV.jpg",
+    "by": "QT",
+    "menudesc": "A daiquiri with strawberries added to the mix.",
+    "desc": "Perfect for beating the summer heat.",
+    "roles": [],
+    "users": []
+  },
+  "Margarita": {
+    "name": "Margarita",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/5zTifFY.jpg",
+    "by": "Foxbat",
+    "menudesc": "2:1:1 Tequila, Triple Sec and lime juice.",
+    "desc": "So what's a cougar like you doing here?",
+    "roles": [],
+    "users": []
+  },
+  "JackFrost": {
+    "name": "Jack Frost",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/G2Jj6sG.jpg",
+    "by": "QT",
+    "menudesc": "Vodka, pineapple juice, cream of coconut, blue curacao, coconut, all blended with ice.",
+    "desc": "The Pina Colada's winter version. Tropical, yet festive.",
+    "roles": [],
+    "users": []
+  },
+  "SexOnTheBeach": {
+    "name": "Sex on the Beach",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/vXx3kOU.jpg",
+    "by": "none",
+    "menudesc": "2:2:1 Vodka, cranberry juice and Peach Schnapps, topped with orange juice.",
+    "desc": "Not a good idea. It's all coarse, and rough, and irritating. And it gets everywhere.",
+    "roles": [],
+    "users": []
+  },
+  "Mojito": {
+    "name": "Mojito",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/JaLrhdi.png",
+    "by": "Mustang",
+    "menudesc": "Rum, lime juice, brown sugar, and mint, topped with soda.",
+    "desc": "One of those cocktails that takes forever to make, but people order them in gargantuan quantities anyway.\n Be sure to leave a generous tip.",
+    "roles": [],
+    "users": []
+  },
+  "VirginMojito": {
+    "name": "Virgin Mojito",
+    "alcoholic": false,
+    "category": "cocktails",
+    "pic": "https://imgur.com/JaLrhdi.png",
+    "by": "Uniform",
+    "menudesc": "Lime juice, brown sugar, and mint, topped with soda.",
+    "desc": "It's a mojito, but named and served just for you.",
+    "roles": [
+      "Meido"
+    ],
+    "users": [],
+    "checkAdditive": true
+  },
+  "RoyRogers": {
+    "name": "Roy Rogers",
+    "alcoholic": false,
+    "category": "cocktails",
+    "pic": "https://i.imgur.com/oAzDwbs.png",
+    "by": "Uniform",
+    "menudesc": "Coca-Cola with grenadine syrup, garnished with a maraschino cherry",
+    "desc": "Not named after Dread Pirate Rogers, but after a famous spaghetti western actor, this one is perfect when you need your wits about before a shootout.",
+    "roles": [
+      "Meido"
+    ],
+    "users": [],
+    "checkAdditive": true
+  },
+  "Cinderella": {
+    "name": "Cinderella",
+    "alcoholic": false,
+    "category": "cocktails",
+    "pic": "https://i.imgur.com/0mQWxbi.png",
+    "by": "Uniform",
+    "menudesc": "Equal parts of lemon, orange and pineapple juice, with a dash of grenadine and topped with ginger ale.",
+    "desc": "Don't leave in a hurry, lest you forget your footwear.",
+    "roles": [
+      "Meido"
+    ],
+    "users": [],
+    "checkAdditive": true
+  },
+  "WhiteRussian": {
+    "name": "White Russian",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/sshjo8N.jpg",
+    "by": "Un1form",
+    "menudesc": "5:2:3 Vodka, Kahlua, and double cream.",
+    "desc": "Made popular by The Dude in The Big Lebowski movie. \n If you don't like it, then well, that's just, like, your opinion, man.",
+    "roles": [],
+    "users": []
+  },
+  "BlackRussian": {
+    "name": "Black Russian",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/rzVMDxe.jpg",
+    "by": "Un1form",
+    "menudesc": "Coffee liqueur and vodka.",
+    "desc": "Somewhat of a rarity, Black Russian is a mix of vodka and coffee liqueur, mostly in a 5:3 ratio.",
+    "roles": [],
+    "users": []
+  },
+  "OldFashioned": {
+    "name": "Old Fashioned",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/OcGRHXH.jpg",
+    "by": "Un1form",
+    "menudesc": "12:2:1 Bourbon, sugar syrup, squeezed orange peel, and Angostura bitters.",
+    "desc": "Reminiscent of the times when cocktails were simply alcohol with anything fruity over ice.",
+    "roles": [],
+    "users": []
+  },
+  "WhiskeySour": {
+    "name": "Whiskey Sour",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/BhmaVUd.jpg",
+    "by": "Un1form",
+    "menudesc": "4:2:1 Whiskey, lemon juice, and sugar syrup.",
+    "desc": "The original 'sour'. Like other sours, it's made up by 4:2:1 of whiskey, lemon juice, and sugar syrup. Add an egg white into the mix for some frothy texture.",
+    "roles": [],
+    "users": []
+  },
+  "Whisky": {
+    "name": "Whisky",
+    "alcoholic": true,
+    "category": "spirits",
+    "pic": "https://i.imgur.com/yfAYaL4.jpg",
+    "by": "Un1form",
+    "menudesc": "A spirit made from fermented grain mash, aged in wooden casks. 40\u201368% ABV.",
+    "desc": "Modern spelling of uisce beatha, Gaelic for 'water of life'. Because what would life be without a bit of whisky?",
+    "roles": [],
+    "users": []
+  },
+  "Manhattan": {
+    "name": "Manhattan",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/gF7Tjbh.jpg",
+    "by": "Un1form",
+    "menudesc": "2:1 Rye and Sweet Vermouth, plus a few dashes of Angostura bitters.",
+    "desc": "",
+    "roles": [],
+    "users": []
+  },
+  "BlackVelvet": {
+    "name": "Black Velvet",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/x7HHNf1.jpg",
+    "by": "Un1form",
+    "menudesc": "A glass of Champagne poured into a perfect pint of Guinness.",
+    "desc": "For when a pint of Guinness just isn't fancy enough for the occasion.",
+    "roles": [],
+    "users": []
+  },
+  "MintJulep": {
+    "name": "Mint Julep",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/SkM310k.jpg",
+    "by": "Un1form",
+    "menudesc": "Bourbon, sugar syrup, and muddled mint leaves.",
+    "desc": "An American classic, famously served by Daisy in The Great Gastby.",
+    "roles": [],
+    "users": []
+  },
+  "BloodyMary": {
+    "name": "Bloody Mary",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/XfAeIbm.jpg",
+    "by": "Un1form",
+    "menudesc": "Vodka, tomato juice, lemon juice, salt, pepper, tabasco, and Worcestershire sauce, garnished with a stalk of celery.",
+    "desc": "A breakfast cocktail perfect for jumpstarting your day.",
+    "roles": [],
+    "users": []
+  },
+  "Screwdriver": {
+    "name": "Screwdriver",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/6tBjp3i.jpg",
+    "by": "Un1form",
+    "menudesc": "1:2 Vodka and orange juice.",
+    "desc": "Named after NYC construction workers using screwdrivers to stir their orange-juice-carton-smuggled vodka, this one is as simple as it gets.",
+    "roles": [],
+    "users": []
+  },
+  "Daiquiri": {
+    "name": "Daiquiri",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/kVjwjGe.jpg",
+    "by": "Un1form",
+    "menudesc": "4:2:1 Rum, lime juice, and sugar syrup.",
+    "desc": "Famously drunk by Ernest Hemingway, a Daiquiri could also be called a 'Rum Sour', but that doesn't sound quite as catchy now, does it?",
+    "roles": [],
+    "users": []
+  },
+  "Bacardi": {
+    "name": "Bacardi",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/DXYLlnu.jpg",
+    "by": "Un1form",
+    "menudesc": "3:1:1 Bacardi, lime juice, and grenadine.",
+    "desc": "Made by Bacardi in an attempt to popularise their ethanol.",
+    "roles": [],
+    "users": []
+  },
+  "DirtyMartini": {
+    "name": "Dirty Martini",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/mwsduRX.jpg",
+    "by": "Un1form",
+    "menudesc": "6:1:1 Vodka, Dry Vermouth, and olive brine.",
+    "desc": "Unlike its pornstar sister, Dirty Martini isn't named as an innuendo, but because of how the olive juice affects its opacity. Served with an olive garnish.",
+    "roles": [],
+    "users": []
+  },
+  "Vesper": {
+    "name": "Vesper",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/zT6pYGJ.jpg",
+    "by": "Un1form",
+    "menudesc": "6:2:1 Gin, Vodka, and dry vermouth.",
+    "desc": "Shaken, not stirred. Invented by Ian Fleming, and popularised by his character James Bond.\n Served with a twisted lemon peel garnish.",
+    "roles": [],
+    "users": []
+  },
+  "DarkNStormy": {
+    "name": "Dark'N'Stormy",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/SEMswui.jpg",
+    "by": "Un1form",
+    "menudesc": "7:4 Ginger beer and dark rum, bitters to taste.",
+    "desc": "Dark rum, stormy ginger beer. Perfect for sailors and pirates alike.",
+    "roles": [],
+    "users": []
+  },
+  "Godfather": {
+    "name": "Godfather",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/TxX3xwv.jpg",
+    "by": "Un1form",
+    "menudesc": "Equal parts Bourbon and Amaretto.",
+    "desc": "Referencing the classic movie, the Godfather is an equal split between Amaretto (Sicilian Mafia) and Bourbon (American Mafia). Served over ice.",
+    "roles": [],
+    "users": []
+  },
+  "Caipirinha": {
+    "name": "Caipirinha",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/WgkWRMz.jpg",
+    "by": "Un1form",
+    "menudesc": "3:2:1 Cachaca, lime juice, and sugar.",
+    "desc": "'The countryside lady', Brazil's national cocktail. \n Fica \u00e0 vontade.",
+    "roles": [],
+    "users": []
+  },
+  "Greyhound": {
+    "name": "Greyhound",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/lfDt3aX.png",
+    "by": "Un1form",
+    "menudesc": "1:4 Vodka and grapefruit juice.",
+    "desc": "",
+    "roles": [],
+    "users": []
+  },
+  "Gimlet": {
+    "name": "Gimlet",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/KOMCBLm.jpg",
+    "by": "Un1form",
+    "menudesc": "4:2:1 Gin, lime juice, and sugar syrup",
+    "desc": "Could've called it a Gin Sour, but I suppose Gimlet does have a nice ring to it\u2026",
+    "roles": [],
+    "users": []
+  },
+  "ShirleyTemple": {
+    "name": "Shirley Temple",
+    "alcoholic": false,
+    "category": "cocktails",
+    "pic": "https://imgur.com/Y86w8tn.jpg",
+    "by": "Un1form",
+    "menudesc": "Ginger ale and grenadine syrup.",
+    "desc": "Just like its namesake, this mocktail is quite sweet.",
+    "roles": [
+      "Meido"
+    ],
+    "users": [],
+    "checkAdditive": true
+  },
+  "HairyNavel": {
+    "name": "Hairy Navel",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/SflpY4C.jpg",
+    "by": "Uniform",
+    "menudesc": "1:1:2 Peach Schnapps, Vodka, and pulpy orange juice.",
+    "desc": "Just order a Fuzzy Navel instead.",
+    "roles": [],
+    "users": []
+  },
+  "FuzzyNavel": {
+    "name": "Fuzzy Navel",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/77hKy45.jpg",
+    "by": "QPiD",
+    "menudesc": "Equal parts Peach Schnapps, orange juice.",
+    "desc": "Just order a Hairy Navel instead.",
+    "roles": [],
+    "users": []
+  },
+  "SkinnyBitch": {
+    "name": "Skinny Bitch",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/bsqvYLl.jpg",
+    "by": "none",
+    "menudesc": "Vodka, soda water, and lime juice.\n Garnished with one lime wedge.",
+    "desc": "A favourite of calorie-cutting party goers and keto dieters everywhere.",
+    "roles": [],
+    "users": []
+  },
+  "Sidecar": {
+    "name": "Sidecar",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/wu81DFp.jpg",
+    "by": "Serpentine",
+    "menudesc": "5:2:2 Cognac, Cointreau, and lemon juice",
+    "desc": "Made of 5 parts Cognac, 2 parts Cointreau, and 2 parts lemon juice.\n As the Cointreau is the sidecar to the leading flavour of Cognac, it's unclear where lemon juice fits in this allegory.",
+    "roles": [],
+    "users": []
+  },
+  "Appletini": {
+    "name": "Appletini",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/pdsJHFH.jpg",
+    "by": "Serpentine",
+    "menudesc": "3:1:1 Vodka, apple liqueur, and Cointreau.",
+    "desc": "Yet another Martini variation, with a fruity twist.",
+    "roles": [],
+    "users": []
+  },
+  "PinaColada": {
+    "name": "Pina Colada",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://i.imgur.com/iWz3ZEH.jpg",
+    "by": "Uniform",
+    "menudesc": "3:1:1 Pinapple juice, white rum and coconut milk.",
+    "desc": "We offer umbrellas for customers in this establishment.",
+    "roles": [],
+    "users": []
+  },
+  "HotToddy": {
+    "name": "Hot Toddy",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/LGvbkQv.jpg",
+    "by": "Serpentine",
+    "menudesc": "Lemon honey tea, but also Whisky.",
+    "desc": "For the times when a cup of tea just needs a bit of an extra punch.",
+    "roles": [],
+    "users": []
+  },
+  "Wassail": {
+    "name": "Wassail",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/rDk41Gy.jpg",
+    "by": "Serpentine",
+    "menudesc": "Mulled cider punch, served nice and hot.",
+    "desc": "From the Anglo-Saxon _wes h\u00e1l_, meaning 'be healthy', this traditional English drink is perfect for anyone wishing to celebrate the Yuletide or harrass the local Lordship.\n Drinc h\u00e1l!",
+    "roles": [],
+    "users": []
+  },
+  "ScreamingOrgasm": {
+    "name": "Screaming Orgasm",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/AIwyDCN.jpg",
+    "by": "Krobos",
+    "menudesc": "Equal parts Vodka, Kahlua, Amaretto, cream liqueur and milk.\n It's a mystery where this thick white cocktail got its name.",
+    "desc": "We know you've never had one, so might as well get one here.\n Just don't spill any of that stuff on the counter.",
+    "roles": [],
+    "users": []
+  },
+  "TomandJerry": {
+    "name": "Tom and Jerry",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/dspxT83.jpg",
+    "by": "Un1form",
+    "menudesc": "1:1: Dark rum, brandy and Cognac topped with hot milk.",
+    "desc": "No, it's not named after a cartoon.\n Introduced as a way of popularising his book, Pierce Egan put a spin on the classic egnogg recipe by adding brandy to it.",
+    "roles": [],
+    "users": []
+  },
+  "NoName": {
+    "name": "No Name",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/MGOxzXp.jpg",
+    "by": "Un1form",
+    "menudesc": "4:1 rum and honey. Cinnamon sticks to taste.",
+    "desc": "Uniquely crafted to go with a cigar, this one consists of 4 parts of rum, 1 part of honey, some cinnamon sticks, all put into a shaker. \n It doesn't have a name; the customer names it.",
+    "roles": [],
+    "users": []
+  },
+  "A1": {
+    "name": "A1",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/QPE2luJ.jpg",
+    "by": "Un1form",
+    "menudesc": "6:4:1 Gin, Grand Marnier, lemon juice with a dash of grenadine",
+    "desc": "A cocktail that was named in such a way that in any alphabetically sorted book it would be on the first page.",
+    "roles": [],
+    "users": []
+  },
+  "LastKiss": {
+    "name": "Last Kiss",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/SySFtgQ.jpg",
+    "by": "Un1form",
+    "menudesc": "6:2:1:1:1:1 Light rum, gin, brandy, dry vermouth, lemon juice and sugar syrup.",
+    "desc": "What can I say? We may not meet again, so let me give you one Last Kiss.",
+    "roles": [],
+    "users": []
+  },
+  "RustyNail": {
+    "name": "Rusty Nail",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/UMnRYAg.jpg",
+    "by": "Un1form",
+    "menudesc": "9:5 Scotch and Drambuie.",
+    "desc": "You won't need a tetanus shot after this one.",
+    "roles": [],
+    "users": []
+  },
+  "GinFizz": {
+    "name": "Gin Fizz",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/e6I0hcw.jpg",
+    "by": "Un1form",
+    "menudesc": "2:1:1 Gin, lime juice and sugar syrup, shaken with an egg white and topped with soda.",
+    "desc": "It's a Gimlet but with soda and egg whites.",
+    "roles": [],
+    "users": []
+  },
+  "Bannockburn": {
+    "name": "Bannockburn",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/sBX4Ziw.jpg",
+    "by": "Un1form",
+    "menudesc": "It's a Bloody Mary with whiskey.",
+    "desc": "Scottish people put their own spin on Bloody Mary.\n They replaced vodka with whiskey and renamed it after one of the their most impressive victories over the English.",
+    "roles": [],
+    "users": []
+  },
+  "Sledgehammer": {
+    "name": "Sledgehammer",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/5qR5cAg.jpg",
+    "by": "Un1form",
+    "menudesc": "9:2:1 Vodka, Orange juice and lime juice.",
+    "desc": "True to its name, will get you smashed right and proper.",
+    "roles": [],
+    "users": []
+  },
+  "Brandy": {
+    "name": "Brandy",
+    "alcoholic": true,
+    "category": "spirits",
+    "pic": "https://imgur.com/n9nISPd.jpg",
+    "by": "Vanitas",
+    "menudesc": "A spirit produced by distilling wine. 40% ABV.",
+    "desc": "The preferred drink of cigar-puffing suits and afro-american rappers alike.",
+    "roles": [],
+    "users": []
+  },
+  "Gin": {
+    "name": "Gin",
+    "alcoholic": true,
+    "category": "spirits",
+    "pic": "https://i.pinimg.com/originals/47/04/7f/47047faf24dc423944ede729398258f2.jpg",
+    "by": "Vanitas",
+    "menudesc": "A grain spirit whose characteristic flavour comes from juniper berries. 40% ABV.",
+    "desc": "Gin, sans tonic. Herbal and piney in flavour, thanks to the juniper berries present in most traditional recipes.",
+    "roles": [],
+    "users": []
+  },
+  "Rum": {
+    "name": "Rum",
+    "alcoholic": true,
+    "category": "spirits",
+    "pic": "https://imgur.com/F1myjCi.jpg",
+    "by": "Vanitas",
+    "menudesc": "A distilled alcoholic drink made by fermenting then distilling sugarcane molasses or sugarcane juice, which is then aged in oak barrels. Has famous associations with piracy. 40-45% ABV.",
+    "desc": "Rum, the one thing that both the Navy and pirates can bond over.\nThanks to being made with sugarcane, you can always count on a hint of sweetness within.",
+    "roles": [],
+    "users": []
+  },
+  "Tequila": {
+    "name": "Tequila",
+    "alcoholic": true,
+    "category": "spirits",
+    "pic": "https://imgur.com/9EhNRbZ.jpg",
+    "by": "Vanitas",
+    "menudesc": "A spirit made from the blue agave plant. Served neat as a shot with salt and lime. 35-55% ABV.",
+    "desc": "Sip it nice and despacito.",
+    "roles": [],
+    "users": []
+  },
+  "Vodka": {
+    "name": "Vodka",
+    "alcoholic": true,
+    "category": "spirits",
+    "pic": "https://imgur.com/F2eFURi.jpg",
+    "by": "Vanitas",
+    "menudesc": "Water and ethanol. A spirit made from literally anything that could be fermented to make alcohol, but typically grain, less commonly potatoes. 40% ABV.",
+    "desc": "Everyone likes water, so why not try some water with alcohol?",
+    "roles": [],
+    "users": []
+  },
+  "Absinthe": {
+    "name": "Absinthe",
+    "alcoholic": true,
+    "category": "spirits",
+    "pic": "https://imgur.com/bRqgfLe.jpg",
+    "by": "Vanitas",
+    "menudesc": "'Green fairy'. A distilled, highly alcoholic spirit that is bitter and anise-flavoured, made mostly from the leaves and flowers of wormwood. 60-80% ABV.",
+    "desc": "Ah, 'la f\u00e9e verte', our green fairy that was a common sight among 19th century Parisians.\n Beware her grasp; absinthe is quite strong.",
+    "roles": [],
+    "users": []
+  },
+  "Everclear": {
+    "name": "Everclear",
+    "alcoholic": true,
+    "category": "spirits",
+    "pic": "https://imgur.com/0X9rOel.jpg",
+    "by": "Vanitas",
+    "menudesc": "A distilled spirit that has a notorious reputation for its high alcohol content, up to 95% ABV. Typically mixed with other ingredients to create cocktails, or with water to create vodka.",
+    "desc": "You've tried water with alcohol, now try alcohol with water.\n Guaranteed to fuck you up.",
+    "roles": [],
+    "users": []
+  },
+  "Lager": {
+    "name": "Lager",
+    "alcoholic": true,
+    "category": "beers",
+    "pic": "https://imgur.com/QNLzRWu.jpg",
+    "by": "Vanitas",
+    "menudesc": "The most widely consumed and commercially available style of beer.\n Easily recognizable by its golden colour and light flavour.",
+    "desc": "Crisp and refreshing.",
+    "roles": [],
+    "users": []
+  },
+  "WheatBeer": {
+    "name": "Wheat Beer",
+    "alcoholic": true,
+    "category": "beers",
+    "pic": "https://i.imgur.com/OHq3Cx1.jpg",
+    "by": "Cookie",
+    "menudesc": "One of the oldest styles of beer still in existence today, brewed with anywhere from 30 to 70% wheat in the grain mix.",
+    "desc": "Golden, hazy, goes down easy.",
+    "roles": [],
+    "users": []
+  },
+  "EnglishBitter": {
+    "name": "English Bitter",
+    "alcoholic": true,
+    "category": "beers",
+    "pic": "https://i.imgur.com/JAU0A76.jpg",
+    "by": "Vanitas",
+    "menudesc": "Contrary to its name, this beer won't make you gag from the taste.\n A light and 'sessionable' beer, thanks to its comparatively low alcohol content.",
+    "desc": "The quintessential after-work pint.",
+    "roles": [],
+    "users": []
+  },
+  "India Pale Ale": {
+    "name": "India Pale Ale",
+    "alcoholic": true,
+    "category": "beers",
+    "pic": "https://imgur.com/xkMURGQ.jpg",
+    "by": "Vanitas",
+    "menudesc": "A variant of the Pale Ale that has an increased hops content.\n Was a result of British brewers looking for a way to ship pale ale to soldiers stationed in India without the drink spoiling during the voyage.",
+    "desc": "Hoppy and bitter.",
+    "roles": [],
+    "users": []
+  },
+  "Porter": {
+    "name": "Porter",
+    "alcoholic": true,
+    "category": "beers",
+    "pic": "https://imgur.com/a6il0LQ.jpg",
+    "by": "Vanitas",
+    "menudesc": "A dark style of beer developed in London that has flavors and aromas of coffee, chocolate and toast. ",
+    "desc": "Smooth and creamy.",
+    "roles": [],
+    "users": []
+  },
+  "Stout": {
+    "name": "Stout",
+    "alcoholic": true,
+    "category": "beers",
+    "pic": "https://imgur.com/dTy8xVA.jpg",
+    "by": "Vanitas",
+    "menudesc": "A stronger, 'stouter' version of the Porter, popularized by Guinness.",
+    "desc": "Be honest with yourself and just call it a Guinness.",
+    "roles": [],
+    "users": []
+  },
+  "Lambic": {
+    "name": "Lambic",
+    "alcoholic": true,
+    "category": "beers",
+    "pic": "https://i.imgur.com/eKxEtQ1.jpg",
+    "by": "RustyRat",
+    "menudesc": "A Belgian beer. Its most popular variant is Kriek, which is brewed with sour cherries.",
+    "desc": "Some people think this tastes like cough syrup. Those people are wrong.",
+    "roles": [],
+    "users": []
+  },
+  "Cider": {
+    "name": "Cider",
+    "alcoholic": true,
+    "category": "beers",
+    "pic": "https://imgur.com/R6ezZEt.jpg",
+    "by": "RustyRat",
+    "menudesc": "Fermented apple juice. Amber to gold sour-sweet nectar.",
+    "desc": "For when you want to drink apple juice but also want to get plastered.",
+    "roles": [],
+    "users": []
+  },
+  "ColdBrew": {
+    "name": "Cold Brew",
+    "alcoholic": false,
+    "category": "iced coffee",
+    "pic": "https://i.imgur.com/GhM9BLS.jpg",
+    "by": "Zae",
+    "menudesc": "Low acidity dark roasted coffee brewed overnight & served over water & ice.",
+    "desc": "",
+    "roles": [
+      "Coffee Mom"
+    ],
+    "users": []
+  },
+  "NitroColdBrew": {
+    "name": "Nitro Cold Brew",
+    "alcoholic": false,
+    "category": "iced coffee",
+    "pic": "https://i.imgur.com/BZlI0Sj.jpg",
+    "by": "Zae",
+    "menudesc": "Cold brewed coffee infused with nitrogen for a naturally sweet flavor and cascading, velvety crema.",
+    "desc": "",
+    "roles": [
+      "Coffee Mom"
+    ],
+    "users": []
+  },
+  "ColdMoo": {
+    "name": "Cold Moo",
+    "alcoholic": false,
+    "category": "iced coffee",
+    "pic": "https://i.imgur.com/QbmqkEY.jpg",
+    "by": "Zae",
+    "menudesc": "Cold brewed coffee with cream.",
+    "desc": "",
+    "roles": [
+      "Coffee Mom"
+    ],
+    "users": []
+  },
+  "IcedAmericano": {
+    "name": "Iced Americano",
+    "alcoholic": false,
+    "category": "iced coffee",
+    "pic": "https://i.imgur.com/ZoTJfNK.jpg",
+    "by": "Zae",
+    "menudesc": "Two shots of espresso coffee + iced water for a long lasting drink.",
+    "desc": "",
+    "roles": [
+      "Coffee Mom"
+    ],
+    "users": []
+  },
+  "IcedCoffee": {
+    "name": "Iced Coffee",
+    "alcoholic": false,
+    "category": "iced coffee",
+    "pic": "https://i.imgur.com/lZ0gmVP.jpg",
+    "by": "Zae",
+    "menudesc": "Freshly brewed coffee in the roast of your choice served over ice.",
+    "desc": "",
+    "roles": [
+      "Coffee Mom"
+    ],
+    "users": []
+  },
+  "BrewedCoffee": {
+    "name": "Plain Hot Coffee",
+    "alcoholic": false,
+    "category": "hot coffee",
+    "pic": "https://i.imgur.com/h4nfJia.jpg",
+    "by": "Zae",
+    "menudesc": "Freshly brewed coffee in the roast of your choice - flavoring, sugar, cream all optional.",
+    "desc": "",
+    "roles": [
+      "Coffee Mom"
+    ],
+    "users": []
+  },
+  "Macchiato": {
+    "name": "Macchiato",
+    "alcoholic": false,
+    "category": "hot coffee",
+    "pic": "https://i.imgur.com/PvEAZkD.jpg",
+    "by": "Zae",
+    "menudesc": "Espresso & a small amount of foamed milk.",
+    "desc": "",
+    "roles": [
+      "Coffee Mom"
+    ],
+    "users": []
+  },
+  "FlatWhite": {
+    "name": "Flat White",
+    "alcoholic": false,
+    "category": "hot coffee",
+    "pic": "https://i.imgur.com/Appqyad.jpg",
+    "by": "Zae",
+    "menudesc": "Two shots of espresso coffee (blonde or dark roast) with steam milk microfoam. Velvety luxury.",
+    "desc": "",
+    "roles": [
+      "Coffee Mom"
+    ],
+    "users": []
+  },
+  "Cappuccino": {
+    "name": "Cappucino",
+    "alcoholic": false,
+    "category": "hot coffee",
+    "pic": "https://i.imgur.com/4vCM8wC.jpg",
+    "by": "Zae",
+    "menudesc": "Two shots of espresso coffee, with milk of your choice (almond, coconut, regular), topped with microfoam.",
+    "desc": "",
+    "roles": [
+      "Coffee Mom"
+    ],
+    "users": []
+  },
+  "Americano": {
+    "name": "Americano",
+    "alcoholic": false,
+    "category": "hot coffee",
+    "pic": "https://i.imgur.com/cmsoWzQ.jpg",
+    "by": "Zae",
+    "menudesc": "Two shots of espresso coffee + water for a long lasting drink served hot.",
+    "desc": "",
+    "roles": [
+      "Coffee Mom"
+    ],
+    "users": []
+  },
+  "Mocha": {
+    "name": "Mocha",
+    "alcoholic": false,
+    "category": "hot coffee",
+    "pic": "https://i.imgur.com/NYc4Ymd.jpg",
+    "by": "Zae",
+    "menudesc": "Espresso and hot milk with cocoa powder + sugar.",
+    "desc": "",
+    "roles": [
+      "Coffee Mom"
+    ],
+    "users": []
+  },
+  "Latte": {
+    "name": "Latte",
+    "alcoholic": false,
+    "category": "hot coffee",
+    "pic": "https://i.imgur.com/sznF5Aq.jpg",
+    "by": "Zae",
+    "menudesc": "2 shots of espresso with steamed milk.",
+    "desc": "",
+    "roles": [
+      "Coffee Mom"
+    ],
+    "users": []
+  },
+  "SpicyWater": {
+    "name": "Spicy Water",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://i.imgur.com/EKJptYq.jpg",
+    "by": "Eric",
+    "menudesc": "Literally just water and vodka. Toss a lime wedge in if you're adventurous.",
+    "desc": "It ain\u2019t fancy, but you're here to get drunk, and it does the job.",
+    "roles": [],
+    "users": []
+  },
+  "Kvass": {
+    "name": "Kvass",
+    "alcoholic": false,
+    "category": "beers",
+    "pic": "https://i.imgur.com/lEGrels.jpg",
+    "by": "Van",
+    "menudesc": "A fermented beverage, not unlike beer, made from rye bread that is enjoyed as a summertime drink in many Slavic countries.\n Mildly alcoholic, around 0.5-1% ABV, but classified as a non-alcoholic beverage nonetheless.",
+    "desc": "Delicious and thirst-quenching bread juice. Tastes a bit like raisins.",
+    "roles": [
+      "Meido"
+    ],
+    "users": [],
+    "checkAdditive": true
+  },
+  "Pilsner": {
+    "name": "Pilsner",
+    "alcoholic": true,
+    "category": "beers",
+    "pic": "https://i.imgur.com/KaOEHgW.jpg",
+    "by": "prohunter",
+    "menudesc": "A style of beer invented by a German brewer in 1843 in the city of Pilsen, characterised by its bittersweet earthy taste, bright gold colour and clear liquid.",
+    "desc": "Hoppy and delightfully bitter. Go big or go home.",
+    "roles": [],
+    "users": []
+  },
+  "EarlGrey": {
+    "name": "Earl Grey Tea",
+    "alcoholic": false,
+    "category": "tea",
+    "pic": "https://i.imgur.com/D4mJacE.jpg",
+    "by": "Skye",
+    "menudesc": "Black tea with a splash of bergamot (orange) oil infused in the leaves.",
+    "desc": "Nice, wholesome, and Grey. Sounds like good weather.",
+    "roles": [
+      "Meido"
+    ],
+    "users": [],
+    "checkAdditive": true
+  },
+  "GreenTea": {
+    "name": "Green Tea",
+    "alcoholic": false,
+    "category": "tea",
+    "pic": "https://i.imgur.com/tTUw5Wv.jpg",
+    "by": "Skye",
+    "menudesc": "Camellia sinensis leaves oxidized much less than the black variant.",
+    "desc": "Not actually green most of the time.",
+    "roles": [
+      "Meido"
+    ],
+    "users": [],
+    "checkAdditive": true
+  },
+  "EnglishBreakfast": {
+    "name": "English Breakfast Tea",
+    "alcoholic": false,
+    "category": "tea",
+    "pic": "https://i.imgur.com/1mby6IH.jpg",
+    "by": "Vanitas",
+    "menudesc": "A blend of black teas, commonly Assam, Ceylon, and Kenyan, traditionally served as part of the full English breakfast.\n Goes well with milk and sugar.",
+    "desc": "Puts the 'good' in 'good morning.'",
+    "roles": [
+      "Meido"
+    ],
+    "users": [],
+    "checkAdditive": true
+  },
+  "Darjeeling": {
+    "name": "Darjeeling Tea",
+    "alcoholic": false,
+    "category": "tea",
+    "pic": "https://i.imgur.com/sU6f4pM.jpg",
+    "by": "Vanitas",
+    "menudesc": "A famous tea grown in West Bengal, India. Brews thin and light with a floral aroma.",
+    "desc": "The Champagne of teas.",
+    "roles": [
+      "Meido"
+    ],
+    "users": [],
+    "checkAdditive": true
+  },
+  "SilverNeedle": {
+    "name": "Silver Needle Tea",
+    "alcoholic": false,
+    "category": "tea",
+    "pic": "https://i.imgur.com/P1o4BfX.jpg",
+    "by": "Serpentine",
+    "menudesc": "A prized white tea produced in Fujian Province, China. Sweet and delicate.",
+    "desc": "Golden luxury.",
+    "roles": [
+      "Meido"
+    ],
+    "users": [],
+    "checkAdditive": true
+  },
+  "Caf\u00e9ConLeche": {
+    "name": "Caf\u00e9 Con Leche",
+    "alcoholic": false,
+    "category": "hot coffee",
+    "pic": "https://i.imgur.com/YUg3m1e.jpg",
+    "by": "Indy",
+    "menudesc": "A traditional beverage of Spanish and Latin American origin that consists of strong and bold dark-roasted coffee (usually espresso) mixed with scalded milk in approximately a 1:1 ratio. Sugar or sweetener is added according to taste. Comes with two variants, both with more amounts of milk. Caf\u00e9 Con Leche en Vaso (Coffee with Milk in Cup) or Caf\u00e9 Con Leche de Desayuno (Breakfast Coffee with Milk).",
+    "desc": "Gets you up and running.",
+    "roles": [
+      "Coffee Mom"
+    ],
+    "users": [
+      "175052342633168903"
+    ],
+    "checkAdditive": true
+  },
+  "Espresso": {
+    "name": "Espresso",
+    "alcoholic": false,
+    "category": "hot coffee",
+    "pic": "https://i.imgur.com/XcpL39g.jpg",
+    "by": "Zae",
+    "menudesc": "Coffee made by forcing high pressure water through finely ground beans.",
+    "desc": "Very concentrated.",
+    "roles": [
+      "Coffee Mom"
+    ],
+    "users": [],
+    "checkAddititve": false
+  },
+  "CorpseReviver2": {
+    "name": "Corpse Reviver No. 2",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://i.imgur.com/Tyeklqh.jpg",
+    "by": "Uniform",
+    "menudesc": "4:3:3:3 of Gin, Triple Sec, Lemon juice and dry vermouth with few dashes of absinthe.",
+    "desc": "For when you really need to be jolted awake. \nHey, you. You are finally awake...",
+    "roles": [],
+    "users": []
+  },
+  "Mead": {
+    "name": "Mead",
+    "alcoholic": true,
+    "category": "beers",
+    "pic": "https://i.imgur.com/UFe5j9I.jpg",
+    "by": "Mia",
+    "menudesc": "Fermented honey with water, sometimes with fruits, spices, grains or hops. Colour varies by honey type. 3.5% ABV and upwards.",
+    "desc": "The drink of Gods and Vikings, perfect for those days when you have Dragons to slay.",
+    "roles": [],
+    "users": [
+      "385445076165197824"
+    ],
+    "checkAdditive": true
+  },
+  "BlackSambuca": {
+    "name": "Black Sambuca",
+    "alcoholic": true,
+    "category": "spirits",
+    "pic": "https://i.imgur.com/IkPRkMu.jpg",
+    "by": "Extra",
+    "menudesc": "An anise-flavored liqueur of Italian origin. 38% ABV.",
+    "desc": "When you 'n' the lads are getting a bit lairy and you need yourself a nice shot to ripen the mood",
+    "roles": [],
+    "users": [
+      "209472888313479168"
+    ],
+    "checkAdditive": true
+  },
+  "DrinkName": {
+    "name": "Solo",
+    "alcoholic": false,
+    "category": "miscellaneous",
+    "pic": "https://i.imgur.com/aoBVXi3.jpg",
+    "by": "Malinux",
+    "menudesc": "An orange-flavoured Norwegian soft drink",
+    "desc": "For when you and the lads want some classic Norwegian goodness",
+    "roles": [],
+    "users": [
+      "317413012686372864"
+    ],
+    "checkAdditive": true
+  },
+  "BeesKnees": {
+    "name": "Bee's Knees",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://kitchenswagger.com/wp-content/uploads/2019/08/bees-knees-cocktail1.jpg",
+    "by": "Un1f0rm",
+    "menudesc": "8:6:6 parts of gin, honey, and lemon juice",
+    "desc": "A cocktail from the Prohibition era.\nThe name meant 'the best'. Just like you.",
+    "roles": [],
+    "users": [
+      "129277263165259776",
+      "255114737598201856"
+    ],
+    "checkAdditive": true
+  },
+  "WhiteLady": {
+    "name": "White Lady",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://www.london-unattached.com/wp-content/uploads/2019/12/White-Lady-Cocktail-2-scaled.jpg",
+    "by": "Un1f0rm",
+    "menudesc": "4:3:2 parts gin, Triple Sec and lemon juice",
+    "desc": "Everyone can drink it regardless of skin colour, though maybe refrain if you are named Karen.",
+    "roles": [],
+    "users": [
+      "129277263165259776"
+    ],
+    "checkAdditive": true
+  },
+  "TheLastWord": {
+    "name": "The Last Word",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://noseychef.com/wp-content/uploads/2019/02/IMG_4398.jpg",
+    "by": "Un1f0rm",
+    "menudesc": "1:1:1:1 parts gin, lime juice, green Chartreuse, and maraschino liquer.",
+    "desc": "Yours, until the last flame dies and all words have been spoken.",
+    "roles": [],
+    "users": [
+      "129277263165259776"
+    ],
+    "checkAdditive": true
+  },
+  "SufferingBastard": {
+    "name": "Suffering Bastard",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://imgur.com/a/C4f172x",
+    "by": "Un1f0rm",
+    "menudesc": "8:2:2:1 parts ginger beer, gin, bourbon and lime juice, with a dash of Angostura bitters.",
+    "desc": "You did ask for the manager, right?",
+    "roles": [],
+    "users": [
+      "129277263165259776"
+    ],
+    "checkAdditive": true
+  },
+  "MotorOilShot": {
+    "name": "Motor Oil Shot",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://i.pinimg.com/originals/b4/4a/96/b44a96026c22cf2515cb09e2017a2fcb.jpg",
+    "by": "Mustang",
+    "menudesc": "1:1:1:1 parts J\u00e4germeister, peppermint schnapps, goldschl\u00e4ger and coconut rum.",
+    "desc": "Feeling old, cranky or mouldy? Something grinding your gears? What you need is a glass of the finest motor oil in this establishment. Fear not, this one is engineered uniquely to lubricate your inner workings.",
+    "roles": [],
+    "users": [
+      "221913315079618560"
+    ],
+    "checkAdditive": true
+  },
+  "Ramune": {
+    "name": "Ramune (\u30e9\u30e0\u30cd)",
+    "alcoholic": false,
+    "category": "miscellaneous",
+    "pic": "https://i.imgur.com/ZBMzAKd.jpg",
+    "by": "Taco",
+    "menudesc": "Carbonated water, sugar, citric acid, and lemon flavoring, served in a glass codd-neck bottle sealed with a marble.",
+    "desc": "The quintessential Japanese summer drink. You can't go wrong with a bottle of faintly sweet, fizzy marble soda on a hot and humid day.",
+    "roles": [
+      "Meido"
+    ],
+    "users": [
+      "115793141809807365"
+    ],
+    "checkAdditive": true
+  },
+  "PanGalacticGargleBlaster": {
+    "name": "Pan Galactic Gargle Blaster",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://i.imgur.com/dqjNCrO.jpg",
+    "by": "Taylor",
+    "menudesc": "1:1:5 bourbon, peach schnapps, and orange juice, with a splash of blue curacao liqueur. Garnish with a citrus twist and possibly an olive.",
+    "desc": "Like having your brains smashed out by a slice of lemon wrapped round a large gold brick. Don't panic, it's mostly harmless.",
+    "roles": [],
+    "users": [
+      "316005415211106305"
+    ],
+    "checkAdditive": false
+  },
+  "Mugicha": {
+    "name": "Mugicha (\u9ea6\u8336)",
+    "alcoholic": false,
+    "category": "tea",
+    "pic": "https://i.imgur.com/4vybEH9.jpg",
+    "by": "Taco",
+    "menudesc": "Made with roasted barley grains, often served chilled with ice.",
+    "desc": "The perfect accompaniment to the sound of cicadas on a hot summer day.",
+    "roles": [
+      "Meido"
+    ],
+    "users": [
+      "115793141809807365"
+    ],
+    "checkAdditive": true
+  },
+  "IchigoMilk": {
+    "name": "Ichigo Milk (\u3044\u3061\u3054\u30df\u30eb\u30af)",
+    "vessel": "",
+    "alcoholic": false,
+    "category": "miscellaneous",
+    "infoLink": "",
+    "pic": "https://i.imgur.com/lxXdUIj.jpg",
+    "by": "Taco",
+    "menudesc": "Fresh milk blended with strawberry puree.",
+    "desc": "Flows through the veins of cute anime girls, probably.",
+    "roles": [
+      "Meido"
+    ],
+    "users": [
+      "115793141809807365"
+    ],
+    "checkAdditive": true
+  },
+  "AppleJuice": {
+    "name": "Apple Juice",
+    "alcoholic": false,
+    "category": "miscellaneous",
+    "pic": "https://www.cateringsupplier.co.uk/wp-content/uploads/2017/02/apple-juice.jpg",
+    "by": "Evie\u00b5",
+    "menudesc": "Freshly pressed, served cold.",
+    "desc": "When you want a simple but tasteful drink without alcohol.",
+    "roles": [],
+    "users": [
+      "671289732919066644"
+    ],
+    "checkAdditive": true
+  },
+  "OrangeJuice": {
+    "name": "Orange Juice",
+    "alcoholic": false,
+    "category": "miscellaneous",
+    "pic": "https://cdn.dribbble.com/users/33267/screenshots/2043335/dr_1x.jpg",
+    "by": "Evie\u00b5",
+    "menudesc": "Freshly pressed, served cold.",
+    "desc": "When you want a simple but tasteful drink without alcohol.",
+    "roles": [],
+    "users": [
+      "671289732919066644"
+    ],
+    "checkAdditive": true
+  },
+  "CreamSoda": {
+    "name": "Cream Soda (\u30af\u30ea\u30fc\u30e0\u30bd\u30fc\u30c0)",
+    "alcoholic": false,
+    "category": "miscellaneous",
+    "pic": "https://i.imgur.com/A29abDp.jpg",
+    "by": "Taco",
+    "menudesc": "Club soda mixed with melon syrup, topped with a scoop of vanilla ice cream and a maraschino cherry",
+    "desc": "This fizzy emerald drink is a Japanese diner classic, and is well-loved by kids and adults alike.",
+    "roles": [
+      "Meido"
+    ],
+    "users": [
+      "115793141809807365"
+    ],
+    "checkAdditive": true
+  },
+  "MilkTea": {
+    "name": "Milk Tea(\u30bf\u30d4\u30aa\u30ab\u30df\u30eb\u30af\u30c6\u30a3\u30fc)",
+    "alcoholic": false,
+    "category": "tea",
+    "pic": "https://i.imgur.com/qeC90gS.jpg",
+    "by": "Taco",
+    "menudesc": "Black tea base mixed with sweetened condensed milk, served over chewy tapioca pearls.",
+    "desc": "Sweet and creamy, complemented well by the soft, chewy texture of the tapioca pearls.",
+    "roles": [
+      "Meido"
+    ],
+    "users": [
+      "115793141809807365"
+    ],
+    "checkAdditive": true
+  },
+  "CocaCola": {
     "name": "Coca Cola",
     "alcoholic": false,
     "category": "miscellaneous",
     "pic": "https://i.imgur.com/uWarl3o.png",
-    "by": "Evieµ",
+    "by": "Evie\u00b5",
     "menudesc": "Tastes like medicine, just better",
     "desc": "For when you need to satisfy that sugar rush and caffeine addiction",
     "roles": [],
-		"users": ["671289732919066644"],
-		"checkAdditive": true
-	}
+    "users": [
+      "671289732919066644"
+    ],
+    "checkAdditive": true
+  },
+  "example": {
+    "name": "example",
+    "alcoholic": true,
+    "category": "beers",
+    "pic": " https://i.imgur.com/ceiXDPT.jpeg\" ",
+    "by": "xXEldestXx",
+    "menudesc": " example menu blurb",
+    "desc": " Come up with an Eagles song for THIS one, Joe!",
+    "roles": [],
+    "users": [
+      "316005415211106305"
+    ],
+    "checkAdditive": false
+  },
+  "southside": {
+    "name": "Southside",
+    "alcoholic": true,
+    "category": "cocktails",
+    "pic": "https://i.imgur.com/SBKbWhM.png\" ",
+    "by": "Uniform",
+    "menudesc": "4:2:1 Gin, lime juice and sugar syrup, along with a sprig of mint. Shaken.",
+    "desc": " People say the name comes from it being the favourite drink of the infamous Al Capone, the ruler of Chicago's South Side. \nFor me, the minty sweet taste calms me when things go south. It's the drink that waits south side. ",
+    "roles": [],
+    "users": [
+      "129277263165259776"
+    ],
+    "checkAdditive": false
+  }
 }

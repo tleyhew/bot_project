@@ -11,7 +11,7 @@ import configLoader
 import drinkLoader
 
 
-try:  # If we don't have the drink list, why bother?
+try:
     config_file = open("./resources/config.json", "r", encoding="utf-8")
 except:
     print("Configuration File Not Found")
@@ -83,14 +83,15 @@ for x in sorted_drink_keys:
      categorized_key_list[drink_list[x].get("category")].append(x)
      
 #print (categorized_key_list)
-
 categorized_menus = { key : list() for key in drink_categories}
 
 
-def build_menu_list():  #this has to go here, because python won't let me forward declare it,
+def build_menu_list(drink_keys):  #this has to go here, because python won't let me forward declare it,
      menu_num_pages  = math.ceil(len(drink_keys)/menu_page_size)#but I also can't call it before it's declared. Python, man. 
      #print(len(drink_keys))
      #print(menu_num_pages)
+
+     drink_keys = drink_list.keys()
      sorted_drink_keys = sorted(drink_keys)
      drink_counter = 0
      return_list = []
@@ -133,7 +134,7 @@ def build_menu_list():  #this has to go here, because python won't let me forwar
 intentions = discord.Intents(guilds=True, members=True, emojis=True, messages=True, reactions=True)
 bot = commands.Bot(command_prefix='!bb - ', case_insensitive = True, intents=intentions)
 
-menu_list = build_menu_list()
+menu_list = build_menu_list(drink_keys)
 
 
 @bot.event
@@ -144,7 +145,10 @@ async def on_ready():
    for guild in bot.guilds:
       print(guild.name)
       
-@bot.command()
+@bot.command(help="""Serves a drink. 
+The correct invocation is '!bb - serve [person] - [drink].
+Replace [person] with the name of the individual getting the drink, and [drink] with the name of the beverage in question""",
+             brief="Serves a drink to a thirsty soul")
 async def serve(ctx):
      allowed_to_serve = False #Is the invoking user allowed to serve the drink?
      valid_user = False       #Is the user being served present in the server?
@@ -267,15 +271,20 @@ async def serve(ctx):
      
      try:
          msg = await ctx.channel.send(embed=embed)  
-     except discord.HTTPException:
-         print ("The picture for " + curr_drink["name"] + " is not available")
+     except discord.HTTPException as error:
+         print (curr_drink["name"])
+         print(error.text + ' ' + str(error.status) + ' ' + str(error.code))
+         err_string = error.text.split(".")
+         print(embed.fields[int(err_string[2])])
          await ctx.channel.send("I'm sorry, but we seem to be out of the ingredients for " + curr_drink["name"] + ". Our staff is working on it. Would you like something else?")
          
      return
     
 
         
-@bot.command()
+@bot.command(help="""Shows a menu. Use the arrow reacts to page through. React with an X emote to close the menu.
+You can bring up a more specific menu by invoking the command with a category name, a page number, or both.""",
+             brief="Displays a list of the beverages available in this establishment")
 async def menu(ctx, *args):
      if len(args) == 0:
          category = "all"
@@ -330,12 +339,170 @@ async def menu(ctx, *args):
      await menu_page.add_reaction("\N{BLACK RIGHT-POINTING TRIANGLE}")  #"\N{BLACK RIGHT-POINTING TRIANGLE}"
 
     
-@bot.command()
+@bot.command(help="""Adds a drink to the menu. This command can only be performed in the wine-cellar channel. If you don't have access and want to add a drink, wait for your turn to be a bartender.
+The correct command format is: 
+!bb - suggest name="example"|menudesc="example menu blurb"| desc="Come up with an Eagles song for THIS one, Joe!"|pic="https://i.imgur.com/ceiXDPT.jpeg" |category="beers"|alcoholic="True" 
+
+name - should be the name of the drink.
+
+menudesc - should be the ingredients list. Don't get too flowery here, as it is also what will show up in the menu, oddly enough.
+
+desc -  is the actual description of the drink. Get as flowery as you want here, or even take the opportunity to get in a cheap joke.
+
+pic - needs to be an imgur link, if at all possible. If you can't find one, ask around, see if someone else can.
+
+category - tells us what kind of drink it is. Use '!bb - categories' to see a list of valid categories. If you think that you need to add a new one, work with the barstaff on that.
+
+alcoholic - tells us whether the drink contains alcohol. Crazy, right?
+
+Make sure that you separate each field with a vertical bar character: '|'.""",
+brief="Allows a bartender to add a drink to the menu.")
 async def suggest(ctx):
-    await ctx.send('This will eventually be how drinks are added.')
-    
-    
-@bot.command()
+
+     new_name = ""
+     name_provided = False
+     new_alcoholic = False
+     alcoholic_provided = False
+     new_category = ""
+     category_provided = False
+     new_pic = ""
+     pic_provided = False
+     new_menudesc = ""
+     menudesc_provided = False
+     new_desc = ""
+     desc_provided = False
+
+     is_bartender = False
+     is_meido = False
+     is_coffee = False
+
+     add_category = False
+
+     drink_dict = {
+        "name": "",
+		"alcoholic": False,
+		"category": "",
+		"pic": "",
+		"by": "",
+		"menudesc": "",
+		"desc": "",
+		"roles": [],
+		"users": [],
+		"checkAdditive": False
+        }
+
+
+     base_string = """,
+     "!TITLE!":{
+     "name": "!NAME!",
+     "alcoholic": !ALCOHOLIC!,
+     "category": "!CAT!",
+     "pic": "!PIC!",
+     "by": "!BY!",
+	 "menudesc": "!MENUDESC!",
+	 "desc": "!DESC!",
+	 "roles": [!ROLES!],
+	 "users": [!USERS!],
+	 "checkAdditive": !CHECK!
+     }"""
+
+
+     valid_channel = False
+     if ctx.channel.id == int("647089228999819264"):
+         await ctx.send("This is suggesting a drink in the proof of concept channel")
+         valid_channel = True
+     elif ctx.channel.id == int("650763541808283686"):
+         await ctx.send("This is a drink suggestion in the wine cellar")
+         valid_channel = True
+     else: 
+         await ctx.send('This is not the correct channel for suggesting new drinks')
+         
+     if not valid_channel:
+        return
+     
+     args_list = ctx.message.content.replace("!bb - suggest", "").replace("!bb","").split("|")
+     #await ctx.send(str(args_list))
+     drink_dict["by"] = ctx.author.display_name
+     drink_dict["users"].append(str(ctx.author.id))    
+     
+     for x in ctx.author.roles:
+         if "Coffee Mom" == x.name:
+             is_coffee = True
+         if "Meido" == x.name:
+             is_meido = True
+         if x in server_roles_m or x in server_roles_f or x in server_roles_n:
+             is_bartender = True
+         if x.name == "Bouncer":
+             add_category = True
+             
+     if ((is_coffee and is_meido and is_bartender) or (is_bartender and is_meido) or
+          (is_bartender and is_coffee) or (is_coffee and is_meido)):
+         drink_dict["checkAdditive"] = True         
+     elif is_coffee:
+         drink_dict["roles"] = "Coffee Mom"
+     elif is_meido:
+         drink_dict["roles"] = "Meido"
+     
+     for x in args_list:
+         if x.lstrip().lower().startswith("name") and not name_provided:
+             drink_dict["name"] = x.replace('name="', '').strip('"').lstrip()
+             name_provided = True
+         elif x.lstrip().lower().startswith("alcoholic") and not alcoholic_provided:
+             if "true" in x.lower():
+                 drink_dict["alcoholic"] = True
+                 alcoholic_provided = True
+             elif "false" in x.lower():
+                 alcoholic_provided = True
+         elif x.lstrip().lower().startswith("category") and not category_provided:
+             new_category = x.replace('category="', "").strip('"')
+             if new_category.strip() not in drink_categories and str(ctx.author.id) not in ["316005415211106305"] and not add_category:
+                 await ctx.send("It looks like you're trying to add a new category of drink. Please work with the mod team to get it added.")
+                 await ctx.send(new_category + '   ' + str(drink_categories))
+                 return
+             else:
+                 category_provided = True
+                 drink_dict["category"] = new_category.strip()
+         elif x.lstrip().lower().startswith("menudesc") and not menudesc_provided:
+             drink_dict["menudesc"] = x.replace('menudesc="', '').strip('"')
+             menudesc_provided = True
+         elif x.lstrip().lower().startswith("desc") and not desc_provided:
+             drink_dict["desc"] = x.replace('desc="', '').strip('"')
+             desc_provided = True
+         elif x.lstrip().lower().startswith("pic") and not pic_provided:
+             drink_dict["pic"] = x.replace('pic="', '').strip('"')
+             pic_provided = True
+                 
+     if not (desc_provided and menudesc_provided and category_provided and name_provided and alcoholic_provided): #and pic_provided):
+         await ctx.send("You don't seem to have provided all the necessary information. Check the help function for details.")
+         return
+     #await ctx.send(str(drink_dict))
+     
+     for x in drink_list:
+         if drink_list[x].get("name").lower() == drink_dict["name"].lower():
+             await ctx.send("Sorry, but we already have a drink named " + drink_dict["name"] + ". Consult with the bar staff if you think that this submission is meaningfully distinct")
+     
+
+     drink_title = drink_dict["name"].replace(' ', '').lower()
+     drink_list[drink_title] = drink_dict
+     global menu_list
+     global drink_keys 
+     drink_keys = drink_list.keys()
+     menu_list = build_menu_list(drink_keys)
+     
+     try: #If we don't have the drink list, why bother?
+         drink_file = open("./resources/drinklist.json", "w",encoding="utf-8") 
+     except:
+         print ("Drink list not found")
+         quit()
+ 
+     out_string = json.dumps(drink_list,indent=2)
+ 
+     drink_file.write(out_string)
+     drink_file.close()
+         
+         
+@bot.command(help="Displays all valid drink categories.",
+             brief="Displays all valid drink categories.")
 async def categories(ctx):
      msg = "The valid categories are:\n"
      for x in drink_categories:
@@ -345,16 +512,16 @@ async def categories(ctx):
      await ctx.send(msg)     
     
       
-@bot.command()
+@bot.command(hidden=True)
 async def test(ctx):    
     await ctx.send(ctx.message.content)
     print (ctx.message.content)
     
-@bot.command() #Some easter eggs
+@bot.command(hidden=True) #Some easter eggs
 async def zork(ctx):
     await ctx.send('It is pitch black. You are likely to be eaten by a grue.')
     
-@bot.command()
+@bot.command(hidden=True)
 async def nethack(ctx):
      await ctx.send('Who do you think you are, War?')
      
@@ -431,7 +598,7 @@ def build_embed(ctx, recipient, curr_drink, serve_pronoun, self_flag, all_flag):
 
 def starts_with_vowel(in_string):
     vowel = 'a','e','i','o','u'
-    if in_string.lower().startswith(vowel):
+    if in_string.lstrip().lower().startswith(vowel):
         return True
     else:
         return False
