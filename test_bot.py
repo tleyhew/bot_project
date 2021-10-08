@@ -27,21 +27,21 @@ configLoader.validateConfig(config)
 #is what professionals do, so here we are.
 logger = logging.getLogger('discord')
 logger.setLevel(logging.INFO)
-handler = logging.FileHandler(filename=config.discordlog, encoding='UTF-8', mode='a')
+handler = logging.FileHandler(filename=config['discordlog'], encoding='UTF-8', mode='a')
 handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
 logger.addHandler(handler)
 
-bot_std_out = open(config.stdoutlog, 'a',encoding='UTF-8')
+bot_std_out = open(config['stdoutlog'], 'a',encoding='UTF-8')
 sys.stdout = bot_std_out
 
 try: #Do we have a client token? If we don't, shut down
-  token_file = open("./resources/bot_token.txt", "r")
+  token_file = open(config['tokenfile'], "r")
 except:
   print ("No client token found. Can't log in to discord without one, boss.")
   quit()
 
 try: #If we don't have the drink list, why bother?
-  drink_file = open("./resources/drinklist.json", "r",encoding="utf-8") 
+  drink_file = open(config['drinkfile'], "r",encoding="utf-8") 
 except:
   print ("Drink list not found")
   quit()
