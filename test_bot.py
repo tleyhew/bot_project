@@ -226,6 +226,9 @@ async def serve(ctx):
      else:    
          allowed_roles = default_roles
      role_list = ctx.author.roles   
+     
+     print(str(allowed_roles))
+     
      #print(ctx.author.id)
      if ctx.author.id == int('316005415211106305'): #316005415211106305
          allowed_to_serve = True
