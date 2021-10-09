@@ -214,14 +214,17 @@ async def serve(ctx):
      if valid_drink == False:   
          await ctx.send ("Sorry, but we don't have " + modified_content[1].strip() + " in this establishment.")
          return
-      
+     default_roles = ["Bartender","Barkeep","Alewife","Server","Barstaff"] 
      allowed_roles = []      
      if "Coffee Mom" in curr_drink["roles"]:
          allowed_roles = curr_drink["roles"]
      elif "Meido" in curr_drink["roles"]:
-         allowed_roles = curr_drink["roles"]   
+         allowed_roles = curr_drink["roles"]
+         if curr_drink["checkAdditive"]:
+            for x in default_roles:
+                allowed_roles.append(x)
      else:    
-         allowed_roles = ["Bartender","Barkeep","Alewife","Server","Barstaff"] 
+         allowed_roles = default_roles
      role_list = ctx.author.roles   
      #print(ctx.author.id)
      if ctx.author.id == int('316005415211106305'): #316005415211106305

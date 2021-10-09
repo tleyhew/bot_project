@@ -8,7 +8,8 @@
     "menudesc": "A spirit made from distilled coconut sap, common in Southeast Asia.\n Also known as coconut vodka or wine. 40%-45% ABV.",
     "desc": "Smooth and tropical. _Tagay!_",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Tuak": {
     "name": "Tuak",
@@ -19,7 +20,8 @@
     "menudesc": "A traditional rice wine indigenous to the Bornean region. 15-18% ABV.",
     "desc": "A primitive wine, said to have kept the ones that brew it drunk '100 out of 365 days'. ",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Water": {
     "name": "Water",
@@ -58,7 +60,8 @@
     "menudesc": "A fruity wine punch of Spanish origin.\n Mainly red wine and chopped fruit.",
     "desc": "Technically this is just a liquid and alcoholic fruit salad.\n Cheers to your healthy diet.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Aviation": {
     "name": "Aviation",
@@ -83,7 +86,8 @@
     "menudesc": "6:3:1 Ginger beer, vodka, lime juice, all served in a copper mug.",
     "desc": "A cocktail that in 1941 solved the problem of three unsuccessful business people: a copper mug salesman, a barkeep, and a vodka distiller.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Deathintheafternoon": {
     "name": "Death in the Afternoon",
@@ -94,7 +98,8 @@
     "menudesc": "9:2 Champagne and Absinthe in a champagne flute, garnished with a lemon peel",
     "desc": "Invented by Ernest Hemingway, and if followed his drinking instructions, which say to drink three to five glasses, may lead to an early retirement from this world. \n It is unclear however, whether that would happen in the afternoon.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "LycheeMartini": {
     "name": "Lychee Martini",
@@ -105,7 +110,8 @@
     "menudesc": "Martini mixed with lychee juice.",
     "desc": "A martini that tastes like lychees. Simple enough.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "MulledWine": {
     "name": "Mulled Wine",
@@ -127,7 +133,8 @@
     "menudesc": "2:1:1:1 Pineapple juice, gin, cherry liqueur and lime juice.",
     "desc": "Originally called a Gin Sling, this classic hails from as far back as 1915.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "HairOfTheDog": {
     "name": "Hair of the Dog",
@@ -138,7 +145,8 @@
     "menudesc": "2:1:1 Scotch whisky, cream and honey",
     "desc": "Just like healing a dog's bite with dog hair, healing hangovers can be done with more alcohol. And this one's perfect for the job.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "TequilaSunrise": {
     "name": "Tequila Sunrise",
@@ -149,7 +157,8 @@
     "menudesc": "A sweet mix of Tequila, orange juice, and grenadine syrup.",
     "desc": "Some people say it gets its name because it looks like a sunrise. I prefer to think it means I get to share your company until then.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "StrawberryDaquiri": {
     "name": "Strawberry Daquiri",
@@ -160,7 +169,8 @@
     "menudesc": "A daiquiri with strawberries added to the mix.",
     "desc": "Perfect for beating the summer heat.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Margarita": {
     "name": "Margarita",
@@ -171,7 +181,8 @@
     "menudesc": "2:1:1 Tequila, Triple Sec and lime juice.",
     "desc": "So what's a cougar like you doing here?",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "JackFrost": {
     "name": "Jack Frost",
@@ -182,7 +193,8 @@
     "menudesc": "Vodka, pineapple juice, cream of coconut, blue curacao, coconut, all blended with ice.",
     "desc": "The Pina Colada's winter version. Tropical, yet festive.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "SexOnTheBeach": {
     "name": "Sex on the Beach",
@@ -193,7 +205,8 @@
     "menudesc": "2:2:1 Vodka, cranberry juice and Peach Schnapps, topped with orange juice.",
     "desc": "Not a good idea. It's all coarse, and rough, and irritating. And it gets everywhere.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Mojito": {
     "name": "Mojito",
@@ -204,7 +217,8 @@
     "menudesc": "Rum, lime juice, brown sugar, and mint, topped with soda.",
     "desc": "One of those cocktails that takes forever to make, but people order them in gargantuan quantities anyway.\n Be sure to leave a generous tip.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "VirginMojito": {
     "name": "Virgin Mojito",
@@ -257,7 +271,8 @@
     "menudesc": "5:2:3 Vodka, Kahlua, and double cream.",
     "desc": "Made popular by The Dude in The Big Lebowski movie. \n If you don't like it, then well, that's just, like, your opinion, man.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "BlackRussian": {
     "name": "Black Russian",
@@ -268,7 +283,8 @@
     "menudesc": "Coffee liqueur and vodka.",
     "desc": "Somewhat of a rarity, Black Russian is a mix of vodka and coffee liqueur, mostly in a 5:3 ratio.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "OldFashioned": {
     "name": "Old Fashioned",
@@ -279,7 +295,8 @@
     "menudesc": "12:2:1 Bourbon, sugar syrup, squeezed orange peel, and Angostura bitters.",
     "desc": "Reminiscent of the times when cocktails were simply alcohol with anything fruity over ice.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "WhiskeySour": {
     "name": "Whiskey Sour",
@@ -290,7 +307,8 @@
     "menudesc": "4:2:1 Whiskey, lemon juice, and sugar syrup.",
     "desc": "The original 'sour'. Like other sours, it's made up by 4:2:1 of whiskey, lemon juice, and sugar syrup. Add an egg white into the mix for some frothy texture.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Whisky": {
     "name": "Whisky",
@@ -301,7 +319,8 @@
     "menudesc": "A spirit made from fermented grain mash, aged in wooden casks. 40\u201368% ABV.",
     "desc": "Modern spelling of uisce beatha, Gaelic for 'water of life'. Because what would life be without a bit of whisky?",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Manhattan": {
     "name": "Manhattan",
@@ -312,7 +331,8 @@
     "menudesc": "2:1 Rye and Sweet Vermouth, plus a few dashes of Angostura bitters.",
     "desc": "",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "BlackVelvet": {
     "name": "Black Velvet",
@@ -323,7 +343,8 @@
     "menudesc": "A glass of Champagne poured into a perfect pint of Guinness.",
     "desc": "For when a pint of Guinness just isn't fancy enough for the occasion.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "MintJulep": {
     "name": "Mint Julep",
@@ -334,7 +355,8 @@
     "menudesc": "Bourbon, sugar syrup, and muddled mint leaves.",
     "desc": "An American classic, famously served by Daisy in The Great Gastby.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "BloodyMary": {
     "name": "Bloody Mary",
@@ -345,7 +367,8 @@
     "menudesc": "Vodka, tomato juice, lemon juice, salt, pepper, tabasco, and Worcestershire sauce, garnished with a stalk of celery.",
     "desc": "A breakfast cocktail perfect for jumpstarting your day.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Screwdriver": {
     "name": "Screwdriver",
@@ -356,7 +379,8 @@
     "menudesc": "1:2 Vodka and orange juice.",
     "desc": "Named after NYC construction workers using screwdrivers to stir their orange-juice-carton-smuggled vodka, this one is as simple as it gets.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Daiquiri": {
     "name": "Daiquiri",
@@ -367,7 +391,8 @@
     "menudesc": "4:2:1 Rum, lime juice, and sugar syrup.",
     "desc": "Famously drunk by Ernest Hemingway, a Daiquiri could also be called a 'Rum Sour', but that doesn't sound quite as catchy now, does it?",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Bacardi": {
     "name": "Bacardi",
@@ -378,7 +403,8 @@
     "menudesc": "3:1:1 Bacardi, lime juice, and grenadine.",
     "desc": "Made by Bacardi in an attempt to popularise their ethanol.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "DirtyMartini": {
     "name": "Dirty Martini",
@@ -389,7 +415,8 @@
     "menudesc": "6:1:1 Vodka, Dry Vermouth, and olive brine.",
     "desc": "Unlike its pornstar sister, Dirty Martini isn't named as an innuendo, but because of how the olive juice affects its opacity. Served with an olive garnish.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Vesper": {
     "name": "Vesper",
@@ -400,7 +427,8 @@
     "menudesc": "6:2:1 Gin, Vodka, and dry vermouth.",
     "desc": "Shaken, not stirred. Invented by Ian Fleming, and popularised by his character James Bond.\n Served with a twisted lemon peel garnish.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "DarkNStormy": {
     "name": "Dark'N'Stormy",
@@ -411,7 +439,8 @@
     "menudesc": "7:4 Ginger beer and dark rum, bitters to taste.",
     "desc": "Dark rum, stormy ginger beer. Perfect for sailors and pirates alike.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Godfather": {
     "name": "Godfather",
@@ -422,7 +451,8 @@
     "menudesc": "Equal parts Bourbon and Amaretto.",
     "desc": "Referencing the classic movie, the Godfather is an equal split between Amaretto (Sicilian Mafia) and Bourbon (American Mafia). Served over ice.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Caipirinha": {
     "name": "Caipirinha",
@@ -433,7 +463,8 @@
     "menudesc": "3:2:1 Cachaca, lime juice, and sugar.",
     "desc": "'The countryside lady', Brazil's national cocktail. \n Fica \u00e0 vontade.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Greyhound": {
     "name": "Greyhound",
@@ -444,7 +475,8 @@
     "menudesc": "1:4 Vodka and grapefruit juice.",
     "desc": "",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Gimlet": {
     "name": "Gimlet",
@@ -455,7 +487,8 @@
     "menudesc": "4:2:1 Gin, lime juice, and sugar syrup",
     "desc": "Could've called it a Gin Sour, but I suppose Gimlet does have a nice ring to it\u2026",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "ShirleyTemple": {
     "name": "Shirley Temple",
@@ -480,7 +513,8 @@
     "menudesc": "1:1:2 Peach Schnapps, Vodka, and pulpy orange juice.",
     "desc": "Just order a Fuzzy Navel instead.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "FuzzyNavel": {
     "name": "Fuzzy Navel",
@@ -491,7 +525,8 @@
     "menudesc": "Equal parts Peach Schnapps, orange juice.",
     "desc": "Just order a Hairy Navel instead.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "SkinnyBitch": {
     "name": "Skinny Bitch",
@@ -502,7 +537,8 @@
     "menudesc": "Vodka, soda water, and lime juice.\n Garnished with one lime wedge.",
     "desc": "A favourite of calorie-cutting party goers and keto dieters everywhere.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Sidecar": {
     "name": "Sidecar",
@@ -513,7 +549,8 @@
     "menudesc": "5:2:2 Cognac, Cointreau, and lemon juice",
     "desc": "Made of 5 parts Cognac, 2 parts Cointreau, and 2 parts lemon juice.\n As the Cointreau is the sidecar to the leading flavour of Cognac, it's unclear where lemon juice fits in this allegory.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Appletini": {
     "name": "Appletini",
@@ -524,7 +561,8 @@
     "menudesc": "3:1:1 Vodka, apple liqueur, and Cointreau.",
     "desc": "Yet another Martini variation, with a fruity twist.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "PinaColada": {
     "name": "Pina Colada",
@@ -535,7 +573,8 @@
     "menudesc": "3:1:1 Pinapple juice, white rum and coconut milk.",
     "desc": "We offer umbrellas for customers in this establishment.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "HotToddy": {
     "name": "Hot Toddy",
@@ -546,7 +585,8 @@
     "menudesc": "Lemon honey tea, but also Whisky.",
     "desc": "For the times when a cup of tea just needs a bit of an extra punch.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Wassail": {
     "name": "Wassail",
@@ -557,7 +597,8 @@
     "menudesc": "Mulled cider punch, served nice and hot.",
     "desc": "From the Anglo-Saxon _wes h\u00e1l_, meaning 'be healthy', this traditional English drink is perfect for anyone wishing to celebrate the Yuletide or harrass the local Lordship.\n Drinc h\u00e1l!",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "ScreamingOrgasm": {
     "name": "Screaming Orgasm",
@@ -568,7 +609,8 @@
     "menudesc": "Equal parts Vodka, Kahlua, Amaretto, cream liqueur and milk.\n It's a mystery where this thick white cocktail got its name.",
     "desc": "We know you've never had one, so might as well get one here.\n Just don't spill any of that stuff on the counter.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "TomandJerry": {
     "name": "Tom and Jerry",
@@ -579,7 +621,8 @@
     "menudesc": "1:1: Dark rum, brandy and Cognac topped with hot milk.",
     "desc": "No, it's not named after a cartoon.\n Introduced as a way of popularising his book, Pierce Egan put a spin on the classic egnogg recipe by adding brandy to it.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "NoName": {
     "name": "No Name",
@@ -590,7 +633,8 @@
     "menudesc": "4:1 rum and honey. Cinnamon sticks to taste.",
     "desc": "Uniquely crafted to go with a cigar, this one consists of 4 parts of rum, 1 part of honey, some cinnamon sticks, all put into a shaker. \n It doesn't have a name; the customer names it.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "A1": {
     "name": "A1",
@@ -601,7 +645,8 @@
     "menudesc": "6:4:1 Gin, Grand Marnier, lemon juice with a dash of grenadine",
     "desc": "A cocktail that was named in such a way that in any alphabetically sorted book it would be on the first page.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "LastKiss": {
     "name": "Last Kiss",
@@ -612,7 +657,8 @@
     "menudesc": "6:2:1:1:1:1 Light rum, gin, brandy, dry vermouth, lemon juice and sugar syrup.",
     "desc": "What can I say? We may not meet again, so let me give you one Last Kiss.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "RustyNail": {
     "name": "Rusty Nail",
@@ -623,7 +669,8 @@
     "menudesc": "9:5 Scotch and Drambuie.",
     "desc": "You won't need a tetanus shot after this one.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "GinFizz": {
     "name": "Gin Fizz",
@@ -634,7 +681,8 @@
     "menudesc": "2:1:1 Gin, lime juice and sugar syrup, shaken with an egg white and topped with soda.",
     "desc": "It's a Gimlet but with soda and egg whites.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Bannockburn": {
     "name": "Bannockburn",
@@ -645,7 +693,8 @@
     "menudesc": "It's a Bloody Mary with whiskey.",
     "desc": "Scottish people put their own spin on Bloody Mary.\n They replaced vodka with whiskey and renamed it after one of the their most impressive victories over the English.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Sledgehammer": {
     "name": "Sledgehammer",
@@ -656,7 +705,8 @@
     "menudesc": "9:2:1 Vodka, Orange juice and lime juice.",
     "desc": "True to its name, will get you smashed right and proper.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Brandy": {
     "name": "Brandy",
@@ -667,7 +717,8 @@
     "menudesc": "A spirit produced by distilling wine. 40% ABV.",
     "desc": "The preferred drink of cigar-puffing suits and afro-american rappers alike.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Gin": {
     "name": "Gin",
@@ -678,7 +729,8 @@
     "menudesc": "A grain spirit whose characteristic flavour comes from juniper berries. 40% ABV.",
     "desc": "Gin, sans tonic. Herbal and piney in flavour, thanks to the juniper berries present in most traditional recipes.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Rum": {
     "name": "Rum",
@@ -689,7 +741,8 @@
     "menudesc": "A distilled alcoholic drink made by fermenting then distilling sugarcane molasses or sugarcane juice, which is then aged in oak barrels. Has famous associations with piracy. 40-45% ABV.",
     "desc": "Rum, the one thing that both the Navy and pirates can bond over.\nThanks to being made with sugarcane, you can always count on a hint of sweetness within.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Tequila": {
     "name": "Tequila",
@@ -700,7 +753,8 @@
     "menudesc": "A spirit made from the blue agave plant. Served neat as a shot with salt and lime. 35-55% ABV.",
     "desc": "Sip it nice and despacito.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Vodka": {
     "name": "Vodka",
@@ -711,7 +765,8 @@
     "menudesc": "Water and ethanol. A spirit made from literally anything that could be fermented to make alcohol, but typically grain, less commonly potatoes. 40% ABV.",
     "desc": "Everyone likes water, so why not try some water with alcohol?",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Absinthe": {
     "name": "Absinthe",
@@ -722,7 +777,8 @@
     "menudesc": "'Green fairy'. A distilled, highly alcoholic spirit that is bitter and anise-flavoured, made mostly from the leaves and flowers of wormwood. 60-80% ABV.",
     "desc": "Ah, 'la f\u00e9e verte', our green fairy that was a common sight among 19th century Parisians.\n Beware her grasp; absinthe is quite strong.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Everclear": {
     "name": "Everclear",
@@ -733,7 +789,8 @@
     "menudesc": "A distilled spirit that has a notorious reputation for its high alcohol content, up to 95% ABV. Typically mixed with other ingredients to create cocktails, or with water to create vodka.",
     "desc": "You've tried water with alcohol, now try alcohol with water.\n Guaranteed to fuck you up.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Lager": {
     "name": "Lager",
@@ -744,7 +801,8 @@
     "menudesc": "The most widely consumed and commercially available style of beer.\n Easily recognizable by its golden colour and light flavour.",
     "desc": "Crisp and refreshing.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "WheatBeer": {
     "name": "Wheat Beer",
@@ -755,7 +813,8 @@
     "menudesc": "One of the oldest styles of beer still in existence today, brewed with anywhere from 30 to 70% wheat in the grain mix.",
     "desc": "Golden, hazy, goes down easy.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "EnglishBitter": {
     "name": "English Bitter",
@@ -766,7 +825,8 @@
     "menudesc": "Contrary to its name, this beer won't make you gag from the taste.\n A light and 'sessionable' beer, thanks to its comparatively low alcohol content.",
     "desc": "The quintessential after-work pint.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "India Pale Ale": {
     "name": "India Pale Ale",
@@ -777,7 +837,8 @@
     "menudesc": "A variant of the Pale Ale that has an increased hops content.\n Was a result of British brewers looking for a way to ship pale ale to soldiers stationed in India without the drink spoiling during the voyage.",
     "desc": "Hoppy and bitter.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Porter": {
     "name": "Porter",
@@ -788,7 +849,8 @@
     "menudesc": "A dark style of beer developed in London that has flavors and aromas of coffee, chocolate and toast. ",
     "desc": "Smooth and creamy.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Stout": {
     "name": "Stout",
@@ -799,7 +861,8 @@
     "menudesc": "A stronger, 'stouter' version of the Porter, popularized by Guinness.",
     "desc": "Be honest with yourself and just call it a Guinness.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Lambic": {
     "name": "Lambic",
@@ -810,7 +873,8 @@
     "menudesc": "A Belgian beer. Its most popular variant is Kriek, which is brewed with sour cherries.",
     "desc": "Some people think this tastes like cough syrup. Those people are wrong.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Cider": {
     "name": "Cider",
@@ -821,7 +885,8 @@
     "menudesc": "Fermented apple juice. Amber to gold sour-sweet nectar.",
     "desc": "For when you want to drink apple juice but also want to get plastered.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "ColdBrew": {
     "name": "Cold Brew",
@@ -834,7 +899,8 @@
     "roles": [
       "Coffee Mom"
     ],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "NitroColdBrew": {
     "name": "Nitro Cold Brew",
@@ -847,7 +913,8 @@
     "roles": [
       "Coffee Mom"
     ],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "ColdMoo": {
     "name": "Cold Moo",
@@ -860,7 +927,8 @@
     "roles": [
       "Coffee Mom"
     ],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "IcedAmericano": {
     "name": "Iced Americano",
@@ -873,7 +941,8 @@
     "roles": [
       "Coffee Mom"
     ],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "IcedCoffee": {
     "name": "Iced Coffee",
@@ -886,7 +955,8 @@
     "roles": [
       "Coffee Mom"
     ],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "BrewedCoffee": {
     "name": "Plain Hot Coffee",
@@ -899,7 +969,8 @@
     "roles": [
       "Coffee Mom"
     ],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Macchiato": {
     "name": "Macchiato",
@@ -912,7 +983,8 @@
     "roles": [
       "Coffee Mom"
     ],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "FlatWhite": {
     "name": "Flat White",
@@ -925,7 +997,8 @@
     "roles": [
       "Coffee Mom"
     ],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Cappuccino": {
     "name": "Cappucino",
@@ -938,7 +1011,8 @@
     "roles": [
       "Coffee Mom"
     ],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Americano": {
     "name": "Americano",
@@ -951,7 +1025,8 @@
     "roles": [
       "Coffee Mom"
     ],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Mocha": {
     "name": "Mocha",
@@ -964,7 +1039,8 @@
     "roles": [
       "Coffee Mom"
     ],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Latte": {
     "name": "Latte",
@@ -977,7 +1053,8 @@
     "roles": [
       "Coffee Mom"
     ],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "SpicyWater": {
     "name": "Spicy Water",
@@ -988,7 +1065,8 @@
     "menudesc": "Literally just water and vodka. Toss a lime wedge in if you're adventurous.",
     "desc": "It ain\u2019t fancy, but you're here to get drunk, and it does the job.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Kvass": {
     "name": "Kvass",
@@ -1013,7 +1091,8 @@
     "menudesc": "A style of beer invented by a German brewer in 1843 in the city of Pilsen, characterised by its bittersweet earthy taste, bright gold colour and clear liquid.",
     "desc": "Hoppy and delightfully bitter. Go big or go home.",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "EarlGrey": {
     "name": "Earl Grey Tea",
@@ -1124,7 +1203,8 @@
     "menudesc": "4:3:3:3 of Gin, Triple Sec, Lemon juice and dry vermouth with few dashes of absinthe.",
     "desc": "For when you really need to be jolted awake. \nHey, you. You are finally awake...",
     "roles": [],
-    "users": []
+    "users": [],
+    "checkAdditive": false
   },
   "Mead": {
     "name": "Mead",
