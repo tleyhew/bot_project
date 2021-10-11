@@ -197,11 +197,7 @@ async def serve(ctx):
      try:
      #need to catch an index error here.    
          for drinks in sorted_drink_keys: #drink_list.keys(): #moderately fuzzy string matching
-             if (drink_list[drinks].get("name").lower() == modified_content[1].strip():
-                 valid_drink = True
-                 curr_drink = drink_list[drinks]
-                 break
-             elif (drink_list[drinks].get("name").lower().startswith(modified_content[1].strip()) 
+             if (drink_list[drinks].get("name").lower().startswith(modified_content[1].strip()) 
              or drink_list[drinks].get("name").lower().endswith(modified_content[1].strip()) 
              or modified_content[1].strip() in drink_list[drinks].get("name").lower()):
                  valid_drink = True
