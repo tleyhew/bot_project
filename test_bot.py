@@ -197,7 +197,11 @@ async def serve(ctx):
      try:
      #need to catch an index error here.    
          for drinks in sorted_drink_keys: #drink_list.keys(): #moderately fuzzy string matching
-             if (drink_list[drinks].get("name").lower().startswith(modified_content[1].strip()) 
+             if (drink_list[drinks].get("name").lower() == modified_content[1].strip():
+                 valid_drink = True
+                 curr_drink = drink_list[drinks]
+                 break
+             elif (drink_list[drinks].get("name").lower().startswith(modified_content[1].strip()) 
              or drink_list[drinks].get("name").lower().endswith(modified_content[1].strip()) 
              or modified_content[1].strip() in drink_list[drinks].get("name").lower()):
                  valid_drink = True
@@ -227,7 +231,7 @@ async def serve(ctx):
          allowed_roles = default_roles
      role_list = ctx.author.roles   
      
-     print(str(allowed_roles))
+     print("Allowed for roles for " + curr_drink["name"] + " are " + str(allowed_roles))
      
      #print(ctx.author.id)
      if ctx.author.id == int('316005415211106305'): #316005415211106305
@@ -238,7 +242,7 @@ async def serve(ctx):
         # print(allowed_to_serve)           
      else:
          role_list = ctx.author.roles #Does the invoker have a role that can serve this drink
-         print (role_list)
+         #print (role_list)
          #allowed_roles = ["Bartender","Barkeep","Alewife","Server","Barstaff"]
          #allowed_roles = allowed_roles + curr_drink["roles"]
          #print (allowed_roles)
